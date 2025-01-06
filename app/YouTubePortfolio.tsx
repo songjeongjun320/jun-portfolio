@@ -24,7 +24,7 @@ const navItems = [
     href: "#resume",
     onClick: (e: React.MouseEvent) => {
       e.preventDefault();
-      window.open("/pdf/JeongJun_Resume_v30.pdf", "_blank");
+      window.open("/pdf/JeongJun_Resume_v35.pdf", "_blank");
     },
   },
   { name: "Career", icon: <Briefcase className="w-6 h-6" />, href: "#career" },

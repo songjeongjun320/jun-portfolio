@@ -1,5 +1,4 @@
-import Image from "next/image";
-// Ensure YouTubePortfolio exists and is correctly exported
+'use client'
 import YouTubePortfolio from "./YouTubePortfolio";
 
 export default function Home() {
