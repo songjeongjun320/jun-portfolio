@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import SmoothScroll from './components/SmoothScroll'
 import { ProjectCard } from './components/project-card'
+import { BsBriefcase } from 'react-icons/bs'
 
 interface IntroContent {
   name: string;
@@ -14,9 +15,20 @@ interface IntroContent {
 
 interface Section {
   id: string;
-  gradient: string;
+  // gradient: string;
   title: string;
-  content: string[] | IntroContent;
+  content: string[] | IntroContent | Experience[] | Research[];
+}
+interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  details: string[];
+}
+
+interface Research {
+  title: string;
+  details: string[];
 }
 
 const projects = [
@@ -79,7 +91,7 @@ const projects = [
 const sections: Section[] = [
   {
     id: 'intro',
-    gradient: 'from-custom-teal via-custom-green to-custom-blue',
+    // gradient: 'from-custom-teal via-custom-green to-custom-blue',
     title: 'Introduction',
     content: {
       name: '(Jun) JeongJun Song',
@@ -95,7 +107,7 @@ and pursue Define Tuning techniques to remove unnecessary components within LLMs
 instead of traditional fine-tuning methods.`,
       details: [
         'Full-stack Development',
-        'AI/ML Research',
+        'NLP/ML Research',
         'Clean Code Advocate',
         'Problem Solver'
       ]
@@ -103,57 +115,93 @@ instead of traditional fine-tuning methods.`,
   },
   {
     id: 'education',
-    gradient: 'bg-gradient-to-bl from-red-400 via-pink-200 to-purple-500',
+    // gradient: 'bg-gradient-to-bl from-red-400 via-pink-200 to-purple-500',
     title: 'Education',
     content: [
       'Arizona State University, Ira A. Fulton Schools of Engineering | GPA: 3.81/4.0',
       'B.S. Computer Science (Expected December 2025)',
-      "Dean's List (2023-2024) | NamU Scholarship (2023-2025)",
+      "Dean's List (2023 - Expected until graduation) | NamU Scholarship (2023-2025)",
       'Relevant Coursework: Data Structures, Algorithms, Machine Learning, AI'
     ]
   },
   {
     id: 'experience',
-    gradient: 'from-custom-purple via-custom-pink to-custom-red',
+    // gradient: 'from-custom-purple via-custom-pink to-custom-red',
     title: 'Professional Experiences',
     content: [
-      'ABC Tech - 시니어 웹 개발자 (2019-현재)',
-      'XYZ Solutions - 데이터 사이언티스트 (2017-2019)',
-      'DEF Corp - 소프트웨어 엔지니어 인턴 (2016)',
-      '다수의 프리랜서 프로젝트 수행'
-    ]
+      {
+        role: 'Undergraduate Research Assistant in NLP/ML',
+        company: 'ASU ARC LAB',
+        period: 'Jan 2025-Present',
+        details: [
+          'Leading ML Insights project: Optimizing object detection and developing cost-effective OCR solutions',
+          'Building Full-Stack website using Next.js, Flask, Supabase, and AWS',
+          'Achieved 95% code coverage through automated unit testing implementation'
+        ]
+      },
+      {
+        role: 'Research Aide',
+        company: 'Arizona State University',
+        period: 'May 2024-Present',
+        details: [
+          'Leading ML Insights project: Optimizing object detection and developing cost-effective OCR solutions',
+          'Building Full-Stack website using Next.js, Flask, Supabase, and AWS',
+          'Achieved 95% code coverage through automated unit testing implementation'
+        ]
+      },
+      {
+        role: 'Software Engineering Intern',
+        company: 'NGL Transportation INC',
+        period: 'Jan 2022-Jan 2023',
+        details: [
+          'Reduced truck gate processing time from 5 min to 5-10 sec by implementing OCR system',
+          'Improved image detection accuracy by 20% through YOLOv5 model refinement',
+          'Managed 10,000+ daily data transactions using PostgreSQL and AWS S3'
+        ]
+      }
+    ] as Experience[]
   },
   {
     id: 'research',
-    gradient: 'bg-gradient-to-bl from-blue-400 via-indigo-200 to-purple-500',
+    // gradient: 'bg-gradient-to-bl from-blue-400 via-indigo-200 to-purple-500',
     title: 'Research Interests',
     content: [
-      '인공지능 및 기계학습',
-      '자연어 처리',
-      '컴퓨터 비전',
-      '빅데이터 분석'
-    ]
-  },
+      {
+        title: 'Language Model Development',
+        details: [
+          'Exploring whether an LLM trained in one natural language can autonomously learn untrained languages.',
+          'This advancement could enable models to independently learn from visual and auditory data, symbolizing humanity\'s ability to master all languages.'
+        ]
+      },
+      {
+        title: 'Define Tuning',
+        details: [
+          'Researching a method to remove unnecessary components from models, rather than traditional Fine Tuning.',
+          'This addresses biases in LLMs trained on large datasets and helps design models tailored to specific research needs.'
+        ]
+      }
+    ] as Research[]
+  }
+  
+  ,
   {
     id: 'publication',
-    gradient: 'bg-gradient-to-bl from-green-400 via-teal-200 to-blue-500',
+    // gradient: 'bg-gradient-to-bl from-green-400 via-teal-200 to-blue-500',
     title: 'Publication',
     content: [
-      '"AI in Web Development" - 국제 컨퍼런스 논문 (2022)',
-      '"Machine Learning Algorithms for Data Analysis" - 저널 논문 (2021)',
-      '"Innovative Approaches in NLP" - 컨퍼런스 발표 (2020)',
-      '"Big Data Visualization Techniques" - 연구 보고서 (2019)'
+      '"ML-based YMS (Yard Management System) Automation: Can Technology Replace Human Labor?"\nSubmitted to arXiv, under review (2024)"'
     ]
-  },
+  }, 
+  
   {
     id: 'projects',
-    gradient: 'bg-gradient-to-bl from-blue-400 via-indigo-200 to-purple-500',
+    // gradient: 'bg-gradient-to-bl from-blue-400 via-indigo-200 to-purple-500',
     title: 'Projects',
     content: [] 
   },
   {
     id: 'skills',
-    gradient: 'bg-gradient-to-bl from-indigo-400 via-blue-200 to-teal-500',
+    // gradient: 'bg-gradient-to-bl from-indigo-400 via-blue-200 to-teal-500',
     title: 'Tech Stack',
     content: [
       'Frontend: React, Vue.js, Angular',
@@ -164,18 +212,18 @@ instead of traditional fine-tuning methods.`,
   },
   {
     id: 'awards',
-    gradient: 'bg-gradient-to-bl from-teal-400 via-blue-200 to-indigo-500',
+    // gradient: 'bg-gradient-to-bl from-teal-400 via-blue-200 to-indigo-500',
     title: 'Leadership & Prize',
     content: [
-      '최우수 논문상 - 국제 AI 컨퍼런스 (2022)',
+      '최우수 논문상 - 국제 AI 컨퍼퍼런스 (2022)',
       '혁신적 프로젝트상 - 전국 해커톤 (2021)',
       '우수 연구원상 - XYZ 대학교 (2020)',
-      '리더십 어워드 - DEF 대학교 (2015)'
+      '리더십 어어워드드드 - DEF 대학교 (2015)'
     ]
   },
   {
     id: 'military',
-    gradient: 'bg-gradient-to-bl from-gray-400 via-gray-200 to-gray-500',
+    // gradient: 'bg-gradient-to-bl from-gray-400 via-gray-200 to-gray-500',
     title: 'Military Service',
     content: [
       '대한민국 육군 - 병장 만기 전역',
@@ -186,7 +234,7 @@ instead of traditional fine-tuning methods.`,
   },
   {
     id: 'contact',
-    gradient: 'bg-gradient-to-bl from-green-400 via-teal-200 to-blue-500',
+    // gradient: 'bg-gradient-to-bl from-green-400 via-teal-200 to-blue-500',
     title: 'Contact Information',
     content: [
       'Email: example@email.com',
@@ -204,39 +252,39 @@ export default function Portfolio() {
   const [prevSection, setPrevSection] = useState('intro')
   const [isImageFlipped, setIsImageFlipped] = useState(false)
 
-  useEffect(() => {
-    if (activeSection !== prevSection) {
-      setIsTransitioning(true)
+  // useEffect(() => {
+  //   if (activeSection !== prevSection) {
+  //     setIsTransitioning(true)
       
-      // 현재 섹션과 이전 섹션의 색상 가져오기
-      const currentSection = sections.find(section => section.id === activeSection)
-      const previousSection = sections.find(section => section.id === prevSection)
+  //     // 현재 섹션과 이전 섹션의 색상 가져오기
+  //     const currentSection = sections.find(section => section.id === activeSection)
+  //     const previousSection = sections.find(section => section.id === prevSection)
       
-      if (currentSection && previousSection) {
-        const currentColors = currentSection.gradient.split(' ').slice(1)
-        const prevColors = previousSection.gradient.split(' ').slice(1)
+  //     if (currentSection && previousSection) {
+  //       const currentColors = currentSection.gradient.split(' ').slice(1)
+  //       const prevColors = previousSection.gradient.split(' ').slice(1)
         
-        // 중간 색상으로 전환
-        setBgStyle({
-          backgroundImage: `linear-gradient(to bottom left, ${currentColors.map((color, i) => {
-            return `color-mix(in srgb, ${color} 50%, ${prevColors[i]} 50%)`
-          }).join(', ')})`,
-          transition: 'background-image 0.5s ease-in-out'
-        })
+  //       // 중간 색상으로 전환
+  //       setBgStyle({
+  //         backgroundImage: `linear-gradient(to bottom left, ${currentColors.map((color, i) => {
+  //           return `color-mix(in srgb, ${color} 50%, ${prevColors[i]} 50%)`
+  //         }).join(', ')})`,
+  //         transition: 'background-image 0.5s ease-in-out'
+  //       })
 
-        // 0.5초 후 최종 색상으로 전환
-        setTimeout(() => {
-          setBgStyle({
-            backgroundImage: `linear-gradient(to bottom left, ${currentColors.join(', ')})`,
-            transition: 'background-image 0.5s ease-in-out'
-          })
-          setIsTransitioning(false)
-        }, 500)
-      }
+  //       // 0.5초 후 최종 색상으로 전환
+  //       setTimeout(() => {
+  //         setBgStyle({
+  //           backgroundImage: `linear-gradient(to bottom left, ${currentColors.join(', ')})`,
+  //           transition: 'background-image 0.5s ease-in-out'
+  //         })
+  //         setIsTransitioning(false)
+  //       }, 500)
+  //     }
       
-      setPrevSection(activeSection)
-    }
-  }, [activeSection, prevSection])
+  //     setPrevSection(activeSection)
+  //   }
+  // }, [activeSection, prevSection])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -280,8 +328,8 @@ export default function Portfolio() {
           <section
             key={section.id}
             id={section.id}
-            className={`min-h-screen w-full snap-start bg-gradient-to-bl ${section.gradient}`}
-          >
+            className="min-h-screen w-full snap-start bg-black text-white"
+            >
             {section.id === 'projects' ? (
               <div className="container mx-auto px-4 py-20">
                 <h2 className="text-4xl font-bold text-white mb-12 text-center">{section.title}</h2>
@@ -353,15 +401,39 @@ export default function Portfolio() {
                       </div>
                     </div>
                   )}
-                  {section.id !== 'intro' && (
+                  {section.id === 'experience' ? (
+                    <div className="container mx-auto px-4 py-20">
+                      <h2 className="text-5xl font-bold text-white mb-12 text-center">{section.title}</h2>
+                      <div className="max-w-4xl mx-auto space-y-6">
+                        {(section.content as Experience[]).map((exp, index) => (
+                          <div key={index} className="experience-box">
+                            <h3 className="experience-title">{exp.company}</h3>
+                            <div className="experience-subtitle">
+                              <span>{exp.role}</span>
+                              <span className="text-gray-400 mx-2">•</span>
+                              <span className="text-gray-400">{exp.period}</span>
+                            </div>
+                            <ul className="experience-details">
+                              {exp.details.map((detail, i) => (
+                                <li key={i} className="experience-detail-item">
+                                  <span className="text-gray-400">•</span>
+                                  <span>{detail}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : section.id !== 'intro' && section.id !== 'projects' ? (
                     <ul className="space-y-3 text-xl md:text-2xl text-white">
                       {Array.isArray(section.content) && section.content.map((item, index) => (
                         <li key={index} className="flex items-center gap-2">
-                          <span className="text-2xl">•</span> {item}
+                          <span className="text-2xl">•</span> {typeof item === 'string' ? item : null}
                         </li>
                       ))}
                     </ul>
-                  )}
+                  ) : null}
                 </div>
               </div>
             )}

@@ -4,7 +4,7 @@ import React, { useRef, useEffect, ReactNode } from 'react'
 
 interface SmoothScrollProps {
   children: ReactNode;
-  sections: { id: string; gradient: string }[];
+  sections: { id: string }[]; // Removed 'gradient'
   onSectionChange: (sectionId: string) => void;
 }
 
