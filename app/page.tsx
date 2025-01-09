@@ -35,56 +35,56 @@ const projects = [
   {
     id: 1,
     title: "Who am I?",
-    description: "Explanation for myself",
-    image: "/placeholder.svg?height=400&width=600",
+    description: "My personal website project",
+    image: "/img/whoami.jpg",
     views: 1200,
-    date: new Date('2024-01-06'),
-    href: "/projects/who-am-i"
+    date: new Date('2025-01-09'),
+    href: "https://github.com/songjeongjun320/jun-portfolio"
   },
   {
     id: 2,
-    title: "MindVillage - Hack for Humanity",
-    description: "To resolve the mental issues",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Building YMS(Yard Management System) Automation - Publishing Research Paper",
+    description: "Using Machine Learning and OCR(Optical Character Recognition) Technology",
+    image: "/img/YMS_project.jpg",
     views: 1200,
-    date: new Date('2024-01-06'),
-    href: "/projects/mindvillage"
+    date: new Date('2024-12-25'),
+    href: "https://github.com/songjeongjun320/ASU_FURI_Project"
   },
   {
     id: 3,
-    title: "Why don't you be more nice(!)?",
-    description: "2nd Prize Ethical Hackathon",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Business Contract Analyzer",
+    description: "An efficient tool for PDF manipulation and risk analysis using LLMs",
+    image: "/img/bsns_cntrct_analyzer.jpg",
     views: 3400,
-    date: new Date('2024-01-01'),
-    href: "/projects/ethical-hackathon"
+    date: new Date('2024-11-10'),
+    href: "https://github.com/songjeongjun320/business-contract-analyzer"
   },
   {
     id: 4,
-    title: "Project 3",
-    description: "This is a brief description of Project 3.",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Building the ASU Bookstore Web App",
+    description: "Empowering Students with an Intuitive Textbook Platform",
+    image: "/img/bookstore.jpg",
     views: 5600,
-    date: new Date('2023-12-25'),
-    href: "/projects/project-3"
+    date: new Date('2024-11-24'),
+    href: "https://github.com/songjeongjun320/Bookstore_project"
   },
   {
     id: 5,
-    title: "Project 4",
-    description: "This is a brief description of Project 4.",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Hacks for Humanity 2024 - MindVillage",
+    description: "Building a platform for mental health support",
+    image: "/img/mindvillage.png",
     views: 7800,
-    date: new Date('2023-12-18'),
-    href: "/projects/project-4"
+    date: new Date('2024-10-13'),
+    href: "https://github.com/songjeongjun320/mindvillage"
   },
   {
     id: 6,
-    title: "Project 5",
-    description: "This is a brief description of Project 5.",
-    image: "/placeholder.svg?height=400&width=600",
+    title: `Ethical Hackathon - "Why don't you be more nice(r)?" 2nd Prize 🏆`,
+    description: "Using AI LLama and Sentient model from Hugging face",
+    image: "/img/ethical_hackathon.jpg",
     views: 9000,
     date: new Date('2023-12-08'),
-    href: "/projects/project-5"
+    href: "https://github.com/songjeongjun320/ethical_hackathon"
   }
 ]
 
