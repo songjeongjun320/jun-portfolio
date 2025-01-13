@@ -42,7 +42,7 @@ instead of traditional fine-tuning methods.`,
       {
         role: 'Undergraduate Research Assistant in NLP/ML',
         company: 'ASU ARC LAB',
-        period: 'Jan 2025-Present',
+        period: 'Jan 2025 - Present',
         details: [
           'Leading ML Insights project: Optimizing object detection and developing cost-effective OCR solutions',
           'Building Full-Stack website using Next.js, Flask, Supabase, and AWS',
@@ -52,7 +52,7 @@ instead of traditional fine-tuning methods.`,
       {
         role: 'Research Aide',
         company: 'Arizona State University',
-        period: 'May 2024-Present',
+        period: 'May 2024 - Dec 2024',
         details: [
           'Leading ML Insights project: Optimizing object detection and developing cost-effective OCR solutions',
           'Building Full-Stack website using Next.js, Flask, Supabase, and AWS',
@@ -62,7 +62,7 @@ instead of traditional fine-tuning methods.`,
       {
         role: 'Software Engineering Intern',
         company: 'NGL Transportation INC',
-        period: 'Jan 2022-Jan 2023',
+        period: 'Jan 2022 - Jan 2023',
         details: [
           'Reduced truck gate processing time from 5 min to 5-10 sec by implementing OCR system',
           'Improved image detection accuracy by 20% through YOLOv5 model refinement',
