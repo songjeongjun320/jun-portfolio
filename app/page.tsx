@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-'use client'
-import YouTubePortfolio from "./YouTubePortfolio";
-=======
 'use client';
 
 import { useState } from 'react';
@@ -26,7 +22,6 @@ export default function Portfolio() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
->>>>>>> organize
 
   return (
     <div className="relative min-h-screen transition-all duration-500 ease-in-out">
