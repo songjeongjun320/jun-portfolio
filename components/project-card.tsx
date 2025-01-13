@@ -1,19 +1,26 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { formatDistanceToNow } from 'date-fns'
+import Image from 'next/image';
+import Link from 'next/link';
+import { formatDistanceToNow } from 'date-fns';
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  image: string
-  views: number
-  date: Date
-  href: string
+  title: string;
+  description: string;
+  image: string;
+  views: number;
+  date: Date;
+  href: string;
 }
 
-export function ProjectCard({ title, description, image, views, date, href }: ProjectCardProps) {
+export function ProjectCard({
+  title,
+  description,
+  image,
+  views,
+  date,
+  href,
+}: ProjectCardProps) {
   return (
-    <Link 
+    <Link
       href={href}
       className="group relative block overflow-hidden rounded-lg bg-gray-900/90 transition-all hover:scale-105"
     >
@@ -37,6 +44,5 @@ export function ProjectCard({ title, description, image, views, date, href }: Pr
         <p className="text-sm text-gray-300">{description}</p>
       </div>
     </Link>
-  )
+  );
 }
-
