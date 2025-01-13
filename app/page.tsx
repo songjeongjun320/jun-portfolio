@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import SmoothScroll from '../components/SmoothScroll';
+import SmoothScroll from '@/components/SmoothScroll';
 import { sections } from '@/data/sections';
 import IntroSection from '@/components/sections/IntroSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
@@ -11,7 +11,7 @@ import SkillsSection from '@/components/sections/SkillsSection';
 import ResearchSection from '@/components/sections/ResearchSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import DefaultSection from '@/components/sections/DefaultSection';
-import { SkillsContent, MilitaryService, Research, Experience } from '@/types'; // Adjust the import path as necessary
+import { SkillsContent, MilitaryService, Research, Experience } from '@/types';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('intro');
