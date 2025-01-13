@@ -6,7 +6,7 @@ export interface IntroContent {
 }
 
 export interface SkillsContent {
-  languages: string[];
+  languages: { name: string; icon: string }[];
   frameworks: string[];
   tools: string[];
   skills: string[];
@@ -41,13 +41,4 @@ export interface Research {
 export interface MilitaryService {
   title: string;
   content: (string | JSX.Element)[];
-}
-
-export interface SkillsContent {
-  languages: { name: string; icon: string }[];
-  frameworks: { name: string; icon: string }[];
-  tools: { name: string; icon: string }[];
-  skills: { name: string; icon: string }[];
-  methodologies: { name: string; icon: string }[];
-  operatingSystems: { name: string; icon: string }[];
 }
