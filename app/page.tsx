@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import SmoothScroll from './components/SmoothScroll';
 import { ProjectCard } from './components/project-card';
-import { BsBriefcase } from 'react-icons/bs';
 
 interface IntroContent {
   name: string;
@@ -205,10 +204,9 @@ instead of traditional fine-tuning methods.`,
     id: 'publication',
     title: 'Publication',
     content: [
-      '"ML-based YMS (Yard Management System) Automation: Can Technology Replace Human Labor?"\nSubmitted to arXiv, under review (2024)"',
+      '"ML-based YMS (Yard Management System) Automation: Can Technology Replace Human Labor?" Submitted to arXiv, under review (2024)"',
     ],
   },
-
   {
     id: 'projects',
     title: 'Projects',
@@ -237,10 +235,11 @@ instead of traditional fine-tuning methods.`,
     id: 'awards',
     title: 'Leadership & Prize',
     content: [
-      '최우수 논문상 - 국제 AI 컨퍼퍼런스 (2022)',
-      '혁신적 프로젝트상 - 전국 해커톤 (2021)',
-      '우수 연구원상 - XYZ 대학교 (2020)',
-      '리더십 어어워드드드 - DEF 대학교 (2015)',
+      'ASU Dean’s List (2023 - 2024)',
+      'ASU NamU Scholarship (2023 - 2025)',
+      '2nd Prize, Ethical Hackathon (2024)',
+      'Furi Research Presentation (2024)',
+      'Participant of Amazon’s Campus Summer Series (2024)',
     ],
   },
   {
@@ -249,19 +248,23 @@ instead of traditional fine-tuning methods.`,
     content: [
       {
         title:
-          'Driver and Interpreter, Hanbit Unit 12th Peacekeepers, United Nations (UN), Bor, South Sudan',
+          'Hanbit Unit 12th Peacekeepers, United Nations (UN), Bor, South Sudan',
         content: [
-          'January 2020 - January 2021',
+          'Driver and Interpreter | January 2020 - January 2021',
           'Supported UN peacekeeping with logistics, interpretation, and aid for war-affected children during COVID-19.',
-          <a
-            href="https://world.kbs.co.kr/service/news_view.htm?lang=e&Seq_Code=153813"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read related article on KBS World News
-          </a>,
+            'Read related article on KBS World News: <https://world.kbs.co.kr/service/news_view.htm?lang=e&Seq_Code=153813>',
         ],
-      },
+      },{
+        title:
+          '1st Infantry Division, Paju, South Korea',
+        content: [
+          'Driver | May 2019 - January 2020',
+          'Conducted troop transportation operations to support mission-critical deployments efficiently and safely.',
+          'Performed artillery firing drills, ensuring precise execution and compliance with safety protocols during live-fire training.',
+          'Maintained a high level of combat readiness through rigorous training exercises and operational assessments.',
+          'Gained expertise in teamwork, logistical coordination, and situational problem-solving under high-pressure environments.',
+        ],
+      }
     ],
   },
   {
@@ -270,9 +273,9 @@ instead of traditional fine-tuning methods.`,
     title: 'Contact Information',
     content: [
       'Email: songjeongjun320@gmail.com ',
-      'LinkedIn: linkedin.com/in/username',
-      'GitHub: github.com/username',
-      'Personal Website: www.example.com',
+      'LinkedIn: www.linkedin.com/in/junsong0602',
+      'GitHub: https://github.com/songjeongjun320',
+      'Personal Website: https://junswebsite.vercel.app/',
     ],
   },
 ];
@@ -347,7 +350,24 @@ export default function Portfolio() {
                   ))}
                 </div>
               </div>
-            ) : section.id === 'military' ? (
+            ) : section.id === 'publication' ? (
+              <div className="container mx-auto px-4 py-20">
+                <h2 className="text-4xl font-bold text-white mb-12 text-center">
+                  {section.title}
+                </h2>
+                <div className="space-y-8">
+                  {(section.content as string[]).map((publication, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-[70%] mx-auto"
+                    >
+                      <p className="text-2xl text-white whitespace-pre-line">{publication}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+            : section.id === 'military' ? (
               <div className="container mx-auto px-4 py-20">
                 <h2 className="text-4xl font-bold text-white mb-12 text-center">
                   {section.title}
@@ -463,7 +483,7 @@ export default function Portfolio() {
                   {(section.content as Research[]).map((research, index) => (
                     <div
                       key={index}
-                      className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-[80%] mx-auto"
+                      className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-[70%] mx-auto"
                     >
                       <h3 className="text-3xl font-bold text-white mb-4">
                         {research.title}
@@ -555,30 +575,38 @@ export default function Portfolio() {
                     </div>
                   )}
                   {section.id === 'experience' ? (
-                    <div className="container mx-auto px-4 py-20">
-                      <div className="max-w-4xl mx-auto space-y-6">
-                        {(section.content as Experience[]).map((exp, index) => (
-                          <div key={index} className="experience-box">
-                            <h3 className="experience-title">{exp.company}</h3>
-                            <div className="experience-subtitle">
-                              <span>{exp.role}</span>
-                              <span className="text-gray-400 mx-2">•</span>
-                              <span className="text-gray-400">
-                                {exp.period}
-                              </span>
-                            </div>
-                            <ul className="experience-details">
-                              {exp.details.map((detail, i) => (
-                                <li key={i} className="experience-detail-item">
-                                  <span className="text-gray-400">•</span>
-                                  <span>{detail}</span>
-                                </li>
-                              ))}
-                            </ul>
+                    <div className="max-w-4xl mx-auto space-y-6">
+                      {(section.content as Experience[]).map((exp, index) => (
+                        <div
+                          key={index}
+                          className="experience-box bg-gray-800 p-6 rounded-lg shadow-md"
+                        >
+                          {/* 회사 이름 */}
+                          <h3 className="experience-title text-2xl font-bold mb-2">
+                            {exp.company}
+                          </h3>
+                          
+                          {/* 역할과 기간 */}
+                          <div className="experience-subtitle text-lg flex items-center mb-4">
+                            <span>{exp.role}</span>
+                            <span className="text-gray-400 mx-2">|</span>
+                            <span>{exp.period}</span>
                           </div>
-                        ))}
+
+                          {/* 상세 내용 */}
+                          <ul className="experience-details list-disc list-inside space-y-2">
+                            {exp.details.map((detail, i) => (
+                              <li
+                                key={i}
+                                className="experience-detail-item text-base"
+                              >
+                              <span>{detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                       </div>
-                    </div>
                   ) : section.id !== 'intro' && section.id !== 'projects' ? (
                     <ul className="space-y-3 text-xl md:text-2xl text-white">
                       {Array.isArray(section.content) &&
