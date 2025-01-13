@@ -16,7 +16,7 @@ export default function ResearchSection({ content }: { content: Research[] }) {
             key={index}
             className="bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
           >
-            <h3 className="text-3xl font-semibold text-teal-400 mb-6">
+            <h3 className="text-3xl font-semibold mb-6">
               {research.title}
             </h3>
             <ul className="space-y-4 text-gray-300 list-inside">

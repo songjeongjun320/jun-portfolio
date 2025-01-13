@@ -10,8 +10,8 @@ export default function DefaultSection({ title, content }: { title: string; cont
             key={index}
             className="flex items-center gap-3 hover:text-white transition-colors duration-300"
           >
-            <span className="w-3 h-3 bg-teal-400 rounded-full"></span>
-            {item}
+                  <span className="text-xl text-teal-400 font-bold"></span>
+                  {item}
           </li>
         ))}
       </ul>
