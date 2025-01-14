@@ -107,7 +107,15 @@ instead of traditional fine-tuning methods.`,
     id: 'skills',
     title: 'Tech Stack',
     content: {
-      languages: ['Python', 'Java', 'JavaScript', 'C++', 'TypeScript', 'HTML', 'CSS'],
+      languages: [
+        { name: 'Python', icon: 'python-icon' },
+        { name: 'Java', icon: 'java-icon' },
+        { name: 'JavaScript', icon: 'javascript-icon' },
+        { name: 'C++', icon: 'cpp-icon' },
+        { name: 'TypeScript', icon: 'typescript-icon' },
+        { name: 'HTML', icon: 'html-icon' },
+        { name: 'CSS', icon: 'css-icon' },
+      ],
       frameworks: ['Next.js', 'React', 'React Query', 'Flask'],
       tools: ['Supabase', 'Git', 'AWS', 'YOLO', 'Jira', 'Linux'],
       skills: [
