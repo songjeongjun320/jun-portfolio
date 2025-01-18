@@ -32,7 +32,7 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900">
+    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center">
       <h2 className="text-5xl font-extrabold text-white mb-16 text-center tracking-tight">
         Professional Experience
       </h2>

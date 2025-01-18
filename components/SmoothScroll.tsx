@@ -21,8 +21,17 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children, onSectionChange }
 
     let animationFrameId: number | null = null
     let currentSection = ''
+    let lastScrollTime = 0 // Track last scroll time to limit frequency of updates
 
     const handleScroll = () => {
+      // Get current time to throttle scroll updates
+      const now = Date.now()
+
+      // Limit scroll event frequency (e.g., 100ms)
+      if (now - lastScrollTime < 100) return
+
+      lastScrollTime = now
+
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
       }

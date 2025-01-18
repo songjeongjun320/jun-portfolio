@@ -18,9 +18,52 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* 추가된 CSS */
+@layer components {
+  .custom-button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-button:hover {
+    background-color: #005f73;
+  }
+}
+
+@layer utilities {
+  /* 유틸리티 클래스 추가 */
+  .text-gradient {
+    background: linear-gradient(45deg, #f3a683, #f7b731);
+    background-clip: text;
+    color: transparent;
+  }
+}
+/* fade animation */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }

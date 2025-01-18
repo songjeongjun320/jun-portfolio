@@ -1,14 +1,14 @@
 export default function ContactInfoSection() {
   const title = 'Contact Information';
   const content = [
-    'Email: songjeongjun320@gmail.com',
-    'LinkedIn: www.linkedin.com/in/junsong0602',
-    'GitHub: https://github.com/songjeongjun320',
-    'Personal Website: https://junswebsite.vercel.app/',
+    { label: 'Email', link: 'mailto:songjeongjun320@gmail.com' },
+    { label: 'LinkedIn', link: 'https://www.linkedin.com/in/junsong0602' },
+    { label: 'GitHub', link: 'https://github.com/songjeongjun320' },
+    { label: 'Personal Website', link: 'https://junswebsite.vercel.app/' },
   ];
 
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900">
+    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center">
       <h2 className="text-5xl font-extrabold text-white mb-16 text-center tracking-tight">
         {title}
       </h2>
@@ -16,10 +16,17 @@ export default function ContactInfoSection() {
         {content.map((item, index) => (
           <li
             key={index}
-            className="flex items-center gap-3 hover:text-white transition-colors duration-300"
+            className="flex items-center gap-3 hover:text-white transition-colors duration-300 "
           >
-            <span className="text-xl text-teal-400 font-bold">•</span>
-            {item}
+            <span className="text-xl text-teal-400 font-bold ">•</span> {/* Set the bullet point color to white */}
+            <a
+              href={item.link}
+              target={item.link.startsWith('mailto') ? '' : '_blank'}
+              rel="noopener noreferrer"
+              className="text-white hover:text-teal-300 transition-colors duration-300"
+            >
+              {item.label}: {item.link}
+            </a>
           </li>
         ))}
       </ul>
