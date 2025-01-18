@@ -5,7 +5,7 @@ export const projects = [
       description: 'My personal website project',
       image: '/img/whoami.jpg',
       views: 1200,
-      date: new Date('2025-01-09'),
+      date: new Date('2025-01-18'),
       href: 'https://github.com/songjeongjun320/jun-portfolio',
     },
     {
