@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 export default function EducationSection() {
   const title = 'Education';
   const content = [
-    'Arizona State University, Ira A. Fulton Schools of Engineering | GPA: 3.81/4.0',
+    'Arizona State University, Ira A. Fulton Schools of Engineering | GPA: 3.81 / 4.0 (Overall), 3.78 / 4.0 (Major)',
     'B.S. Computer Science (Expected December 2025)',
     "Dean's List (2023 - Expected until graduation) | NamU Scholarship (2023-2025)",
     'Relevant Coursework: Data Structures, Algorithms, Machine Learning, AI',
