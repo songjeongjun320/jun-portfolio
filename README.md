@@ -24,7 +24,7 @@ You can view the live version of the portfolio at [Jun's Personal Website](https
 ## Folder Structure
 
 Here’s an overview of the project folder structure:
-
+```
 /portfolio
 ├── /components            # Contains reusable components like Navbar, Footer, etc.
 ├── /public                # Static files such as images, fonts, etc.
@@ -38,7 +38,7 @@ Here’s an overview of the project folder structure:
 ├── package.json           # Dependencies and scripts
 ├── tsconfig.json          # TypeScript configuration
 ├── README.md              # This file
-
+```
 
 ## Contribution
 
