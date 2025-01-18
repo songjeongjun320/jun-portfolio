@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jun's Portfolio Website
 
-## Getting Started
+This is a personal portfolio website designed to showcase the skills, experiences, and projects of **Jun Song**. It includes sections for personal information, education, work experience, skills, and more. The website is built using **React** and is fully responsive.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can view the live version of the portfolio at [Jun's Personal Website](https://junswebsite.vercel.app/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Smooth scrolling**: The website supports smooth scrolling for easy navigation.
+- **Interactive Sections**: Sections dynamically highlight based on the current scroll position.
+- **Responsive Design**: Fully responsive, optimized for both desktop and mobile devices.
+- **SEO Optimized**: The content is optimized for search engines to ensure better visibility.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **React**: The front-end JavaScript framework used to build the components.
+- **Tailwind CSS**: A utility-first CSS framework for styling the components.
+- **TypeScript**: For type safety and to reduce runtime errors.
+- **Next.js**: A React framework used to create a production-ready web application.
+- **Smooth Scroll**: Custom smooth scrolling for seamless user experience.
 
-To learn more about Next.js, take a look at the following resources:
+## Folder Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here’s an overview of the project folder structure:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/portfolio
+├── /components            # Contains reusable components like Navbar, Footer, etc.
+├── /public                # Static files such as images, fonts, etc.
+├── /pages                 # Next.js pages (each file corresponds to a route)
+│   ├── /index.tsx         # Homepage
+│   ├── /_app.tsx          # Custom App for Next.js
+├── /styles                # Global and component-specific CSS
+├── /data                  # Contains data such as projects, education, and work experience
+├── /utils                 # Helper functions (like for smooth scrolling)
+├── /types                 # TypeScript types
+├── package.json           # Dependencies and scripts
+├── tsconfig.json          # TypeScript configuration
+├── README.md              # This file
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contribution
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you want to contribute to this project, feel free to fork the repository, make your changes, and submit a pull request.
+
+### Steps to Contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature/your-feature`).
+6. Create a pull request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
