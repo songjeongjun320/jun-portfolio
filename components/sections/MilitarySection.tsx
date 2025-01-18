@@ -1,6 +1,25 @@
-import { MilitaryService } from '@/types';
+export default function MilitarySection() {
+  const content = [
+    {
+      title: 'Hanbit Unit 12th Peacekeepers, United Nations (UN), Bor, South Sudan',
+      content: [
+        'Driver and Interpreter | January 2020 - January 2021',
+        'Supported UN peacekeeping with logistics, interpretation, and aid for war-affected children during COVID-19.',
+        'Read related article on KBS World News: <https://world.kbs.co.kr/service/news_view.htm?lang=e&Seq_Code=153813>',
+      ],
+    },
+    {
+      title: '1st Infantry Division, Paju, South Korea',
+      content: [
+        'Driver | May 2019 - January 2020',
+        'Conducted troop transportation operations to support mission-critical deployments efficiently and safely.',
+        'Performed artillery firing drills, ensuring precise execution and compliance with safety protocols during live-fire training.',
+        'Maintained a high level of combat readiness through rigorous training exercises and operational assessments.',
+        'Gained expertise in teamwork, logistical coordination, and situational problem-solving under high-pressure environments.',
+      ],
+    },
+  ];
 
-export default function MilitarySection({ content }: { content: MilitaryService[] }) {
   return (
     <div className="container mx-auto px-4 py-20 bg-gradient-to-r from-gray-900">
       <h2 className="text-4xl font-extrabold text-white mb-16 text-center tracking-tight">

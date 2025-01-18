@@ -1,12 +1,23 @@
-import { Research } from '@/types';
+export default function ResearchInterestSection() {
+  const content = [
+    {
+      title: 'Language Model Development',
+      details: [
+        'Exploring whether an LLM trained in one natural language can autonomously learn untrained languages.',
+        "This advancement could enable models to independently learn from visual and auditory data, symbolizing humanity's ability to master all languages.",
+      ],
+    },
+    {
+      title: 'Define Tuning',
+      details: [
+        'Researching a method to remove unnecessary components from models, rather than traditional Fine Tuning.',
+        'This addresses biases in LLMs trained on large datasets and helps design models tailored to specific research needs.',
+      ],
+    },
+  ];
 
-export default function ResearchSection({ content }: { content: Research[] }) {
   return (
-    <div
-      className="container mx-auto px-6 py-24 min-h-screen
-     flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900"
-    >
-      {' '}
+    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900">
       <h2 className="text-5xl font-extrabold text-white mb-16 text-center tracking-tight">
         Research Interests
       </h2>

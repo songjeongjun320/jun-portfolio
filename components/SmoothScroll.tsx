@@ -4,7 +4,6 @@ import React, { useRef, useEffect, ReactNode } from 'react'
 
 interface SmoothScrollProps {
   children: ReactNode;
-  sections: { id: string }[]; // Removed 'gradient'
   onSectionChange: (sectionId: string) => void;
 }
 
@@ -12,7 +11,7 @@ interface SectionElement extends React.HTMLProps<HTMLElement> {
   id: string;
 }
 
-const SmoothScroll: React.FC<SmoothScrollProps> = ({ children, sections, onSectionChange }) => {
+const SmoothScroll: React.FC<SmoothScrollProps> = ({ children, onSectionChange }) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
@@ -31,14 +30,14 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children, sections, onSecti
       animationFrameId = requestAnimationFrame(() => {
         const scrollPosition = container.scrollTop + window.innerHeight / 2
 
-        for (const section of sections) {
-          const element = sectionRefs.current[section.id]
+        for (const sectionId in sectionRefs.current) {
+          const element = sectionRefs.current[sectionId]
           if (element) {
             const { offsetTop, offsetHeight } = element
             if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-              if (currentSection !== section.id) {
-                currentSection = section.id
-                onSectionChange(section.id)
+              if (currentSection !== sectionId) {
+                currentSection = sectionId
+                onSectionChange(sectionId)
               }
               break
             }
@@ -56,11 +55,11 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children, sections, onSecti
         cancelAnimationFrame(animationFrameId)
       }
     }
-  }, [sections, onSectionChange])
+  }, [onSectionChange])
 
   return (
-    <div 
-      ref={containerRef} 
+    <div
+      ref={containerRef}
       className="h-screen overflow-y-scroll snap-y snap-mandatory"
       style={{ scrollBehavior: 'smooth' }}
     >
@@ -80,4 +79,3 @@ const SmoothScroll: React.FC<SmoothScrollProps> = ({ children, sections, onSecti
 }
 
 export default SmoothScroll
-

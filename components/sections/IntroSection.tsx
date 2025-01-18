@@ -2,17 +2,32 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { IntroContent } from '@/types';
 
-export default function IntroSection({ content }: { content: IntroContent }) {
+export default function IntroSection() {
+  const content = {
+    name: '(Jun) JeongJun Song',
+    title: 'Web Developer & NLP ML Researcher',
+    description: `As a Web Developer:
+I pursue simplicity in web design and strive to create clean, intuitive interfaces. 
+My goal is to develop solutions that are easily understandable for both users and developers, 
+focusing on maintainable and efficient code.
+
+As a Researcher:
+I explore whether LLMs can learn new languages not pre-trained within their models, 
+and pursue Define Tuning techniques to remove unnecessary components within LLMs 
+instead of traditional fine-tuning methods.`,
+    details: [
+      'Full-stack Development',
+      'NLP/ML Research',
+      'Clean Code Advocate',
+      'Problem Solver',
+    ],
+  };
+
   const [isImageFlipped, setIsImageFlipped] = useState(false);
 
   return (
-    <div
-      className="container mx-auto px-6 py-24 min-h-screen
-     flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900"
-    >
-      {' '}
+    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900">
       <h2 className="text-5xl font-extrabold text-white mb-16 text-center tracking-tight">
         Introduction
       </h2>

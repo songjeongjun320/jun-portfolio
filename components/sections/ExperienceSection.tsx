@@ -1,13 +1,38 @@
-import { Experience } from '@/types';
+export default function ExperienceSection() {
+  const content = [
+    {
+      role: 'Research Assistant in NLP/ML',
+      company: 'ASU ARC LAB',
+      period: 'Dec 2024 - Present',
+      details: [
+        'Participating in ARC Research Lab under Assistant Professor Ben Zhou at Arizona State University.',
+        'Leading research on whether Large Language Models (LLMs) can independently learn and infer human language when provided with contextual and auditory information.'
+      ],
+    },
+    {
+      role: 'Research Aide',
+      company: 'Arizona State University',
+      period: 'May 2024 - Dec 2024',
+      details: [
+        'Leading ML Insights project: Optimizing object detection and developing cost-effective OCR solutions',
+        'Building Full-Stack website using Next.js, Flask, Supabase, and AWS',
+        'Achieved 95% code coverage through automated unit testing implementation',
+      ],
+    },
+    {
+      role: 'Software Engineering Intern',
+      company: 'NGL Transportation INC',
+      period: 'Jan 2022 - Jan 2023',
+      details: [
+        'Reduced truck gate processing time from 5 min to 5-10 sec by implementing OCR system',
+        'Improved image detection accuracy by 20% through YOLOv5 model refinement',
+        'Managed 10,000+ daily data transactions using PostgreSQL and AWS S3',
+      ],
+    },
+  ];
 
-export default function ExperienceSection({
-  content,
-}: {
-  content: Experience[];
-}) {
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen
-     flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900">
+    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center bg-gradient-to-b bg-gradient-to-r from-gray-900">
       <h2 className="text-5xl font-extrabold text-white mb-16 text-center tracking-tight">
         Professional Experience
       </h2>

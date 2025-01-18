@@ -1,7 +1,28 @@
-import { SkillsContent } from '@/types';
+export default function SkillsSection() {
+  const content = {
+    languages: [
+      { name: 'Python', icon: 'python-icon' },
+      { name: 'Java', icon: 'java-icon' },
+      { name: 'JavaScript', icon: 'javascript-icon' },
+      { name: 'C++', icon: 'cpp-icon' },
+      { name: 'TypeScript', icon: 'typescript-icon' },
+      { name: 'HTML', icon: 'html-icon' },
+      { name: 'CSS', icon: 'css-icon' },
+    ],
+    frameworks: ['Next.js', 'React', 'React Query', 'Flask'],
+    tools: ['Supabase', 'Git', 'AWS', 'YOLO', 'Jira', 'Linux'],
+    skills: [
+      'Full Stack Development',
+      'Agile Development',
+      'Data Structures and Algorithms',
+      'Software Engineering',
+      'QA Testing',
+      'Computer Architecture',
+    ],
+    methodologies: ['REST API', 'Agile'],
+    operatingSystems: ['Linux'],
+  };
 
-export default function SkillsSection({ content }: { content: SkillsContent }) {
-  console.log('SkillsSection content:', content); // 값 확인
   return (
     <div className="container mx-auto px-6 py-24">
       <h2 className="text-5xl font-extrabold text-white mb-16 text-center tracking-tight">
