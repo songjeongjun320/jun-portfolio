@@ -8,7 +8,7 @@ export default function ResearchInterestSection() {
       ],
     },
     {
-      title: 'Define Tuning',
+      title: 'De-fine Tuning',
       details: [
         'Researching a method to remove unnecessary components from models, rather than traditional Fine Tuning.',
         'This addresses biases in LLMs trained on large datasets and helps design models tailored to specific research needs.',
