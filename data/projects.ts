@@ -1,6 +1,15 @@
 export const projects = [
     {
       id: 1,
+      title: 'CarePilot - AI Voice-Enabled Doctor Assistant',
+      description: 'HackAgent 2025 Winner: AI-powered voice assistant transforming healthcare workflows. Features instant patient summaries, voice-to-structured notes, real-time schedule integration, and voice-driven automation. Built with Next.js 15, TypeScript, Web Speech API, and N8N workflow automation.',
+      image: '/img/CarePilotLogo.png',
+      views: 2500,
+      date: new Date('2025-05-30'),
+      href: 'https://github.com/songjeongjun320/CarePilot',
+    },
+    {
+      id: 2,
       title: 'Who am I?',
       description: 'My personal website project',
       image: '/img/whoami.jpg',
@@ -9,7 +18,7 @@ export const projects = [
       href: 'https://github.com/songjeongjun320/jun-portfolio',
     },
     {
-      id: 2,
+      id: 3,
       title:
         'Building YMS(Yard Management System) Automation - Publishing Research Paper',
       description:
@@ -20,7 +29,7 @@ export const projects = [
       href: 'https://github.com/songjeongjun320/ASU_FURI_Project',
     },
     {
-      id: 3,
+      id: 4,
       title: 'Business Contract Analyzer',
       description:
         'An efficient tool for PDF manipulation and risk analysis using LLMs',
@@ -30,7 +39,7 @@ export const projects = [
       href: 'https://github.com/songjeongjun320/business-contract-analyzer',
     },
     {
-      id: 4,
+      id: 5,
       title: 'Building the ASU Bookstore Web App',
       description: 'Empowering Students with an Intuitive Textbook Platform',
       image: '/img/bookstore.jpg',
@@ -39,7 +48,7 @@ export const projects = [
       href: 'https://github.com/songjeongjun320/Bookstore_project',
     },
     {
-      id: 5,
+      id: 6,
       title: 'Hacks for Humanity 2024 - MindVillage',
       description: 'Building a platform for mental health support',
       image: '/img/mindvillage.png',
@@ -48,7 +57,7 @@ export const projects = [
       href: 'https://github.com/songjeongjun320/mindvillage',
     },
     {
-      id: 6,
+      id: 7,
       title: `Ethical Hackathon - "Why don't you be more nice(r)?" 2nd Prize 🏆`,
       description: 'Using AI LLama and Sentient model from Hugging face',
       image: '/img/ethical_hackathon.jpg',

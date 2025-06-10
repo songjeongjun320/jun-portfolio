@@ -4,81 +4,25 @@ import { CSSTransition } from 'react-transition-group';
 
 export default function SkillsSection() {
   const content = {
-    languages: [
-      { name: 'Python', icon: '' },
-      { name: 'Java', icon: '' },
-      { name: 'JavaScript', icon: '' },
-      { name: 'C++', icon: '' },
-      { name: 'TypeScript', icon: '' },
-      { name: 'HTML', icon: '' },
-      { name: 'CSS', icon: '' },
-    ],
-    frameworks: ['Next.js', 'React', 'React Query', 'Flask'],
-    tools: ['Supabase', 'Git', 'AWS', 'YOLO', 'Jira', 'Linux'],
-    skills: [
-      'Full Stack Development',
-      'Agile Development',
-      'Data Structures and Algorithms',
-      'Software Engineering',
-      'QA Testing',
-      'Computer Architecture',
-    ],
-    methodologies: ['REST API', 'Agile'],
-    operatingSystems: ['Linux'],
-    nlpTech: [
-      'Transformer Models (BERT, GPT, etc.)',
-      'Data Mining',
-      'Fine Tuning',
-      'Text Classification',
-      'Named Entity Recognition (NER)',
-      'Sentiment Analysis',
-    ],
+    languages: ['Python', 'Java', 'JavaScript', 'C++', 'TypeScript', 'HTML', 'CSS'],
+    frameworks: ['Next.js', 'React', 'React Query', 'Flask', 'REST API'],
+    tools: ['n8n', 'Supabase', 'Git', 'AWS', 'YOLO', 'Jira', 'Linux'],
   };
 
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen">
-      <h2 className="text-5xl font-extrabold text-white mb-16 text-center tracking-tight uppercase">
-        Tech Stack & NLP Expertise
+    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center">
+      <h2 className="text-6xl font-extrabold text-white mb-20 text-center tracking-tight bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+        Technical Skills
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {/* NLP & Machine Learning */}
-        <SkillCategory
-          title="NLP & Machine Learning"
-          items={content.nlpTech.map((tech) => ({ name: tech, icon: '' }))}
-        />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
         {/* Languages */}
         <SkillCategory title="Languages" items={content.languages} />
+        
         {/* Frameworks */}
-        <SkillCategory
-          title="Frameworks"
-          items={content.frameworks.map((framework) => ({
-            name: framework,
-            icon: '',
-          }))}
-        />
+        <SkillCategory title="Frameworks" items={content.frameworks} />
+        
         {/* Tools */}
-        <SkillCategory
-          title="Tools"
-          items={content.tools.map((tool) => ({ name: tool, icon: '' }))}
-        />
-        {/* Skills */}
-        <SkillCategory
-          title="Skills"
-          items={content.skills.map((skill) => ({ name: skill, icon: '' }))}
-        />
-        {/* Methodologies */}
-        <SkillCategory
-          title="Methodologies"
-          items={content.methodologies.map((methodology) => ({
-            name: methodology,
-            icon: '',
-          }))}
-        />
-        {/* Operating Systems */}
-        <SkillCategory
-          title="Operating Systems"
-          items={content.operatingSystems.map((os) => ({ name: os, icon: '' }))}
-        />
+        <SkillCategory title="Tools" items={content.tools} />
       </div>
     </div>
   );
@@ -89,27 +33,27 @@ function SkillCategory({
   items,
 }: {
   title: string;
-  items: { name: string; icon: string }[];
+  items: string[];
 }) {
   return (
     <CSSTransition in={true} timeout={500} classNames="fade" unmountOnExit>
-      <div className="bg-gray-900 p-8 rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-        <h3 className="text-2xl font-bold text-teal-400 mb-6 border-b border-gray-700 pb-3">
+      <div className="group bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-700/30 hover:border-teal-400/30 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]">
+        <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-teal-400 via-blue-400 to-green-400 bg-clip-text mb-6 text-center">
           {title}
         </h3>
-        <ul className="space-y-3">
+        <div className="space-y-3">
           {items.map((item, index) => (
-            <li
+            <div
               key={index}
-              className="text-lg text-gray-300 flex items-center gap-3 hover:text-white transition-colors duration-200"
+              className="flex items-center gap-3 p-3 bg-gray-800/40 backdrop-blur-sm rounded-lg border border-gray-700/20 hover:border-teal-400/30 transition-all duration-300 group/item"
             >
-              {item.icon && (
-                <img src={item.icon} alt={item.name} className="w-6 h-6" />
-              )}
-              <span className="font-semibold">{item.name}</span>
-            </li>
+              <div className="w-2 h-2 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full group-hover/item:scale-125 transition-transform duration-300"></div>
+              <span className="text-gray-200 font-medium group-hover/item:text-white transition-colors duration-300">
+                {item}
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </CSSTransition>
   );
