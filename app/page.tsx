@@ -65,14 +65,22 @@ export default function Portfolio() {
 
   if (currentView !== 'dashboard') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50">
-        {renderDetailView()}
+      <div className="min-h-screen bg-gradient-to-t from-purple-950 via-violet-950 via-indigo-950 to-blue-950 relative">
+        {/* 추가 그라데이션 오버레이 */}
+        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/30 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-violet-950/30 via-transparent to-indigo-950/30 pointer-events-none"></div>
+        <div className="relative z-10">
+          {renderDetailView()}
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="h-screen bg-gradient-to-br from-[#f7f7f7] via-white to-[#e7f0fd] p-4 relative">
+    <div className="h-screen bg-gradient-to-t from-purple-950 via-violet-950 via-indigo-950 to-blue-950 p-4 relative">
+      {/* 추가 그라데이션 오버레이 */}
+      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/30 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-violet-950/30 via-transparent to-indigo-950/30 pointer-events-none"></div>
       
       {/* Back Button - only show when cards are hidden */}
       {!showCardsOnly && (
@@ -90,7 +98,7 @@ export default function Portfolio() {
         {/* Education Card */}
         <div
           onClick={() => setCurrentView('education')}
-          className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
+          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
         >
           <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={standardImageSize.container}>
@@ -108,7 +116,7 @@ export default function Portfolio() {
         {/* Projects Card - Top Center */}
         <div
           onClick={() => setCurrentView('projects')}
-          className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-2 row-start-1"
+          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-2 row-start-1"
         >
           <div className="flex flex-col items-center text-center space-y-4 h-full justify-center">
             <div className="bg-white/90 rounded-4xl p-4 shadow-md">
@@ -125,7 +133,7 @@ export default function Portfolio() {
         {/* Honors Card - Top Right */}
         <div
           onClick={() => setCurrentView('honors')}
-          className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-3 row-start-1"
+          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-3 row-start-1"
         >
                                 <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={largeImageSize.container}>
@@ -141,7 +149,7 @@ export default function Portfolio() {
         {/* Main Card - Center, 2x1 */}
         <div 
           onClick={() => window.open('/pdf/JeongJun_Resume_V39.pdf', '_blank')}
-          className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-16 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
+          className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-16 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
           <h1 className="text-[clamp(1.8rem,3.5vw,3.5rem)] font-extrabold text-[#1877F2] mb-6">JeongJun Song (Jun)</h1>
           <h2 className="text-[clamp(0.9rem,1.8vw,1.8rem)] font-bold text-gray-800 mb-8">Full Stack Developer & AI Agent Platform Builder</h2>
           <div className="grid grid-cols-1 gap-6 text-gray-700 text-[clamp(1.25rem,2.5vw,2rem)]"></div>
@@ -150,7 +158,7 @@ export default function Portfolio() {
         {/* Tech Stack Card */}
         <div
           onClick={() => setCurrentView('skills')}
-          className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-2"
+          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-2"
         >
           <div className="flex items-start justify-center h-full w-full gap-[clamp(1.5rem,3vw,3rem)]">
             {/* Left Side - Icons */}
@@ -186,7 +194,7 @@ export default function Portfolio() {
         </div>
 
         {/* Quote Card - Bottom Center, now 1x1 */}
-        <div className="row-start-3 col-start-3 bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-12 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle cursor-default">
+        <div className="row-start-3 col-start-3 bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-12 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle cursor-default">
           <div className="flex flex-col items-center text-center space-y-6 h-full justify-center">
             <div>
               <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">2025. Designed by Jun</h3>
@@ -200,7 +208,7 @@ export default function Portfolio() {
         {/* Experience Card - Bottom Left */}
         <div
           onClick={() => setCurrentView('experience')}
-          className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
+          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
         >
                                 <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={largeImageSize.container}>
@@ -216,7 +224,7 @@ export default function Portfolio() {
         {/* Military Card - Bottom Right */}
         <div
           onClick={() => setCurrentView('military')}
-          className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-4"
+          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-4"
         >
           <div className="flex flex-col items-center text-center space-y-4 h-full justify-center">
             <div className="bg-white/90 rounded-4xl p-4 shadow-md">
@@ -259,7 +267,7 @@ export default function Portfolio() {
         {/* Contact Card - Top Right */}
         <div
           onClick={() => setCurrentView('contact')}
-          className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-1 col-start-4"
+          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-1 col-start-4"
         >
           <div className="grid grid-cols-2 grid-rows-2 gap-4 h-full w-full items-center justify-center">
             {/* GitHub */}
