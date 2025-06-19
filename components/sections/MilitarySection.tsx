@@ -11,6 +11,23 @@ export default function MilitarySection({ onBack }: MilitarySectionProps) {
   const content = [
     {
       title:
+        'Volunteer, Arizona State University, T.Denny Sanford School of Social and Family Dynamics',
+      content: [
+        'April 2025 - present',
+        'Engaged children in various educational and creative activities, fostering their social and cognitive development.',
+        'Collaborated with other volunteers to create a positive, team-oriented atmosphere.',
+        <a
+          href="https://thesanfordschool.asu.edu/cdl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#1877F2] hover:text-blue-500 underline transition-colors duration-200"
+        >
+          [Learn more about ASU Child Development Lab]
+        </a>,
+      ],
+    },
+    {
+      title:
         'Hanbit Unit 12th Peacekeepers, United Nations (UN), Bor, South Sudan',
       content: [
         'Driver and Interpreter | January 2020 - January 2021',
@@ -19,7 +36,7 @@ export default function MilitarySection({ onBack }: MilitarySectionProps) {
           href="https://world.kbs.co.kr/service/news_view.htm?lang=e&Seq_Code=153813"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-teal-400 hover:text-teal-300 transition-colors duration-200"
+          className="text-[#1877F2] hover:text-blue-500 underline transition-colors duration-200"
         >
           [Read related article on KBS World News]
         </a>,
@@ -48,7 +65,7 @@ export default function MilitarySection({ onBack }: MilitarySectionProps) {
       </button>
       
       <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-[#1877F2] mb-[clamp(1rem,4vw,3rem)] text-center tracking-tight uppercase">
-        Military Service
+        Military Service & Volunteer
       </h2>
       <div className="flex flex-col items-center gap-[clamp(0.7rem,2vw,1.5rem)] w-full">
         {content.map((service, index) => (

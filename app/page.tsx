@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { FaGraduationCap, FaBriefcase, FaCode, FaProjectDiagram, FaTrophy, FaEnvelope, FaMedal, FaArrowLeft, FaQuoteLeft, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiGmail, SiNextdotjs, SiSupabase, SiN8N, SiPython } from 'react-icons/si';
+import { SiGmail, SiNextdotjs, SiSupabase, SiN8N, SiPython, SiReact } from 'react-icons/si';
 import IntroSection from '@/components/sections/IntroSection';
 import EducationSection from '@/components/sections/EducationSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
@@ -138,28 +138,34 @@ export default function Portfolio() {
           onClick={() => setCurrentView('skills')}
           className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-2"
         >
-          <div className="flex flex-col items-center text-center space-y-4 h-full justify-center w-full">
-            <div>
-              <div className="grid grid-cols-2 grid-rows-2 gap-3 w-full items-center justify-center mt-2">
-                {/* Next.js */}
-                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
-                  <SiNextdotjs className="text-[3rem] text-black mb-1" />
-                  <span className="font-bold text-base md:text-lg lg:text-xl text-gray-800">Next.js</span>
-                </div>
-                {/* Python */}
-                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
-                  <SiPython className="text-[3rem] text-[#3776AB] mb-1" />
-                  <span className="font-bold text-base md:text-lg lg:text-xl text-gray-800">Python</span>
-                </div>
-                {/* n8n */}
-                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
-                  <SiN8N className="text-[3rem] text-[#EF7C28] mb-1" />
-                  <span className="font-bold text-base md:text-lg lg:text-xl text-gray-800">n8n</span>
-                </div>
-                {/* More */}
-                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
-                  <span className="mb-1 md:mb-2 text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-400"> more.. </span>
-                </div>
+          <div className="flex items-start justify-center h-full w-full gap-[clamp(1.5rem,3vw,3rem)]">
+            {/* Left Side - Icons */}
+            <div className="flex flex-col items-center space-y-[clamp(1rem,2vw,2rem)]">
+              {/* React Icon */}
+              <div className="flex flex-col items-center">
+                <SiReact className="text-[clamp(5rem,10vw,8rem)] text-[#8B5CF6] mb-[clamp(0.5rem,0.5vw,0.5rem)]" />
+              </div>
+              
+              {/* n8n Icon */}
+              <div className="flex flex-col items-center">
+                <SiN8N className="text-[clamp(3rem,6vw,5rem)] text-[#EF7C28]" />
+              </div>
+            </div>
+            
+                        {/* Right Side - Text */}
+            <div className="flex flex-col justify-start text-left space-y-[clamp(0.5rem,0.5vw,0.5rem)] mt-[clamp(0.5rem,1vw,1rem)]">
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black underline decoration-2 underline-offset-4">React</div>
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black underline decoration-2 underline-offset-4">
+                TypeScript
+              </div>
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black underline decoration-2 underline-offset-4 mb-[clamp(1rem,2vw,1.5rem)]">
+                Tailwind CSS
+              </div>
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-[#38BDF8]">
+                n8n
+              </div>
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-[#38BDF8]">
+                AI Agent
               </div>
             </div>
           </div>
@@ -203,7 +209,7 @@ export default function Portfolio() {
               <FaMedal className="text-[clamp(1.5rem,3vw,3rem)] text-[#1877F2]" />
             </div>
             <div>
-              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-extrabold text-[#1877F2] mb-2">Military Service</h3>
+              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-extrabold text-[#1877F2] mb-2">Military Service & Volunteer</h3>
               <p className="text-[clamp(1rem,1.8vw,1.125rem)] font-bold text-gray-800 mb-1">UN Peacekeepers</p>
               <p className="text-[clamp(0.875rem,1.4vw,1rem)] text-gray-600">South Sudan • Driver & Interpreter</p>
             </div>
