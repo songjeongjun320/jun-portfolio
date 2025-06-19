@@ -16,6 +16,7 @@ import Image from 'next/image';
 
 export default function Portfolio() {
   const [currentView, setCurrentView] = useState('dashboard');
+  const [showCardsOnly, setShowCardsOnly] = useState(true);
   
   // 공통 스타일 정의
   const imageContainerStyle = "flex items-center justify-center w-full";
@@ -71,9 +72,20 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="h-screen bg-gradient-to-br from-[#f7f7f7] via-white to-[#e7f0fd] p-4">
+    <div className="h-screen bg-gradient-to-br from-[#f7f7f7] via-white to-[#e7f0fd] p-4 relative">
+      
+      {/* Back Button - only show when cards are hidden */}
+      {!showCardsOnly && (
+        <button
+          onClick={() => setShowCardsOnly(true)}
+          className="fixed top-6 left-6 z-50 bg-white shadow-lg rounded-4xl p-3 hover:shadow-xl transition-shadow duration-300 border border-blue-200"
+        >
+          <FaArrowLeft className="text-blue-600 text-xl" />
+        </button>
+      )}
+      
       {/* Grid Layout - 4x3 Grid */}
-      <div className="h-full grid grid-cols-4 grid-rows-3 gap-6 w-full mx-auto">
+      <div className={`h-full grid grid-cols-4 grid-rows-3 gap-6 w-full mx-auto relative z-10 transition-opacity duration-500 ${showCardsOnly ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         {/* Row 1 */}
         {/* Education Card */}
         <div
@@ -105,7 +117,7 @@ export default function Portfolio() {
             <div>
               <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-extrabold text-[#1877F2] mb-2">Projects</h3>
               <p className="text-[clamp(1rem,1.8vw,1.125rem)] font-bold text-gray-800 mb-1">CarePilot AI Assistant</p>
-              <p className="text-[clamp(0.875rem,1.4vw,1rem)] text-gray-600">HackAgent 2025 Winner • 7+ Projects</p>
+              <p className="text-[clamp(0.875rem,1.4vw,1rem)] text-gray-600">6+ Projects</p>
             </div>
           </div>
         </div>
@@ -127,7 +139,9 @@ export default function Portfolio() {
         </div>
 
         {/* Main Card - Center, 2x1 */}
-        <div className="col-start-2 col-end-4 row-start-2 row-end-3 bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-16 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center">
+        <div 
+          onClick={() => window.open('/pdf/JeongJun_Resume_V39.pdf', '_blank')}
+          className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-16 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
           <h1 className="text-[clamp(1.8rem,3.5vw,3.5rem)] font-extrabold text-[#1877F2] mb-6">JeongJun Song (Jun)</h1>
           <h2 className="text-[clamp(0.9rem,1.8vw,1.8rem)] font-bold text-gray-800 mb-8">Full Stack Developer & AI Agent Platform Builder</h2>
           <div className="grid grid-cols-1 gap-6 text-gray-700 text-[clamp(1.25rem,2.5vw,2rem)]"></div>
@@ -172,7 +186,7 @@ export default function Portfolio() {
         </div>
 
         {/* Quote Card - Bottom Center, now 1x1 */}
-        <div className="row-start-3 col-start-3 bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-12 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center">
+        <div className="row-start-3 col-start-3 bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-12 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle cursor-default">
           <div className="flex flex-col items-center text-center space-y-6 h-full justify-center">
             <div>
               <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">2025. Designed by Jun</h3>
@@ -218,7 +232,8 @@ export default function Portfolio() {
 
         {/* 100 hrs/week Card - Left Middle, Responsive & Emphasized */}
         <div
-          className="bg-gradient-to-br from-yellow-200 via-orange-300 to-red-400 rounded-4xl shadow-2xl border-4 border-yellow-400 animate-pulse-slow flex flex-col items-center justify-center row-start-2 col-start-1 row-span-2 cursor-default transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_10px_rgba(255,140,0,0.3)]"
+          onClick={() => window.open('/pdf/Recommendation.pdf', '_blank')}
+          className="bg-gradient-to-br from-yellow-200 via-orange-300 to-red-400 rounded-4xl shadow-2xl border-4 border-yellow-400 animate-pulse-slow flex flex-col items-center justify-center row-start-2 col-start-1 row-span-2 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_10px_rgba(255,140,0,0.3)]"
           style={{ minHeight: 'clamp(180px, 30vw, 340px)', minWidth: 'clamp(180px, 22vw, 340px)' }}
         >
           <div className="flex flex-col items-center text-center space-y-3 h-full justify-center w-full">
@@ -280,5 +295,56 @@ export default function Portfolio() {
 }
 .animate-pulse-slow {
   animation: pulse-slow 2.5s infinite;
+}
+
+@keyframes plasma-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes plasma-flow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.plasma-line {
+  stroke-dasharray: 20 10;
+  animation: plasma-flow 20s linear infinite, plasma-pulse 4s ease-in-out infinite;
+}
+
+.plasma-line-2 {
+  animation-delay: 1s;
+  animation-duration: 25s, 5s;
+}
+
+.plasma-line-3 {
+  animation-delay: 2s;
+  animation-duration: 18s, 3.5s;
+}
+
+.plasma-line-4 {
+  animation-delay: 3s;
+  animation-duration: 22s, 4.5s;
+}
+
+.energy-particle {
+  opacity: 0.8;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.particle-1 {
+  animation: plasma-pulse 2s ease-in-out infinite;
+}
+
+.particle-2 {
+  animation: plasma-pulse 2.5s ease-in-out infinite 0.5s;
+}
+
+.particle-3 {
+  animation: plasma-pulse 3s ease-in-out infinite 1s;
+}
+
+.particle-4 {
+  animation: plasma-pulse 2.2s ease-in-out infinite 1.5s;
 }
 */

@@ -236,3 +236,108 @@ img {
 .animate-pulse-slow {
   animation: pulse-slow 2.5s infinite;
 }
+
+/* Gentle pulse animation for hover effects */
+@keyframes pulse-gentle {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 1.5s ease-in-out infinite;
+}
+
+/* Plasma Background Animations */
+@keyframes plasma-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes plasma-flow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.plasma-line {
+  stroke-dasharray: 20 10;
+  animation: plasma-flow 20s linear infinite, plasma-pulse 4s ease-in-out infinite;
+}
+
+.plasma-line-2 {
+  animation-delay: 1s;
+  animation-duration: 25s, 5s;
+}
+
+.plasma-line-3 {
+  animation-delay: 2s;
+  animation-duration: 18s, 3.5s;
+}
+
+.plasma-line-4 {
+  animation-delay: 3s;
+  animation-duration: 22s, 4.5s;
+}
+
+.energy-particle {
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor);
+}
+
+.particle-1 {
+  animation: plasma-pulse 2s ease-in-out infinite;
+}
+
+.particle-2 {
+  animation: plasma-pulse 2.5s ease-in-out infinite 0.5s;
+}
+
+.particle-3 {
+  animation: plasma-pulse 3s ease-in-out infinite 1s;
+}
+
+.particle-4 {
+  animation: plasma-pulse 2.2s ease-in-out infinite 1.5s;
+}
+
+/* Enhanced particles with trailing effect */
+.particle-enhanced-1, .particle-enhanced-2, .particle-enhanced-3, .particle-enhanced-4, .particle-enhanced-5 {
+  opacity: 0.95;
+  filter: drop-shadow(0 0 12px currentColor) drop-shadow(0 0 24px currentColor) drop-shadow(0 0 36px currentColor);
+}
+
+.particle-enhanced-1 {
+  animation: plasma-intense-pulse 1.8s ease-in-out infinite;
+}
+
+.particle-enhanced-2 {
+  animation: plasma-intense-pulse 2.2s ease-in-out infinite 0.3s;
+}
+
+.particle-enhanced-3 {
+  animation: plasma-intense-pulse 2.0s ease-in-out infinite 0.6s;
+}
+
+.particle-enhanced-4 {
+  animation: plasma-intense-pulse 2.4s ease-in-out infinite 0.9s;
+}
+
+.particle-enhanced-5 {
+  animation: plasma-intense-pulse 1.9s ease-in-out infinite 1.2s;
+}
+
+@keyframes plasma-intense-pulse {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.3);
+  }
+}
