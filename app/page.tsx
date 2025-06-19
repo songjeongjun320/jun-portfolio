@@ -216,8 +216,8 @@ export default function Portfolio() {
         >
           <div className="flex flex-col items-center text-center space-y-3 h-full justify-center w-full">
             <div className="bg-black rounded-4xl flex items-center justify-center mb-2 shadow-lg border-4 border-white"
-              style={{ width: 'clamp(180px, 20vw, 300px)', height: 'clamp(180px, 20vw, 300px)' }}>
-              <span className="text-white font-extrabold" style={{ fontSize: 'clamp(4rem, 10vw, 8rem)' }}>100</span>
+              style={{ width: 'clamp(160px, 18vw, 260px)', height: 'clamp(160px, 18vw, 260px)' }}>
+              <span className="text-white font-extrabold" style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>100</span>
             </div>
             <div className="flex flex-col items-center space-y-1 w-full">
               <div className="bg-white/80 rounded-4xl px-4 py-1 shadow-md w-fit mx-auto">
