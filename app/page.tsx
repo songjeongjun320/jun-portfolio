@@ -128,8 +128,8 @@ export default function Portfolio() {
 
         {/* Main Card - Center, 2x1 */}
         <div className="col-start-2 col-end-4 row-start-2 row-end-3 bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-16 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center">
-          <h1 className="text-[clamp(2rem,4vw,4rem)] font-extrabold text-[#1877F2] mb-6">JeongJun Song (Jun)</h1>
-          <h2 className="text-[clamp(1rem,2vw,2rem)] font-bold text-gray-800 mb-8">Full Stack Developer & AI Agent Platform Builder</h2>
+          <h1 className="text-[clamp(1.8rem,3.5vw,3.5rem)] font-extrabold text-[#1877F2] mb-6">JeongJun Song (Jun)</h1>
+          <h2 className="text-[clamp(0.9rem,1.8vw,1.8rem)] font-bold text-gray-800 mb-8">Full Stack Developer & AI Agent Platform Builder</h2>
           <div className="grid grid-cols-1 gap-6 text-gray-700 text-[clamp(1.25rem,2.5vw,2rem)]"></div>
         </div>
 
