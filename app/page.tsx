@@ -30,10 +30,10 @@ export default function Portfolio() {
     }
   };
   const largeImageSize = {
-    container: { height: 'clamp(120px, 12vw, 220px)' },
+    container: { height: 'clamp(100px, 12vw, 200px)' },
     image: { 
-      width: 'clamp(200px, 28vw, 480px)', 
-      height: 'clamp(120px, 10vw, 220px)', 
+      width: 'clamp(120px, 15vw, 300px)', 
+      height: 'clamp(100px, 10vw, 200px)', 
       objectFit: 'contain' as const,
       borderRadius: '2rem'
     }
