@@ -9,7 +9,7 @@ interface ProjectsSectionProps {
 
 export default function ProjectsSection({ onBack }: ProjectsSectionProps) {
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f7faff] via-[#e7f0fd] to-[#e3e9fc]">
+    <div className="w-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f7faff] via-[#e7f0fd] to-[#e3e9fc] px-[clamp(0.5rem,3vw,2.5rem)] py-[clamp(1rem,6vw,4rem)] min-h-screen">
       {/* Back Button */}
       <button
         onClick={onBack}

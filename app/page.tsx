@@ -124,8 +124,8 @@ export default function Portfolio() {
             </div>
             <div>
               <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-extrabold text-[#1877F2] mb-2">Projects</h3>
-              <p className="text-[clamp(1rem,1.8vw,1.125rem)] font-bold text-gray-800 mb-1">CarePilot AI Assistant</p>
-              <p className="text-[clamp(0.875rem,1.4vw,1rem)] text-gray-600">6+ Projects</p>
+              <h3 className="text-[clamp(1rem,1.8vw,1.125rem)] font-bold text-gray-800 mb-1">CarePilot AI Assistant</h3>
+              <h3 className="text-[clamp(0.875rem,1.4vw,1rem)] text-gray-600">6+ Projects</h3>
             </div>
           </div>
         </div>

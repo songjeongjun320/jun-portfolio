@@ -30,7 +30,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Enhanced scrollbar styling */
+/* Enhanced scrollbar styling - 기본 스크롤바 사용하도록 주석 처리
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -49,6 +49,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #38b2ac, #3182ce);
 }
+*/
 
 @layer components {
   /* Glass morphism effect */

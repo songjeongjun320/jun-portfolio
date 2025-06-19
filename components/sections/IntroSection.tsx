@@ -33,7 +33,7 @@ export default function IntroSection() {
       onEntered={() => setInSection(true)}
       onExit={() => setInSection(false)}
     >
-      <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center">
+      <div className="w-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f7faff] via-[#e7f0fd] to-[#e3e9fc] px-[clamp(0.5rem,3vw,2.5rem)] py-[clamp(1rem,6vw,4rem)] min-h-screen">
         <h2 className="text-6xl font-extrabold text-white mb-20 text-center tracking-tight bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
           (Jun) JeongJun Song
         </h2>
