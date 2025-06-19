@@ -17,38 +17,38 @@ export function ProjectCard({ title, description, image, views, date, href }: Pr
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/30 shadow-xl hover:shadow-2xl hover:border-teal-400/30 transition-all duration-500 hover:scale-[1.02] card-hover"
+      className="group relative block overflow-hidden rounded-4xl bg-white/90 border-2 border-blue-100 shadow-2xl hover:shadow-2xl hover:border-[#1877F2] transition-all duration-500 hover:scale-[1.03]"
     >
       {/* Image Area */}
-      <div className="aspect-[16/9] w-full relative overflow-hidden">
+              <div className="aspect-[16/9] w-full relative overflow-hidden rounded-4xl">
         <Image
           src={image}
           alt={title}
           width={600}
           height={400}
-          className="h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+          className="h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110 rounded-4xl"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#e7f0fd]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-4xl"></div>
         
         {/* Views and Date Overlay */}
-        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-lg px-3 py-1 text-xs text-white font-medium">
+                  <div className="absolute top-4 right-4 bg-[#e3e9fc] text-[#1877F2] rounded-4xl px-3 py-1 text-xs font-medium border border-blue-100 shadow">
           {views.toLocaleString()} views
         </div>
         
         {/* Date Badge */}
-        <div className="absolute bottom-4 left-4 bg-gradient-to-r from-teal-400/90 to-blue-400/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs text-white font-medium">
+                  <div className="absolute bottom-4 left-4 bg-[#e3e9fc] text-[#1877F2] rounded-4xl px-3 py-1 text-xs font-medium border border-blue-100 shadow">
           {formatDistanceToNow(date)} ago
         </div>
       </div>
 
       {/* Content Area */}
-      <div className="p-6 space-y-4">
-        <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300 leading-tight">
+      <div className="p-8 space-y-4">
+        <h3 className="text-2xl font-extrabold text-[#1877F2] leading-tight">
           {title}
         </h3>
         
         <p 
-          className="text-sm text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
+          className="text-lg text-gray-700 leading-relaxed"
           style={{
             display: '-webkit-box',
             WebkitLineClamp: 3,
@@ -60,9 +60,9 @@ export function ProjectCard({ title, description, image, views, date, href }: Pr
         </p>
         
         {/* Read More Indicator */}
-        <div className="flex items-center text-xs text-teal-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="flex items-center text-sm text-[#1877F2] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span>View Project</span>
-          <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </div>

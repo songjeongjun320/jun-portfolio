@@ -41,6 +41,11 @@ const config: Config = {
         normal: '1.6', // 본문 줄 간격
         heading: '1.4', // 헤딩 줄 간격
       },
+      borderRadius: {
+        '4xl': '2rem', // 32px - rounded-4xl 클래스 정의
+        '5xl': '2.5rem', // 40px - rounded-5xl 클래스 정의  
+        '6xl': '3rem', // 48px - rounded-6xl 클래스 정의
+      },
     },
   },
   plugins: [],

@@ -6,10 +6,8 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
   const sectionMapping: { [key: string]: string } = {
     'Introduction': 'intro',
-    'Education': 'education',
     'Professional Experience': 'experience',
-    'Research Interests': 'research',
-    'Publication': 'publication',
+    'Education': 'education',
     'Projects': 'projects',
     'Honors & Awards': 'honors',
     'Tech Skills': 'skills',
@@ -26,7 +24,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
   };
 
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 bg-black/30 rounded-lg">
+          <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 bg-black/30 rounded-4xl">
       <div className="flex flex-col">
         {/* Navigation Buttons for all sections */}
         {Object.keys(sectionMapping).map((section) => (

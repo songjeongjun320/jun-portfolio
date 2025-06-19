@@ -1,8 +1,13 @@
 'use client';
 
 import { CSSTransition } from 'react-transition-group';
+import { FaArrowLeft } from 'react-icons/fa';
 
-export default function Honors_AwardsSection() {
+interface Honors_AwardsSectionProps {
+  onBack: () => void;
+}
+
+export default function Honors_AwardsSection({ onBack }: Honors_AwardsSectionProps) {
   const content = [
     {
       title: "ASU Dean's List",
@@ -32,40 +37,37 @@ export default function Honors_AwardsSection() {
   ];
 
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center">
-      <h2 className="text-6xl font-extrabold text-white mb-20 text-center tracking-tight bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+    <div className="w-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f7faff] via-[#e7f0fd] to-[#e3e9fc] px-[clamp(0.5rem,3vw,2.5rem)] py-[clamp(1rem,6vw,4rem)] min-h-screen">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="fixed top-6 left-6 z-50 bg-white shadow-lg rounded-4xl p-3 hover:shadow-xl transition-shadow duration-300 border border-blue-200"
+      >
+        <FaArrowLeft className="text-blue-600 text-xl" />
+      </button>
+      
+      <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-[#1877F2] mb-[clamp(1rem,4vw,3rem)] text-center tracking-tight">
         Honors & Awards
       </h2>
-      <div className="space-y-6 w-full max-w-4xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
         {content.map((award, index) => (
-          <CSSTransition
+          <div
             key={index}
-            in={true}
-            timeout={500 + index * 100}
-            classNames="fade"
-            unmountOnExit
+            className="group bg-white/90 w-full p-[clamp(1rem,3vw,2.5rem)] rounded-4xl shadow-2xl border-2 border-blue-100 hover:border-[#1877F2] transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] flex flex-col justify-between"
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div 
-              className="group bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-700/30 hover:border-teal-400/30 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 className="text-2xl font-bold text-transparent bg-gradient-to-r from-teal-400 via-blue-400 to-green-400 bg-clip-text mb-2 md:mb-0">
-                  {award.title}
-                </h3>
-                <div className="bg-gray-800/60 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-600/30">
-                  <span className="text-lg text-gray-300 font-medium">{award.period}</span>
-                </div>
+            <div>
+              <h3 className="text-[clamp(1.3rem,2vw,2rem)] font-extrabold text-[#1877F2] mb-2">
+                {award.title}
+              </h3>
+              <div className="bg-[#e3e9fc] px-4 py-2 rounded-4xl border border-blue-100 inline-block mb-4">
+                <span className="text-[clamp(1rem,1.2vw,1.1rem)] text-[#1877F2] font-medium">{award.period}</span>
               </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full mt-2.5 group-hover:scale-125 transition-transform duration-300"></div>
-                <p className="text-lg text-gray-200 leading-relaxed group-hover:text-white transition-colors duration-300">
-                  {award.description}
-                </p>
-              </div>
+              <p className="text-[clamp(0.95rem,1.5vw,1.15rem)] text-gray-700 leading-relaxed group-hover:text-[#1877F2] transition-colors duration-300">
+                {award.description}
+              </p>
             </div>
-          </CSSTransition>
+          </div>
         ))}
       </div>
     </div>

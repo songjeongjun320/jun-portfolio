@@ -1,8 +1,13 @@
 'use client';
 
 import { CSSTransition } from 'react-transition-group';
+import { FaArrowLeft } from 'react-icons/fa';
 
-export default function MilitarySection() {
+interface MilitarySectionProps {
+  onBack: () => void;
+}
+
+export default function MilitarySection({ onBack }: MilitarySectionProps) {
   const content = [
     {
       title:
@@ -33,11 +38,19 @@ export default function MilitarySection() {
   ];
 
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen">
-      <h2 className="text-4xl font-extrabold text-white mb-16 text-center tracking-tight uppercase">
+    <div className="w-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f7faff] via-[#e7f0fd] to-[#e3e9fc] px-[clamp(0.5rem,3vw,2.5rem)] py-[clamp(1rem,6vw,4rem)] min-h-screen">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="fixed top-6 left-6 z-50 bg-white shadow-lg rounded-4xl p-3 hover:shadow-xl transition-shadow duration-300 border border-blue-200"
+      >
+        <FaArrowLeft className="text-blue-600 text-xl" />
+      </button>
+      
+      <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-[#1877F2] mb-[clamp(1rem,4vw,3rem)] text-center tracking-tight uppercase">
         Military Service
       </h2>
-      <div className="space-y-12">
+      <div className="flex flex-col items-center gap-[clamp(0.7rem,2vw,1.5rem)] w-full">
         {content.map((service, index) => (
           <CSSTransition
             key={index}
@@ -46,15 +59,27 @@ export default function MilitarySection() {
             classNames="fade"
             unmountOnExit
           >
-            <div className="bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-4xl mx-auto">
-              <h3 className="text-3xl font-semibold text-teal-400 mb-6 border-b-2 border-gray-600 pb-2">
+            <div className="bg-white w-full min-w-[clamp(250px,40vw,700px)] max-w-[clamp(300px,90vw,1200px)] p-[clamp(1rem,3vw,2.5rem)] rounded-4xl shadow-2xl hover:shadow-2xl transition-shadow duration-300 mx-auto border-2 border-blue-100">
+              <h3 className="text-[clamp(1.3rem,2vw,2rem)] font-semibold text-[#1877F2] mb-6 border-b-2 border-blue-200 pb-2">
                 {service.title}
               </h3>
-              <ul className="space-y-4 text-gray-300">
+              <ul className="space-y-[clamp(0.3rem,1vw,1rem)] text-gray-700">
                 {service.content.map((detail, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-xl text-teal-400 font-bold">•</span>
-                    <p className="text-lg leading-relaxed">{detail}</p>
+                    <span className="text-[clamp(1.1rem,2vw,1.5rem)] text-[#1877F2] font-bold">•</span>
+                    <p className="text-[clamp(0.95rem,1.5vw,1.15rem)] leading-relaxed">
+                      {typeof detail === 'string' ? detail :
+                        detail && detail.type === 'a' ? (
+                          <a
+                            href={detail.props.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#1877F2] hover:text-blue-500 underline transition-colors duration-200"
+                          >
+                            {detail.props.children}
+                          </a>
+                        ) : detail}
+                    </p>
                   </li>
                 ))}
               </ul>

@@ -1,14 +1,27 @@
 import { ProjectCard } from '../project-card';
 import { projects } from '../../data/projects';
 import { CSSTransition } from 'react-transition-group';
+import { FaArrowLeft } from 'react-icons/fa';
 
-export default function ProjectsSection() {
+interface ProjectsSectionProps {
+  onBack: () => void;
+}
+
+export default function ProjectsSection({ onBack }: ProjectsSectionProps) {
   return (
-    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center">
-      <h2 className="text-6xl font-extrabold text-white mb-20 text-center tracking-tight bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+    <div className="container mx-auto px-6 py-24 min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f7faff] via-[#e7f0fd] to-[#e3e9fc]">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="fixed top-6 left-6 z-50 bg-white shadow-lg rounded-4xl p-3 hover:shadow-xl transition-shadow duration-300 border border-blue-200"
+      >
+        <FaArrowLeft className="text-blue-600 text-xl" />
+      </button>
+      
+      <h2 className="text-6xl font-extrabold text-[#1877F2] mb-20 text-center tracking-tight">
         Projects
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl">
         {projects.map((project, index) => (
           <CSSTransition
             key={project.id}
