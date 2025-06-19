@@ -80,7 +80,7 @@ export default function Portfolio() {
           onClick={() => setCurrentView('education')}
           className="cursor-pointer bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6efff] rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
         >
-          <div className={`${cardContainerStyle} space-y-2`}>
+          <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={standardImageSize.container}>
               <Image src="/img/ASU_LOGO.png" alt="ASU Logo" width={0} height={0} sizes="100vw" style={standardImageSize.image} className="rounded-4xl" />
             </div>
@@ -138,24 +138,24 @@ export default function Portfolio() {
         >
           <div className="flex flex-col items-center text-center space-y-4 h-full justify-center w-full">
             <div>
-              <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full items-center justify-center mt-2">
+              <div className="grid grid-cols-2 grid-rows-2 gap-3 w-full items-center justify-center mt-2">
                 {/* Next.js */}
-                <div className="bg-white/90 rounded-4xl p-6 shadow-md flex flex-col items-center justify-center w-full h-full">
-                  <SiNextdotjs className="text-[3rem] text-black mb-2" />
+                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
+                  <SiNextdotjs className="text-[3rem] text-black mb-1" />
                   <span className="font-bold text-base md:text-lg lg:text-xl text-gray-800">Next.js</span>
                 </div>
                 {/* Python */}
-                <div className="bg-white/90 rounded-4xl p-6 shadow-md flex flex-col items-center justify-center w-full h-full">
-                  <SiPython className="text-[3rem] text-[#3776AB] mb-2" />
+                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
+                  <SiPython className="text-[3rem] text-[#3776AB] mb-1" />
                   <span className="font-bold text-base md:text-lg lg:text-xl text-gray-800">Python</span>
                 </div>
                 {/* n8n */}
-                <div className="bg-white/90 rounded-4xl p-6 shadow-md flex flex-col items-center justify-center w-full h-full">
-                  <SiN8N className="text-[3rem] text-[#EF7C28] mb-2" />
+                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
+                  <SiN8N className="text-[3rem] text-[#EF7C28] mb-1" />
                   <span className="font-bold text-base md:text-lg lg:text-xl text-gray-800">n8n</span>
                 </div>
                 {/* More */}
-                <div className="bg-white/90 rounded-4xl p-6 shadow-md flex flex-col items-center justify-center w-full h-full">
+                <div className="bg-white/90 rounded-4xl p-5 shadow-md flex flex-col items-center justify-center w-full h-full">
                   <span className="mb-1 md:mb-2 text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-400"> more.. </span>
                 </div>
               </div>
