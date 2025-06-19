@@ -84,9 +84,10 @@ export default function Portfolio() {
             <div className={imageContainerStyle} style={standardImageSize.container}>
               <Image src="/img/ASU_LOGO.png" alt="ASU Logo" width={0} height={0} sizes="100vw" style={standardImageSize.image} className="rounded-4xl" />
             </div>
+
             <div>
-              <h3 className="text-[clamp(0.9rem,1.8vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">Arizona State University</h3>
-              <p className="text-[clamp(0.875rem,1.5vw,1.125rem)] text-gray-600">B.S. Computer Science • GPA: 3.77/4.0</p>
+              <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-bold text-gray-800 mb-1">Arizona State University</h3>
+              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">B.S. Computer Science • GPA: 3.77/4.0</p>
             </div>
           </div>
         </div>
@@ -118,8 +119,8 @@ export default function Portfolio() {
               <Image src="/img/ethical_hackathon.jpg" alt="Ethical Hackathon Logo" width={0} height={0} sizes="100vw" style={largeImageSize.image} className="rounded-4xl" />
             </div>
             <div>
-              <h3 className="text-[clamp(1.2rem,1.8vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">🏆 2nd place in Hackathon</h3>
-              <span className="text-[clamp(1rem,1.8vw,1.125rem)] text-gray-600">OpenAI + Next.js + Supabase</span>
+              <h3 className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-gray-800 mb-1">🏆 2nd place in Hackathon</h3>
+              <span className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">OpenAI + Next.js + Supabase</span>
             </div>
           </div>
         </div>
@@ -185,8 +186,8 @@ export default function Portfolio() {
               <Image src="/img/MLOPS.jpg" alt="MLOps Logo" width={0} height={0} sizes="100vw" style={largeImageSize.image} className="rounded-4xl" />
             </div>
             <div>
-              <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">+3 years of ML Engineer</h3>
-              <p className="text-[clamp(1rem,1.8vw,1.125rem)] font-bold text-gray-800 mb-1">Train, Optimize, Deploy</p>
+              <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-bold text-gray-800 mb-1">+2 years of AI/ML Experience</h3>
+              <p className="text-[clamp(1rem,2vw,1.5rem)] font-extrabold text-[#1877F2] mb-2">Train, Optimize, Deploy</p>
             </div>
           </div>
         </div>
