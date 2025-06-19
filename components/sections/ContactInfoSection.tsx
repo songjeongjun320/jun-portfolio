@@ -44,11 +44,11 @@ export default function ContactInfoSection({ onBack }: ContactInfoSectionProps) 
               <span className="text-[clamp(1.5rem,3vw,2.5rem)] font-semibold text-[#1877F2] mb-2">{item.label}</span>
               <a
                 href={item.link}
-                target={item.link.startsWith('mailto') ? '' : '_blank'}
-                rel="noopener noreferrer"
+                target={item.link.startsWith('mailto') ? '_self' : '_blank'}
+                rel={item.link.startsWith('mailto') ? '' : 'noopener noreferrer'}
                 className="text-blue-500 hover:text-[#1877F2] text-[clamp(1.2rem,2.5vw,1.8rem)] break-all transition-colors duration-300"
               >
-                {item.link}
+                {item.link.startsWith('mailto') ? item.link.replace('mailto:', '') : item.link}
               </a>
             </div>
           </li>

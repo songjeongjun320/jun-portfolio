@@ -154,11 +154,11 @@ export default function Portfolio() {
             
                         {/* Right Side - Text */}
             <div className="flex flex-col justify-start text-left space-y-[clamp(0.5rem,0.5vw,0.5rem)] mt-[clamp(0.5rem,1vw,1rem)]">
-              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black underline decoration-2 underline-offset-4">React</div>
-              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black underline decoration-2 underline-offset-4">
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black">React</div>
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black">
                 TypeScript
               </div>
-              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black underline decoration-2 underline-offset-4 mb-[clamp(1rem,2vw,1.5rem)]">
+              <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-black mb-[clamp(1rem,2vw,1.5rem)]">
                 Tailwind CSS
               </div>
               <div className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-[#38BDF8]">
