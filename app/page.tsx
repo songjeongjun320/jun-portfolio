@@ -86,8 +86,9 @@ export default function Portfolio() {
             </div>
 
             <div>
-              <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-bold text-gray-800 mb-1">Arizona State University</h3>
-              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">B.S. Computer Science • GPA: 3.77/4.0</p>
+              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-bold text-gray-800 mb-1">Arizona State University</h3>
+              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">B.S. Computer Science </p>
+              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">GPA: 3.77/4.0</p>
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ export default function Portfolio() {
               <FaProjectDiagram className="text-[clamp(1.5rem,3vw,3rem)] text-[#1877F2]" />
             </div>
             <div>
-              <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">Projects</h3>
+              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-extrabold text-[#1877F2] mb-2">Projects</h3>
               <p className="text-[clamp(1rem,1.8vw,1.125rem)] font-bold text-gray-800 mb-1">CarePilot AI Assistant</p>
               <p className="text-[clamp(0.875rem,1.4vw,1rem)] text-gray-600">HackAgent 2025 Winner • 7+ Projects</p>
             </div>
@@ -119,7 +120,7 @@ export default function Portfolio() {
               <Image src="/img/ethical_hackathon.jpg" alt="Ethical Hackathon Logo" width={0} height={0} sizes="100vw" style={largeImageSize.image} className="rounded-4xl" />
             </div>
             <div>
-              <h3 className="text-[clamp(1rem,2vw,1.5rem)] font-bold text-gray-800 mb-1">🏆 2nd place in Hackathon</h3>
+              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-bold text-gray-800 mb-1">🏆 2nd place in Hackathon</h3>
               <span className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">OpenAI + Next.js + Supabase</span>
             </div>
           </div>
@@ -202,7 +203,7 @@ export default function Portfolio() {
               <FaMedal className="text-[clamp(1.5rem,3vw,3rem)] text-[#1877F2]" />
             </div>
             <div>
-              <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">Military Service</h3>
+              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-extrabold text-[#1877F2] mb-2">Military Service</h3>
               <p className="text-[clamp(1rem,1.8vw,1.125rem)] font-bold text-gray-800 mb-1">UN Peacekeepers</p>
               <p className="text-[clamp(0.875rem,1.4vw,1rem)] text-gray-600">South Sudan • Driver & Interpreter</p>
             </div>
