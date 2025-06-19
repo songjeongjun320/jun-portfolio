@@ -21,10 +21,10 @@ export default function Portfolio() {
   const imageContainerStyle = "flex items-center justify-center w-full";
   const cardContainerStyle = "flex flex-col items-center text-center h-full justify-center";
   const standardImageSize = {
-    container: { height: 'clamp(140px, 14vw, 220px)' },
+    container: { height: 'clamp(120px, 12vw, 200px)' },
     image: { 
-      width: 'clamp(140px, 14vw, 220px)', 
-      height: 'clamp(140px, 10vw, 220px)', 
+      width: 'clamp(120px, 12vw, 200px)', 
+      height: 'clamp(120px, 9vw, 200px)', 
       objectFit: 'contain' as const,
       borderRadius: '2rem'
     }
