@@ -86,9 +86,9 @@ export default function Portfolio() {
             </div>
 
             <div>
-              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-bold text-gray-800 mb-1">Arizona State University</h3>
-              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">B.S. Computer Science </p>
-              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-2">GPA: 3.77/4.0</p>
+              <p className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-bold text-black mb-1">Arizona State University</p>
+              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-1">B.S. Computer Science </p>
+              <p className="text-[clamp(1rem,2vw,1.2rem)] font-extrabold text-[#1877F2] mb-1">GPA: 3.77/4.0</p>
             </div>
           </div>
         </div>
