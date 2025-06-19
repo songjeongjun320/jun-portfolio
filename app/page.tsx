@@ -186,7 +186,7 @@ export default function Portfolio() {
               <Image src="/img/MLOPS.jpg" alt="MLOps Logo" width={0} height={0} sizes="100vw" style={largeImageSize.image} className="rounded-4xl" />
             </div>
             <div>
-              <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-bold text-gray-800 mb-1">+2 years of AI/ML Experience</h3>
+              <h3 className="text-[clamp(0.8rem,1.8vw,1.4rem)] font-bold text-gray-800 mb-1">+2 years of AI/ML Experience</h3>
               <p className="text-[clamp(1rem,2vw,1.5rem)] font-extrabold text-[#1877F2] mb-2">Train, Optimize, Deploy</p>
             </div>
           </div>
