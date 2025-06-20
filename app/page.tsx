@@ -30,6 +30,15 @@ export default function Portfolio() {
       borderRadius: '2rem'
     }
   };
+  const asuImageSize = {
+    container: { height: 'clamp(100px, 10vw, 150px)' },
+    image: { 
+      width: 'clamp(100px, 10vw, 180px)', 
+      height: 'clamp(80px, 8vw, 180px)', 
+      objectFit: 'contain' as const,
+      borderRadius: '2rem'
+    }
+  };
   const largeImageSize = {
     container: { height: 'clamp(100px, 12vw, 200px)' },
     image: { 
@@ -101,8 +110,8 @@ export default function Portfolio() {
           className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
         >
           <div className={`${cardContainerStyle} space-y-1`}>
-            <div className={imageContainerStyle} style={standardImageSize.container}>
-              <Image src="/img/ASU_LOGO.png" alt="ASU Logo" width={0} height={0} sizes="100vw" style={standardImageSize.image} className="rounded-4xl" />
+            <div className={imageContainerStyle} style={asuImageSize.container}>
+              <Image src="/img/ASU_LOGO.png" alt="ASU Logo" width={0} height={0} sizes="100vw" style={asuImageSize.image} className="rounded-4xl" />
             </div>
 
             <div>
