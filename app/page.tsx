@@ -107,7 +107,7 @@ export default function Portfolio() {
         {/* Education Card */}
         <div
           onClick={() => setCurrentView('education')}
-          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
+          className="cursor-pointer bg-white rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
         >
           <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={asuImageSize.container}>
@@ -125,7 +125,7 @@ export default function Portfolio() {
         {/* Projects Card - Top Center */}
         <div
           onClick={() => setCurrentView('projects')}
-          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-2 row-start-1"
+          className="cursor-pointer bg-white rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-2 row-start-1"
         >
           <div className="flex flex-col items-center text-center space-y-4 h-full justify-center">
             <div className="bg-white/90 rounded-4xl p-4 shadow-md">
@@ -142,7 +142,7 @@ export default function Portfolio() {
         {/* Honors Card - Top Right */}
         <div
           onClick={() => setCurrentView('honors')}
-          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-3 row-start-1"
+          className="cursor-pointer bg-white rounded-4xl p-10 shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-3 row-start-1"
         >
                                 <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={largeImageSize.container}>
@@ -158,7 +158,7 @@ export default function Portfolio() {
         {/* Main Card - Center, 2x1 */}
         <div 
           onClick={() => window.open('/pdf/JeongJun_Resume_V39.pdf', '_blank')}
-          className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-16 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
+          className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-white rounded-4xl p-16 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
           <h1 className="text-[clamp(1.8rem,3.5vw,3.5rem)] font-extrabold text-[#1877F2] mb-6">JeongJun Song (Jun)</h1>
           <h2 className="text-[clamp(0.9rem,1.8vw,1.8rem)] font-bold text-gray-800 mb-8">Full Stack Developer & AI Agent Platform Builder</h2>
           <div className="grid grid-cols-1 gap-6 text-gray-700 text-[clamp(1.25rem,2.5vw,2rem)]"></div>
@@ -167,7 +167,7 @@ export default function Portfolio() {
         {/* Tech Stack Card */}
         <div
           onClick={() => setCurrentView('skills')}
-          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-2"
+          className="cursor-pointer bg-white rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-2"
         >
           <div className="flex items-start justify-center h-full w-full gap-[clamp(1.5rem,3vw,3rem)]">
             {/* Left Side - Icons */}
@@ -203,7 +203,7 @@ export default function Portfolio() {
         </div>
 
         {/* Quote Card - Bottom Center, now 1x1 */}
-        <div className="row-start-3 col-start-3 bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-12 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle cursor-default">
+        <div className="row-start-3 col-start-3 bg-white rounded-4xl p-12 shadow-2xl border-2 border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle cursor-default">
           <div className="flex flex-col items-center text-center space-y-6 h-full justify-center">
             <div>
               <h3 className="text-[clamp(1rem,2vw,1.6rem)] font-extrabold text-[#1877F2] mb-2">2025. Designed by Jun</h3>
@@ -217,7 +217,7 @@ export default function Portfolio() {
         {/* Experience Card - Bottom Left */}
         <div
           onClick={() => setCurrentView('experience')}
-          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
+          className="cursor-pointer bg-white rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
         >
                                 <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={largeImageSize.container}>
@@ -233,7 +233,7 @@ export default function Portfolio() {
         {/* Military Card - Bottom Right */}
         <div
           onClick={() => setCurrentView('military')}
-          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-4"
+          className="cursor-pointer bg-white rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-4"
         >
           <div className="flex flex-col items-center text-center space-y-4 h-full justify-center">
             <div className="bg-white/90 rounded-4xl p-4 shadow-md">
@@ -276,25 +276,25 @@ export default function Portfolio() {
         {/* Contact Card - Top Right */}
         <div
           onClick={() => setCurrentView('contact')}
-          className="cursor-pointer bg-gradient-to-br from-blue-50 via-blue-25 to-indigo-50 rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-1 col-start-4"
+          className="cursor-pointer bg-white rounded-4xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-1 col-start-4"
         >
           <div className="grid grid-cols-2 grid-rows-2 gap-4 h-full w-full items-center justify-center">
             {/* GitHub */}
-            <div className="bg-white/90 rounded-4xl p-6 shadow-md flex items-center justify-center hover:bg-white transition-colors duration-300 w-full h-full">
+            <div className="bg-white/90 rounded-4xl p-6 shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
               <FaGithub className="text-[4rem] text-gray-800" />
             </div>
             {/* LinkedIn */}
-            <div className="bg-white/90 rounded-4xl p-6 shadow-md flex items-center justify-center hover:bg-white transition-colors duration-300 w-full h-full">
+            <div className="bg-white/90 rounded-4xl p-6 shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
               <FaLinkedin className="text-[4rem] text-blue-600" />
             </div>
             {/* Google G */}
-            <div className="bg-white/90 rounded-4xl p-6 shadow-md flex items-center justify-center hover:bg-white transition-colors duration-300 w-full h-full">
+            <div className="bg-white/90 rounded-4xl p-6 shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="64" height="64">
                 <g><path fill="#4285F4" d="M43.611 20.083H42V20H24v8h11.303C33.973 32.833 29.373 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c2.69 0 5.164.957 7.104 2.53l6.062-6.062C33.984 5.16 29.284 3 24 3 12.954 3 4 11.954 4 23s8.954 20 20 20c10.477 0 19.477-7.615 19.477-19.477 0-1.305-.138-2.568-.366-3.773z"/><path fill="#34A853" d="M6.306 14.691l6.571 4.819C14.655 16.163 19.004 13 24 13c2.69 0 5.164.957 7.104 2.53l6.062-6.062C33.984 5.16 29.284 3 24 3c-7.732 0-14.41 4.41-17.694 11.691z"/><path fill="#FBBC05" d="M24 43c5.205 0 9.963-1.717 13.627-4.60l-6.293-5.146C29.373 36 24 36 24 36c-5.373 0-9.973-3.167-11.303-8H6.306C8.59 38.59 15.268 43 24 43z"/><path fill="#EA4335" d="M43.611 20.083H42V20H24v8h11.303c-1.13 3.833-5.73 8-11.303 8-2.69 0-5.164-.957-7.104-2.53l-6.062 6.062C14.016 42.84 18.716 45 24 45c7.732 0 14.41-4.41 17.694-11.691z"/></g>
               </svg>
             </div>
             {/* X/Twitter */}
-            <div className="bg-white/90 rounded-4xl p-6 shadow-md flex items-center justify-center hover:bg-white transition-colors duration-300 w-full h-full">
+            <div className="bg-white/90 rounded-4xl p-6 shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
               <FaXTwitter className="text-[4rem] text-black" />
             </div>
           </div>
