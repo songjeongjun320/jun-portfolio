@@ -22,30 +22,30 @@ export default function Portfolio() {
   const imageContainerStyle = "flex items-center justify-center w-full";
   const cardContainerStyle = "flex flex-col items-center text-center h-full justify-center";
   const standardImageSize = {
-    container: { height: '6vw' },
+    container: { height: '7.2vw' },
     image: { 
-      width: '6vw', 
-      height: '4.5vw', 
+      width: '7.2vw', 
+      height: '5.4vw', 
       objectFit: 'contain' as const,
-      borderRadius: '0.5vw'
+      borderRadius: '0.6vw'
     }
   };
   const asuImageSize = {
-    container: { height: '5vw' },
+    container: { height: '6vw' },
     image: { 
-      width: '5vw', 
-      height: '4vw', 
+      width: '6vw', 
+      height: '4.8vw', 
       objectFit: 'contain' as const,
-      borderRadius: '0.5vw'
+      borderRadius: '0.6vw'
     }
   };
   const largeImageSize = {
-    container: { height: '6vw' },
+    container: { height: '7.2vw' },
     image: { 
-      width: '7.5vw', 
-      height: '5vw', 
+      width: '9vw', 
+      height: '6vw', 
       objectFit: 'contain' as const,
-      borderRadius: '0.5vw'
+      borderRadius: '0.6vw'
     }
   };
 
@@ -115,9 +115,9 @@ export default function Portfolio() {
             </div>
 
             <div>
-              <p className="text-[0.9vw] font-bold text-black mb-[0.1vw]">Arizona State University</p>
-              <p className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.1vw]">B.S. Computer Science </p>
-              <p className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.1vw]">GPA: 3.77/4.0</p>
+              <p className="text-[1vw] font-bold text-black mb-[0.1vw]">Arizona State University</p>
+              <p className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.1vw]">B.S. Computer Science </p>
+              <p className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.1vw]">GPA: 3.77/4.0</p>
             </div>
           </div>
         </div>
@@ -129,12 +129,12 @@ export default function Portfolio() {
         >
           <div className="flex flex-col items-center text-center space-y-[0.5vw] h-full justify-center">
             <div className="bg-white/90 rounded-[0.8vw] p-[0.5vw] shadow-md">
-              <FaProjectDiagram className="text-[1.5vw] text-[#1877F2]" />
+              <FaProjectDiagram className="text-[1.8vw] text-[#1877F2]" />
             </div>
             <div>
-              <h3 className="text-[0.9vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Projects</h3>
-              <h3 className="text-[0.9vw] font-bold text-gray-800 mb-[0.1vw]">CarePilot AI Assistant</h3>
-              <h3 className="text-[0.7vw] text-gray-600">6+ Projects</h3>
+              <h3 className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Projects</h3>
+              <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">CarePilot AI Assistant</h3>
+              <h3 className="text-[0.8vw] text-gray-600">6+ Projects</h3>
             </div>
           </div>
         </div>
@@ -149,8 +149,8 @@ export default function Portfolio() {
               <Image src="/img/ethical_hackathon.jpg" alt="Ethical Hackathon Logo" width={0} height={0} sizes="100vw" style={largeImageSize.image} className="rounded-[1vw]" />
             </div>
             <div>
-              <h3 className="text-[0.9vw] font-bold text-gray-800 mb-[0.1vw]">🏆 2nd place in Hackathon</h3>
-              <span className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.3vw]">OpenAI + Next.js + Supabase</span>
+              <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">🏆 2nd place in Hackathon</h3>
+              <span className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">OpenAI + Next.js + Supabase</span>
             </div>
           </div>
         </div>
@@ -159,8 +159,8 @@ export default function Portfolio() {
         <div 
           onClick={() => window.open('/pdf/JeongJun_Resume_V39.pdf', '_blank')}
           className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-white rounded-[1.5vw] p-[4vw] shadow-2xl border-[0.2vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
-          <h1 className="text-[1.8vw] font-extrabold text-[#1877F2] mb-[0.8vw]">JeongJun Song (Jun)</h1>
-          <h2 className="text-[0.9vw] font-bold text-gray-800 mb-[1vw]">Full Stack Developer & AI Agent Platform Builder</h2>
+          <h1 className="text-[2.1vw] font-extrabold text-[#1877F2] mb-[0.8vw]">JeongJun Song (Jun)</h1>
+          <h2 className="text-[1vw] font-bold text-gray-800 mb-[1vw]">Full Stack Developer & AI Agent Platform Builder</h2>
           <div className="grid grid-cols-1 gap-[1.5vw] text-gray-700 text-[2.5vw]"></div>
         </div>
 
@@ -174,28 +174,28 @@ export default function Portfolio() {
             <div className="flex flex-col items-center space-y-[1vw]">
               {/* React Icon */}
               <div className="flex flex-col items-center">
-                <SiReact className="text-[5vw] text-[#8B5CF6] mb-[0.3vw]" />
+                <SiReact className="text-[6vw] text-[#8B5CF6] mb-[0.3vw]" />
               </div>
               
               {/* n8n Icon */}
               <div className="flex flex-col items-center">
-                <SiN8N className="text-[3vw] text-[#EF7C28]" />
+                <SiN8N className="text-[3.6vw] text-[#EF7C28]" />
               </div>
             </div>
             
             {/* Right Side - Text */}
             <div className="flex flex-col justify-start text-left space-y-[0.3vw] mt-[0.5vw]">
-              <div className="text-[1vw] font-bold text-black">React</div>
-              <div className="text-[1vw] font-bold text-black">
+              <div className="text-[1.2vw] font-bold text-black">React</div>
+              <div className="text-[1.2vw] font-bold text-black">
                 TypeScript
               </div>
-              <div className="text-[1vw] font-bold text-black mb-[1vw]">
+              <div className="text-[1.2vw] font-bold text-black mb-[1vw]">
                 Tailwind CSS
               </div>
-              <div className="text-[1vw] font-bold text-[#38BDF8]">
+              <div className="text-[1.2vw] font-bold text-[#38BDF8]">
                 n8n
               </div>
-              <div className="text-[1vw] font-bold text-[#38BDF8]">
+              <div className="text-[1.2vw] font-bold text-[#38BDF8]">
                 AI Agent
               </div>
             </div>
@@ -206,8 +206,8 @@ export default function Portfolio() {
         <div className="row-start-3 col-start-3 bg-white rounded-[1.5vw] p-[3vw] shadow-2xl border-[0.2vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle cursor-default">
           <div className="flex flex-col items-center text-center space-y-[0.8vw] h-full justify-center">
             <div>
-              <h3 className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.3vw]">2025. Designed by Jun</h3>
-              <p className="text-[1vw] text-gray-600 italic leading-relaxed">
+              <h3 className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">2025. Designed by Jun</h3>
+              <p className="text-[1.2vw] text-gray-600 italic leading-relaxed">
                 "You can not connect the dots looking forward, you can only connect them looking backward."
               </p>
             </div>
@@ -224,8 +224,8 @@ export default function Portfolio() {
               <Image src="/img/MLOPS.jpg" alt="MLOps Logo" width={0} height={0} sizes="100vw" style={largeImageSize.image} className="rounded-[1vw]" />
             </div>
             <div>
-              <h3 className="text-[0.9vw] font-bold text-gray-800 mb-[0.1vw]">+2 years of AI/ML Experience</h3>
-              <p className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Train, Optimize, Deploy</p>
+              <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">+2 years of AI/ML Experience</h3>
+              <p className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Train, Optimize, Deploy</p>
             </div>
           </div>
         </div>
@@ -237,12 +237,12 @@ export default function Portfolio() {
         >
           <div className="flex flex-col items-center text-center space-y-[0.5vw] h-full justify-center">
             <div className="bg-white/90 rounded-[0.8vw] p-[0.5vw] shadow-md">
-              <FaMedal className="text-[1.5vw] text-[#1877F2]" />
+              <FaMedal className="text-[1.8vw] text-[#1877F2]" />
             </div>
             <div>
-              <h3 className="text-[0.9vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Military Service & Volunteer</h3>
-              <p className="text-[0.9vw] font-bold text-gray-800 mb-[0.1vw]">UN Peacekeepers</p>
-              <p className="text-[0.7vw] text-gray-600">South Sudan • Driver & Interpreter</p>
+              <h3 className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Military Service & Volunteer</h3>
+              <p className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">UN Peacekeepers</p>
+              <p className="text-[0.8vw] text-gray-600">South Sudan • Driver & Interpreter</p>
             </div>
           </div>
         </div>
@@ -254,19 +254,19 @@ export default function Portfolio() {
         >
           <div className="flex flex-col items-center text-center space-y-[0.4vw] h-full justify-center w-full">
             <div className="bg-black rounded-[0.8vw] flex items-center justify-center mb-[0.3vw] shadow-lg border-[0.2vw] border-white"
-              style={{ width: '9vw', height: '9vw' }}>
-              <span className="text-white font-extrabold text-[4.5vw]">100</span>
+              style={{ width: '11vw', height: '11vw' }}>
+              <span className="text-white font-extrabold text-[5.4vw]">100</span>
             </div>
             <div className="flex flex-col items-center space-y-[0.1vw] w-full">
               <div className="bg-white/80 rounded-[0.8vw] px-[0.5vw] py-[0.1vw] shadow-md w-fit mx-auto">
-                <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 drop-shadow-md text-[1.5vw]">100 hrs/week</h3>
+                <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 drop-shadow-md text-[1.7vw]">100 hrs/week</h3>
               </div>
               <div className="bg-white/70 rounded-[0.8vw] px-[0.5vw] py-[0.1vw] shadow-md w-fit mx-auto">
-                <p className="font-extrabold text-orange-700 drop-shadow-md text-[1.3vw]">I am still hungry</p>
+                <p className="font-extrabold text-orange-700 drop-shadow-md text-[1.5vw]">I am still hungry</p>
               </div>
               <div className="bg-white/60 rounded-[0.8vw] px-[0.4vw] py-[0.1vw] shadow w-fit mx-auto mt-[0.1vw] flex items-center justify-center">
-                <span className="text-[1vw] mr-[0.3vw]">🔥</span>
-                <span className="font-bold text-orange-800 drop-shadow-sm text-[1vw]">Relentless Passion</span>
+                <span className="text-[1.2vw] mr-[0.3vw]">🔥</span>
+                <span className="font-bold text-orange-800 drop-shadow-sm text-[1.2vw]">Relentless Passion</span>
               </div>
             </div>
           </div>
@@ -280,21 +280,21 @@ export default function Portfolio() {
           <div className="grid grid-cols-2 grid-rows-2 gap-[0.5vw] h-full w-full items-center justify-center">
             {/* GitHub */}
             <div className="bg-white/90 rounded-[0.8vw] p-[0.8vw] shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
-              <FaGithub className="text-[2vw] text-gray-800" />
+              <FaGithub className="text-[2.4vw] text-gray-800" />
             </div>
             {/* LinkedIn */}
             <div className="bg-white/90 rounded-[0.8vw] p-[0.8vw] shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
-              <FaLinkedin className="text-[2vw] text-blue-600" />
+              <FaLinkedin className="text-[2.4vw] text-blue-600" />
             </div>
             {/* Google G */}
             <div className="bg-white/90 rounded-[0.8vw] p-[0.8vw] shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="2vw" height="2vw">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="2.4vw" height="2.4vw">
                 <g><path fill="#4285F4" d="M43.611 20.083H42V20H24v8h11.303C33.973 32.833 29.373 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c2.69 0 5.164.957 7.104 2.53l6.062-6.062C33.984 5.16 29.284 3 24 3 12.954 3 4 11.954 4 23s8.954 20 20 20c10.477 0 19.477-7.615 19.477-19.477 0-1.305-.138-2.568-.366-3.773z"/><path fill="#34A853" d="M6.306 14.691l6.571 4.819C14.655 16.163 19.004 13 24 13c2.69 0 5.164.957 7.104 2.53l6.062-6.062C33.984 5.16 29.284 3 24 3c-7.732 0-14.41 4.41-17.694 11.691z"/><path fill="#FBBC05" d="M24 43c5.205 0 9.963-1.717 13.627-4.60l-6.293-5.146C29.373 36 24 36 24 36c-5.373 0-9.973-3.167-11.303-8H6.306C8.59 38.59 15.268 43 24 43z"/><path fill="#EA4335" d="M43.611 20.083H42V20H24v8h11.303c-1.13 3.833-5.73 8-11.303 8-2.69 0-5.164-.957-7.104-2.53l-6.062 6.062C14.016 42.84 18.716 45 24 45c7.732 0 14.41-4.41 17.694-11.691z"/></g>
               </svg>
             </div>
             {/* X/Twitter */}
             <div className="bg-white/90 rounded-[0.8vw] p-[0.8vw] shadow-lg hover:shadow-xl flex items-center justify-center hover:bg-white transition-all duration-300 w-full h-full hover:-translate-y-1">
-              <FaXTwitter className="text-[2vw] text-black" />
+              <FaXTwitter className="text-[2.4vw] text-black" />
             </div>
           </div>
         </div>
