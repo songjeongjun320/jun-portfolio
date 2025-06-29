@@ -157,7 +157,7 @@ export default function Portfolio() {
 
         {/* Main Card - Center, 2x1 */}
         <div 
-          onClick={() => window.open('/pdf/JeongJun_Resume_V39.pdf', '_blank')}
+          onClick={() => window.open('/pdf/JeongJun_Resume_V40.pdf', '_blank')}
           className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-white rounded-[1.5vw] p-[4vw] shadow-2xl border-[0.2vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
           <h1 className="text-[2.1vw] font-extrabold text-[#1877F2] mb-[0.8vw]">JeongJun Song (Jun)</h1>
           <h2 className="text-[1vw] font-bold text-gray-800 mb-[1vw]">Full Stack Developer & AI Agent Platform Builder</h2>
