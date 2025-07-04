@@ -1,10 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { FaGraduationCap, FaBriefcase, FaCode, FaProjectDiagram, FaTrophy, FaEnvelope, FaMedal, FaArrowLeft, FaQuoteLeft, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaProjectDiagram, FaMedal, FaArrowLeft, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiGmail, SiNextdotjs, SiSupabase, SiN8N, SiPython, SiReact } from 'react-icons/si';
-import IntroSection from '@/components/sections/IntroSection';
+import { SiN8N, SiReact } from 'react-icons/si';
 import EducationSection from '@/components/sections/EducationSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
@@ -21,15 +20,6 @@ export default function Portfolio() {
   // 공통 스타일 정의
   const imageContainerStyle = "flex items-center justify-center w-full";
   const cardContainerStyle = "flex flex-col items-center text-center h-full justify-center";
-  const standardImageSize = {
-    container: { height: '7.2vw' },
-    image: { 
-      width: '7.2vw', 
-      height: '5.4vw', 
-      objectFit: 'contain' as const,
-      borderRadius: '0.6vw'
-    }
-  };
   const asuImageSize = {
     container: { height: '6vw' },
     image: { 
@@ -129,10 +119,10 @@ export default function Portfolio() {
         >
           <div className="flex flex-col items-center text-center space-y-[0.5vw] h-full justify-center">
             <div className="bg-white/90 rounded-[0.8vw] p-[0.5vw] shadow-md">
-              <FaProjectDiagram className="text-[1.8vw] text-[#1877F2]" />
+              <FaProjectDiagram className="text-[3.5vw] md:text-[2.8vw] lg:text-[2.2vw] text-[#1877F2]" />
             </div>
             <div>
-              <h3 className="text-[1vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Projects</h3>
+              <h3 className="text-[1.8vw] md:text-[1.4vw] lg:text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">Projects</h3>
               <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">CarePilot AI Assistant</h3>
               <h3 className="text-[0.8vw] text-gray-600">6+ Projects</h3>
             </div>
