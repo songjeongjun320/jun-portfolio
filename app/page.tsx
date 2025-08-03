@@ -97,7 +97,11 @@ export default function Portfolio() {
         {/* Education Card */}
         <div
           onClick={() => setCurrentView('education')}
-          className="cursor-pointer bg-white rounded-[1.5vw] p-[2.5vw] shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-[0.2vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
+          className="card-base card-primary card-hover-primary card-focus flex flex-col items-center justify-center"
+          style={{padding: 'var(--space-5)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="View education details"
         >
           <div className={`${cardContainerStyle} space-y-1`}>
             <div className={imageContainerStyle} style={asuImageSize.container}>
@@ -115,7 +119,11 @@ export default function Portfolio() {
         {/* Projects Card - Top Center */}
         <div
           onClick={() => setCurrentView('projects')}
-          className="cursor-pointer bg-white rounded-[1.5vw] p-[2vw] shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border-[0.1vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-2 row-start-1"
+          className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center col-start-2 row-start-1"
+          style={{padding: 'var(--space-4)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="View projects portfolio"
         >
           <div className="flex flex-col items-center text-center space-y-[0.5vw] h-full justify-center">
             <div className="bg-white/90 rounded-[0.8vw] p-[0.5vw] shadow-md">
@@ -132,7 +140,11 @@ export default function Portfolio() {
         {/* Honors Card - Top Right */}
         <div
           onClick={() => setCurrentView('honors')}
-          className="cursor-pointer bg-white rounded-[1.5vw] p-[2.5vw] shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.04] border-[0.2vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center col-start-3 row-start-1"
+          className="card-base card-primary card-hover-primary card-focus flex flex-col items-center justify-center col-start-3 row-start-1"
+          style={{padding: 'var(--space-5)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="View honors and awards"
         >
           <div className={`${cardContainerStyle} space-y-[0.2vw]`}>
             <div className={imageContainerStyle} style={largeImageSize.container}>
@@ -148,7 +160,12 @@ export default function Portfolio() {
         {/* Main Card - Center, 2x1 */}
         <div 
           onClick={() => window.open('/pdf/JeongJun_Resume_V40.pdf', '_blank')}
-          className="cursor-pointer col-start-2 col-end-4 row-start-2 row-end-3 bg-white rounded-[1.5vw] p-[4vw] shadow-2xl border-[0.2vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center hover:shadow-2xl transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle">
+          className="card-base card-hero col-start-2 col-end-4 row-start-2 row-end-3 flex flex-col items-center justify-center hover:animate-pulse-gentle"
+          style={{padding: 'var(--space-8)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="Download resume PDF"
+        >
           <h1 className="text-[2.1vw] font-extrabold text-[#1877F2] mb-[0.8vw]">JeongJun Song (Jun)</h1>
           <h2 className="text-[1vw] font-bold text-gray-800 mb-[1vw]">Full Stack Developer & AI Agent Platform Builder</h2>
           <div className="grid grid-cols-1 gap-[1.5vw] text-gray-700 text-[2.5vw]"></div>
@@ -157,7 +174,11 @@ export default function Portfolio() {
         {/* Tech Stack Card */}
         <div
           onClick={() => setCurrentView('skills')}
-          className="cursor-pointer bg-white rounded-[1.5vw] p-[2vw] shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border-[0.1vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-2"
+          className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center row-start-3 col-start-2"
+          style={{padding: 'var(--space-4)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="View technical skills"
         >
           <div className="flex items-start justify-center h-full w-full gap-[1.5vw]">
             {/* Left Side - Icons */}
@@ -193,7 +214,8 @@ export default function Portfolio() {
         </div>
 
         {/* Quote Card - Bottom Center, now 1x1 */}
-        <div className="row-start-3 col-start-3 bg-white rounded-[1.5vw] p-[3vw] shadow-2xl border-[0.2vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center transition-all duration-300 hover:scale-[1.05] hover:animate-pulse-gentle cursor-default">
+        <div className="card-base card-tertiary card-hover-gentle row-start-3 col-start-3 flex flex-col items-center justify-center hover:animate-pulse-gentle cursor-default"
+             style={{padding: 'var(--space-6)'}}>
           <div className="flex flex-col items-center text-center space-y-[0.8vw] h-full justify-center">
             <div>
               <h3 className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">2025. Designed by Jun</h3>
@@ -207,7 +229,11 @@ export default function Portfolio() {
         {/* Experience Card - Bottom Left */}
         <div
           onClick={() => setCurrentView('experience')}
-          className="cursor-pointer bg-white rounded-[1.5vw] p-[2vw] shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border-[0.1vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center"
+          className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center"
+          style={{padding: 'var(--space-4)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="View professional experience"
         >
           <div className={`${cardContainerStyle} space-y-[0.2vw]`}>
             <div className={imageContainerStyle} style={largeImageSize.container}>
@@ -223,7 +249,11 @@ export default function Portfolio() {
         {/* Military Card - Bottom Right */}
         <div
           onClick={() => setCurrentView('military')}
-          className="cursor-pointer bg-white rounded-[1.5vw] p-[2vw] shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border-[0.1vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-3 col-start-4"
+          className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center row-start-3 col-start-4"
+          style={{padding: 'var(--space-4)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="View military service and volunteer work"
         >
           <div className="flex flex-col items-center text-center space-y-[0.5vw] h-full justify-center">
             <div className="bg-white/90 rounded-[0.8vw] p-[0.5vw] shadow-md">
@@ -240,7 +270,14 @@ export default function Portfolio() {
         {/* 100 hrs/week Card - Left Middle, Responsive & Emphasized */}
         <div
           onClick={() => window.open('/pdf/Recommendation.pdf', '_blank')}
-          className="bg-gradient-to-br from-yellow-200 via-orange-300 to-red-400 rounded-[1.5vw] shadow-2xl border-[0.4vw] border-yellow-400 animate-pulse-slow flex flex-col items-center justify-center row-start-2 col-start-1 row-span-2 cursor-pointer transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_10px_rgba(255,140,0,0.3)]"
+          className="card-gradient-special flex flex-col items-center justify-center row-start-2 col-start-1 row-span-2 cursor-pointer"
+          style={{
+            padding: 'var(--space-6)',
+            borderRadius: 'var(--radius-2xl)'
+          }}
+          tabIndex={0}
+          role="button"
+          aria-label="View recommendation letter"
         >
           <div className="flex flex-col items-center text-center space-y-[0.4vw] h-full justify-center w-full">
             <div className="bg-black rounded-[0.8vw] flex items-center justify-center mb-[0.3vw] shadow-lg border-[0.2vw] border-white"
@@ -265,7 +302,11 @@ export default function Portfolio() {
         {/* Contact Card - Top Right */}
         <div
           onClick={() => setCurrentView('contact')}
-          className="cursor-pointer bg-white rounded-[1.5vw] p-[2vw] shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] border-[0.1vw] border-[#1877F2]/20 backdrop-blur-sm flex flex-col items-center justify-center row-start-1 col-start-4"
+          className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center row-start-1 col-start-4"
+          style={{padding: 'var(--space-4)'}}
+          tabIndex={0}
+          role="button"
+          aria-label="View contact information and social links"
         >
           <div className="grid grid-cols-2 grid-rows-2 gap-[0.5vw] h-full w-full items-center justify-center">
             {/* GitHub */}

@@ -205,43 +205,183 @@ html {
 */
 
 @layer components {
-  /* Glass morphism effect */
+  /* ==========================================================================
+     PROFESSIONAL CARD SYSTEM - Using Design Tokens
+     ========================================================================== */
+
+  /* Base Card Styles */
+  .card-base {
+    background: var(--color-neutral-0);
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(24, 119, 242, 0.15);
+    backdrop-filter: blur(8px);
+    transition: all var(--duration-300) var(--ease-in-out);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Card Elevation Levels */
+  .card-primary {
+    box-shadow: var(--shadow-lg), var(--shadow-primary);
+    border-width: 2px;
+    border-color: rgba(24, 119, 242, 0.2);
+  }
+
+  .card-secondary {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(24, 119, 242, 0.12);
+  }
+
+  .card-tertiary {
+    box-shadow: var(--shadow-base);
+    border-color: rgba(24, 119, 242, 0.08);
+  }
+
+  /* Card Hover States */
+  .card-hover-primary:hover {
+    transform: scale(1.04);
+    box-shadow: var(--shadow-2xl), var(--shadow-primary-lg);
+    border-color: rgba(24, 119, 242, 0.3);
+  }
+
+  .card-hover-secondary:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-xl), var(--shadow-primary);
+    border-color: rgba(24, 119, 242, 0.25);
+  }
+
+  .card-hover-gentle:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg), var(--shadow-primary);
+    border-color: rgba(24, 119, 242, 0.2);
+  }
+
+  /* Focus States for Accessibility */
+  .card-focus:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-xl), 0 0 0 4px rgba(24, 119, 242, 0.1);
+  }
+
+  .card-focus:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: var(--shadow-lg), var(--shadow-primary);
+  }
+
+  /* Special Card Variants */
+  .card-hero {
+    background: var(--color-neutral-0);
+    box-shadow: var(--shadow-2xl), var(--shadow-primary-lg);
+    border: 2px solid rgba(24, 119, 242, 0.25);
+    transition: all var(--duration-500) var(--ease-in-out);
+  }
+
+  .card-hero:hover {
+    transform: scale(1.05);
+    box-shadow: 
+      0 32px 60px -12px rgba(0, 0, 0, 0.25),
+      0 20px 25px -5px rgba(24, 119, 242, 0.15),
+      0 10px 15px -3px rgba(24, 119, 242, 0.1);
+    border-color: rgba(24, 119, 242, 0.4);
+  }
+
+  .card-gradient-special {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FCD34D 25%, #F59E0B 50%, #DC2626 100%);
+    border: 3px solid #FBBF24;
+    box-shadow: 
+      var(--shadow-2xl),
+      0 0 40px 10px rgba(255, 140, 0, 0.15);
+    animation: pulse-special 2.5s infinite;
+  }
+
+  .card-gradient-special:hover {
+    transform: scale(1.05);
+    box-shadow: 
+      var(--shadow-2xl),
+      0 0 60px 20px rgba(255, 140, 0, 0.25);
+  }
+
+  /* Glass morphism effect - Updated */
   .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 2rem; /* 32px - rounded-4xl과 일치 */
+    border-radius: var(--radius-3xl);
   }
   
   /* Professional button styles */
   .btn-primary {
-    @apply bg-gradient-to-r from-teal-400 to-blue-500 text-white px-6 py-3 rounded-3xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+    background: var(--gradient-primary);
+    color: var(--color-neutral-0);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-3xl);
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--duration-300) var(--ease-in-out);
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--shadow-xl);
+    transform: scale(1.05);
   }
   
   .btn-secondary {
-    @apply bg-gray-800/60 backdrop-blur-sm text-white px-6 py-3 rounded-3xl font-semibold border border-gray-600/30 hover:border-teal-400/50 transition-all duration-300 hover:bg-gray-700/60;
+    background: rgba(38, 38, 38, 0.6);
+    backdrop-filter: blur(8px);
+    color: var(--color-neutral-0);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-3xl);
+    font-weight: 600;
+    border: 1px solid rgba(163, 163, 163, 0.3);
+    transition: all var(--duration-300) var(--ease-in-out);
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(24, 119, 242, 0.5);
+    background: rgba(64, 64, 64, 0.6);
   }
   
-  /* Card styles */
+  /* Card styles - Legacy support */
   .card {
-    @apply bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm rounded-4xl p-6 border border-gray-700/30 shadow-xl;
+    background: linear-gradient(135deg, rgba(23, 23, 23, 0.8) 0%, rgba(38, 38, 38, 0.6) 100%);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-3xl);
+    padding: var(--space-6);
+    border: 1px solid rgba(64, 64, 64, 0.3);
+    box-shadow: var(--shadow-xl);
   }
   
   .card-hover {
-    @apply hover:border-teal-400/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500;
+    transition: all var(--duration-500) var(--ease-in-out);
+  }
+
+  .card-hover:hover {
+    border-color: rgba(24, 119, 242, 0.3);
+    box-shadow: var(--shadow-2xl);
+    transform: scale(1.02);
   }
   
   /* Typography enhancements */
   .heading-gradient {
-    @apply text-transparent bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text;
+    background: linear-gradient(135deg, var(--color-neutral-0) 0%, var(--color-neutral-100) 50%, var(--color-neutral-0) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
   
   .text-gradient-primary {
-    @apply text-transparent bg-gradient-to-r from-teal-400 via-blue-400 to-green-400 bg-clip-text;
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
   
   .text-gradient-secondary {
-    @apply text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text;
+    background: linear-gradient(135deg, #A855F7 0%, #EC4899 50%, #EF4444 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
 }
 
@@ -405,6 +545,20 @@ img {
 
 .animate-pulse-gentle {
   animation: pulse-gentle 1.5s ease-in-out infinite;
+}
+
+/* Special pulse animation for the gradient card */
+@keyframes pulse-special {
+  0%, 100% { 
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 40px 10px rgba(255, 140, 0, 0.15);
+  }
+  50% { 
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 60px 20px rgba(255, 140, 0, 0.35);
+  }
 }
 
 /* Plasma Background Animations */
