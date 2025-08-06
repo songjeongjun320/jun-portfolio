@@ -159,7 +159,7 @@ export default function Portfolio() {
 
         {/* Main Card - Center, 2x1 */}
         <div 
-          onClick={() => window.open('/pdf/JeongJun_Resume_V40.pdf', '_blank')}
+          onClick={() => window.open('/pdf/JeongJun_Resume_V41.pdf', '_blank')}
           className="card-base card-hero col-start-2 col-end-4 row-start-2 row-end-3 flex flex-col items-center justify-center hover:animate-pulse-gentle"
           style={{padding: 'var(--space-8)'}}
           tabIndex={0}
