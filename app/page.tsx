@@ -11,6 +11,7 @@ import Honors_AwardsSection from '@/components/sections/Honors_AwardsSection';
 import SkillsSection from '@/components/sections/SkillsSection';
 import MilitarySection from '@/components/sections/MilitarySection';
 import ContactInfoSection from '@/components/sections/ContactInfoSection';
+import DevelopmentLogSection from '@/components/sections/DevelopmentLogSection';
 import Image from 'next/image';
 
 export default function Portfolio() {
@@ -57,6 +58,8 @@ export default function Portfolio() {
         return <MilitarySection onBack={handleBack} />;
       case 'contact':
         return <ContactInfoSection onBack={handleBack} />;
+      case 'devlog':
+        return <DevelopmentLogSection onBack={handleBack} />;
       default:
         return null;
     }
@@ -159,12 +162,12 @@ export default function Portfolio() {
 
         {/* Main Card - Center, 2x1 */}
         <div 
-          onClick={() => window.open('/pdf/JeongJun_Resume_V41.pdf', '_blank')}
+          onClick={() => window.open('/resume', '_self')}
           className="card-base card-hero col-start-2 col-end-4 row-start-2 row-end-3 flex flex-col items-center justify-center hover:animate-pulse-gentle"
           style={{padding: 'var(--space-8)'}}
           tabIndex={0}
           role="button"
-          aria-label="Download resume PDF"
+          aria-label="View resume and recommendation"
         >
           <h1 className="text-[2.1vw] font-extrabold text-[#1877F2] mb-[0.8vw]">JeongJun Song (Jun)</h1>
           <h2 className="text-[1vw] font-bold text-gray-800 mb-[1vw]">Full Stack Developer & AI Agent Platform Builder</h2>
@@ -267,9 +270,9 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* 100 hrs/week Card - Left Middle, Responsive & Emphasized */}
+        {/* Development Log Card - Left Middle */}
         <div
-          onClick={() => window.open('/pdf/Recommendation.pdf', '_blank')}
+          onClick={() => setCurrentView('devlog')}
           className="card-gradient-special flex flex-col items-center justify-center row-start-2 col-start-1 row-span-2 cursor-pointer"
           style={{
             padding: 'var(--space-6)',
@@ -277,7 +280,7 @@ export default function Portfolio() {
           }}
           tabIndex={0}
           role="button"
-          aria-label="View recommendation letter"
+          aria-label="Open development log"
         >
           <div className="flex flex-col items-center text-center space-y-[0.4vw] h-full justify-center w-full">
             <div className="bg-black rounded-[0.8vw] flex items-center justify-center mb-[0.3vw] shadow-lg border-[0.2vw] border-white"
