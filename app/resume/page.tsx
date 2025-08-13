@@ -24,21 +24,30 @@ export default function ResumePage() {
       try {
         const [resumeBuf, recBuf] = await Promise.all([
           fetchArrayBuffer(resumeSrc),
-          fetchArrayBuffer(recSrc)
+          fetchArrayBuffer(recSrc),
         ]);
         const merged = await PDFDocument.create();
         const resumePdf = await PDFDocument.load(resumeBuf);
         const recPdf = await PDFDocument.load(recBuf);
-        const resumePages = await merged.copyPages(resumePdf, resumePdf.getPageIndices());
+        const resumePages = await merged.copyPages(
+          resumePdf,
+          resumePdf.getPageIndices(),
+        );
         resumePages.forEach((p) => merged.addPage(p));
-        const recPages = await merged.copyPages(recPdf, recPdf.getPageIndices());
+        const recPages = await merged.copyPages(
+          recPdf,
+          recPdf.getPageIndices(),
+        );
         recPages.forEach((p) => merged.addPage(p));
         const mergedBytes = await merged.save();
         const blob = new Blob([mergedBytes], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
         if (!isCancelled) setMergedUrl(url);
       } catch (e: unknown) {
-        if (!isCancelled) setError('Could not merge PDFs automatically. Showing side-by-side view.');
+        if (!isCancelled)
+          setError(
+            'Could not merge PDFs automatically. Showing side-by-side view.',
+          );
       }
     })();
     return () => {
@@ -58,7 +67,9 @@ export default function ResumePage() {
           >
             Back
           </button>
-          <h1 className="text-white text-2xl font-extrabold">Resume & Recommendation</h1>
+          <h1 className="text-white text-2xl font-extrabold">
+            Resume & Recommendation
+          </h1>
           <div />
         </div>
 
@@ -75,30 +86,54 @@ export default function ResumePage() {
               </a>
             </div>
             <div className="aspect-[8.5/11] w-full bg-white rounded-xl overflow-hidden">
-              <iframe title="Combined" src={mergedUrl} className="w-full h-full" />
+              <iframe
+                title="Combined"
+                src={mergedUrl}
+                className="w-full h-full"
+              />
             </div>
           </div>
         ) : (
           <>
             {error && (
-              <div className="card-base card-primary p-4 text-white mb-4">{error}</div>
+              <div className="card-base card-primary p-4 text-white mb-4">
+                {error}
+              </div>
             )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="card-base card-secondary p-4">
                 <h2 className="text-white font-bold mb-2">Resume</h2>
                 <div className="aspect-[8.5/11] w-full bg-white rounded-xl overflow-hidden">
-                  <iframe title="Resume" src={resumeSrc} className="w-full h-full" />
+                  <iframe
+                    title="Resume"
+                    src={resumeSrc}
+                    className="w-full h-full"
+                  />
                 </div>
-                <a href={resumeSrc} target="_blank" rel="noreferrer" className="text-blue-200 underline hover:text-white mt-2 inline-block">
+                <a
+                  href={resumeSrc}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-200 underline hover:text-white mt-2 inline-block"
+                >
                   Open in new tab
                 </a>
               </div>
               <div className="card-base card-secondary p-4">
                 <h2 className="text-white font-bold mb-2">Recommendation</h2>
                 <div className="aspect-[8.5/11] w-full bg-white rounded-xl overflow-hidden">
-                  <iframe title="Recommendation" src={recSrc} className="w-full h-full" />
+                  <iframe
+                    title="Recommendation"
+                    src={recSrc}
+                    className="w-full h-full"
+                  />
                 </div>
-                <a href={recSrc} target="_blank" rel="noreferrer" className="text-blue-200 underline hover:text-white mt-2 inline-block">
+                <a
+                  href={recSrc}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-200 underline hover:text-white mt-2 inline-block"
+                >
                   Open in new tab
                 </a>
               </div>
@@ -109,5 +144,3 @@ export default function ResumePage() {
     </div>
   );
 }
-
-

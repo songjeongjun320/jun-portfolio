@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
         sans: [
@@ -49,14 +49,12 @@ const config: Config = {
       },
       borderRadius: {
         '4xl': '2rem', // 32px - rounded-4xl 클래스 정의
-        '5xl': '2.5rem', // 40px - rounded-5xl 클래스 정의  
+        '5xl': '2.5rem', // 40px - rounded-5xl 클래스 정의
         '6xl': '3rem', // 48px - rounded-6xl 클래스 정의
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 };
 
 export default config;

@@ -10,10 +10,12 @@ type Props = {
 };
 
 export default function DevelopmentLogSection({ onBack }: Props) {
-  const [activeProjectId, setActiveProjectId] = useState<string>(devProjects[0]?.id ?? '');
+  const [activeProjectId, setActiveProjectId] = useState<string>(
+    devProjects[0]?.id ?? '',
+  );
   const activeProject: DevProject | undefined = useMemo(
     () => devProjects.find((p) => p.id === activeProjectId),
-    [activeProjectId]
+    [activeProjectId],
   );
 
   const projects = devProjects;
@@ -31,7 +33,9 @@ export default function DevelopmentLogSection({ onBack }: Props) {
           >
             Back
           </button>
-          <h1 className="text-white text-3xl font-extrabold">Dev & Research Logs</h1>
+          <h1 className="text-white text-3xl font-extrabold">
+            Dev & Research Logs
+          </h1>
           <div />
         </div>
 
@@ -82,9 +86,14 @@ export default function DevelopmentLogSection({ onBack }: Props) {
 
           {(activeProject?.logs.length ?? 0) === 0 ? (
             <div className="text-gray-700">
-              No logs yet. Add entries in <code className="font-mono">data/devlogs.ts</code> under <code className="font-mono">{activeProject?.id ?? 'project'}</code>.
+              No logs yet. Add entries in{' '}
+              <code className="font-mono">data/devlogs.ts</code> under{' '}
+              <code className="font-mono">
+                {activeProject?.id ?? 'project'}
+              </code>
+              .
               <div className="mt-3 text-sm text-gray-600">
-{`{
+                {`{
   id: '2025-08-12',
   date: '2025-08-12',
   summary: 'One-line summary',
@@ -98,44 +107,55 @@ export default function DevelopmentLogSection({ onBack }: Props) {
             <div className="divide-y-4 divide-gray-300">
               {activeProject!.logs
                 .slice()
-                .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+                .sort((a, b) =>
+                  a.date < b.date ? 1 : a.date > b.date ? -1 : 0,
+                )
                 .map((entry: DevLogEntry) => (
-                <article key={entry.id} className="py-6">
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                    <h3 className="text-[#1877F2] font-extrabold text-xl">{entry.summary}</h3>
-                    <span className="text-gray-500 text-base font-bold">{entry.date}</span>
-                  </div>
-                  {entry.details && (
-                    <div className="prose max-w-none text-gray-800 mb-2 leading-relaxed">
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{entry.details}</ReactMarkdown>
+                  <article key={entry.id} className="py-6">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                      <h3 className="text-[#1877F2] font-extrabold text-xl">
+                        {entry.summary}
+                      </h3>
+                      <span className="text-gray-500 text-base font-bold">
+                        {entry.date}
+                      </span>
                     </div>
-                  )}
-                  {(entry.tags?.length ?? 0) > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {entry.tags!.map((t) => (
-                        <span key={t} className="bg-gray-100 text-gray-800 text-sm px-2 py-1 rounded-md">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  {(entry.links?.length ?? 0) > 0 && (
-                    <div className="flex flex-wrap gap-3">
-                      {entry.links!.map((l) => (
-                        <a
-                          key={l.href}
-                          href={l.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-blue-600 underline hover:text-blue-800 text-base"
-                        >
-                          {l.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </article>
-              ))}
+                    {entry.details && (
+                      <div className="prose max-w-none text-gray-800 mb-2 leading-relaxed">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                          {entry.details}
+                        </ReactMarkdown>
+                      </div>
+                    )}
+                    {(entry.tags?.length ?? 0) > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-2">
+                        {entry.tags!.map((t) => (
+                          <span
+                            key={t}
+                            className="bg-gray-100 text-gray-800 text-sm px-2 py-1 rounded-md"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {(entry.links?.length ?? 0) > 0 && (
+                      <div className="flex flex-wrap gap-3">
+                        {entry.links!.map((l) => (
+                          <a
+                            key={l.href}
+                            href={l.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-blue-600 underline hover:text-blue-800 text-base"
+                          >
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </article>
+                ))}
             </div>
           )}
         </div>
@@ -143,5 +163,3 @@ export default function DevelopmentLogSection({ onBack }: Props) {
     </div>
   );
 }
-
-

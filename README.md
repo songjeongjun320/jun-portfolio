@@ -24,6 +24,7 @@ You can view the live version of the portfolio at [Jun's Personal Website](https
 ## Folder Structure
 
 Here’s an overview of the project folder structure:
+
 ```
 /portfolio
 ├── /components            # Contains reusable components like Navbar, Footer, etc.

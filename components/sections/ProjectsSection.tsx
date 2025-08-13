@@ -17,7 +17,7 @@ export default function ProjectsSection({ onBack }: ProjectsSectionProps) {
       >
         <FaArrowLeft className="text-blue-600 text-xl" />
       </button>
-      
+
       <h2 className="text-6xl font-extrabold text-[#1877F2] mb-20 text-center tracking-tight">
         Projects
       </h2>
@@ -30,7 +30,10 @@ export default function ProjectsSection({ onBack }: ProjectsSectionProps) {
             classNames="fade"
             unmountOnExit
           >
-            <div className="flex justify-center animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div
+              className="flex justify-center animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <ProjectCard
                 title={project.title}
                 description={project.description}

@@ -63,7 +63,7 @@ export default function MilitarySection({ onBack }: MilitarySectionProps) {
       >
         <FaArrowLeft className="text-blue-600 text-xl" />
       </button>
-      
+
       <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-[#1877F2] mb-[clamp(1rem,4vw,3rem)] text-center tracking-tight uppercase">
         Military Service & Volunteer
       </h2>
@@ -83,19 +83,24 @@ export default function MilitarySection({ onBack }: MilitarySectionProps) {
               <ul className="space-y-[clamp(0.3rem,1vw,1rem)] text-gray-700">
                 {service.content.map((detail, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="text-[clamp(1.1rem,2vw,1.5rem)] text-[#1877F2] font-bold">•</span>
+                    <span className="text-[clamp(1.1rem,2vw,1.5rem)] text-[#1877F2] font-bold">
+                      •
+                    </span>
                     <p className="text-[clamp(0.95rem,1.5vw,1.15rem)] leading-relaxed">
-                      {typeof detail === 'string' ? detail :
-                        detail && detail.type === 'a' ? (
-                          <a
-                            href={detail.props.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#1877F2] hover:text-blue-500 underline transition-colors duration-200"
-                          >
-                            {detail.props.children}
-                          </a>
-                        ) : detail}
+                      {typeof detail === 'string' ? (
+                        detail
+                      ) : detail && detail.type === 'a' ? (
+                        <a
+                          href={detail.props.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#1877F2] hover:text-blue-500 underline transition-colors duration-200"
+                        >
+                          {detail.props.children}
+                        </a>
+                      ) : (
+                        detail
+                      )}
                     </p>
                   </li>
                 ))}

@@ -12,7 +12,7 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
       period: 'Dec 2024 - Present',
       details: [
         'Participating in ARC Research Lab under Assistant Professor Ben Zhou at Arizona State University.',
-        'Leading research on whether Large Language Models (LLMs) can independently learn and infer human language when provided with contextual and auditory information.'
+        'Leading research on whether Large Language Models (LLMs) can independently learn and infer human language when provided with contextual and auditory information.',
       ],
     },
     {
@@ -46,7 +46,7 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
       >
         <FaArrowLeft className="text-blue-600 text-xl" />
       </button>
-      
+
       <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-[#1877F2] mb-[clamp(1rem,4vw,3rem)] text-center tracking-tight">
         Professional Experience
       </h2>
@@ -61,10 +61,14 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
                 <h3 className="text-[clamp(1.3rem,2vw,2rem)] font-extrabold text-[#1877F2] mb-2">
                   {exp.company}
                 </h3>
-                <p className="text-[clamp(1.1rem,1.5vw,1.3rem)] font-semibold text-gray-800">{exp.role}</p>
+                <p className="text-[clamp(1.1rem,1.5vw,1.3rem)] font-semibold text-gray-800">
+                  {exp.role}
+                </p>
               </div>
-                              <div className="bg-[#e3e9fc] px-4 py-2 rounded-4xl border border-blue-100">
-                <span className="text-[clamp(1rem,1.2vw,1.1rem)] text-[#1877F2] font-medium">{exp.period}</span>
+              <div className="bg-[#e3e9fc] px-4 py-2 rounded-4xl border border-blue-100">
+                <span className="text-[clamp(1rem,1.2vw,1.1rem)] text-[#1877F2] font-medium">
+                  {exp.period}
+                </span>
               </div>
             </div>
             <div className="space-y-[clamp(0.3rem,1vw,1rem)]">

@@ -25,7 +25,7 @@ export default function EducationSection({ onBack }: EducationSectionProps) {
       >
         <FaArrowLeft className="text-blue-600 text-xl" />
       </button>
-      
+
       <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-[#1877F2] mb-[clamp(1rem,4vw,3rem)] text-center tracking-wide uppercase leading-tight">
         {title}
       </h2>
@@ -38,8 +38,10 @@ export default function EducationSection({ onBack }: EducationSectionProps) {
             classNames="fade"
             unmountOnExit
           >
-                          <li className="flex items-center gap-4 p-[clamp(0.7rem,2vw,1.5rem)] rounded-4xl bg-white/90 hover:bg-[#e3e9fc] transition-all duration-300 ease-in-out border-2 border-blue-100">
-              <span className="text-[clamp(1.2rem,2vw,2rem)] text-[#1877F2] font-bold">&#8226;</span>
+            <li className="flex items-center gap-4 p-[clamp(0.7rem,2vw,1.5rem)] rounded-4xl bg-white/90 hover:bg-[#e3e9fc] transition-all duration-300 ease-in-out border-2 border-blue-100">
+              <span className="text-[clamp(1.2rem,2vw,2rem)] text-[#1877F2] font-bold">
+                &#8226;
+              </span>
               <span>{item}</span>
             </li>
           </CSSTransition>

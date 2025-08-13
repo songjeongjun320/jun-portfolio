@@ -7,32 +7,36 @@ interface Honors_AwardsSectionProps {
   onBack: () => void;
 }
 
-export default function Honors_AwardsSection({ onBack }: Honors_AwardsSectionProps) {
+export default function Honors_AwardsSection({
+  onBack,
+}: Honors_AwardsSectionProps) {
   const content = [
     {
       title: "ASU Dean's List",
-      period: "2023 - 2024",
-      description: "Academic excellence recognition for maintaining high GPA"
+      period: '2023 - 2024',
+      description: 'Academic excellence recognition for maintaining high GPA',
     },
     {
-      title: "ASU NamU Scholarship",
-      period: "2023 - 2025",
-      description: "Merit-based scholarship for outstanding academic performance"
+      title: 'ASU NamU Scholarship',
+      period: '2023 - 2025',
+      description:
+        'Merit-based scholarship for outstanding academic performance',
     },
     {
-      title: "2nd Prize, Ethical Hackathon",
-      period: "2024",
-      description: "AI LLama and Sentient model implementation project"
+      title: '2nd Prize, Ethical Hackathon',
+      period: '2024',
+      description: 'AI LLama and Sentient model implementation project',
     },
     {
-      title: "FURI Research Presentation",
-      period: "2024",
-      description: "Undergraduate research presentation at Arizona State University"
+      title: 'FURI Research Presentation',
+      period: '2024',
+      description:
+        'Undergraduate research presentation at Arizona State University',
     },
     {
-      title: "Amazon Campus Summer Series",
-      period: "2024",
-      description: "Selected participant in Amazon's exclusive campus program"
+      title: 'Amazon Campus Summer Series',
+      period: '2024',
+      description: "Selected participant in Amazon's exclusive campus program",
     },
   ];
 
@@ -45,7 +49,7 @@ export default function Honors_AwardsSection({ onBack }: Honors_AwardsSectionPro
       >
         <FaArrowLeft className="text-blue-600 text-xl" />
       </button>
-      
+
       <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-[#1877F2] mb-[clamp(1rem,4vw,3rem)] text-center tracking-tight">
         Honors & Awards
       </h2>
@@ -61,7 +65,9 @@ export default function Honors_AwardsSection({ onBack }: Honors_AwardsSectionPro
                 {award.title}
               </h3>
               <div className="bg-[#e3e9fc] px-4 py-2 rounded-4xl border border-blue-100 inline-block mb-4">
-                <span className="text-[clamp(1rem,1.2vw,1.1rem)] text-[#1877F2] font-medium">{award.period}</span>
+                <span className="text-[clamp(1rem,1.2vw,1.1rem)] text-[#1877F2] font-medium">
+                  {award.period}
+                </span>
               </div>
               <p className="text-[clamp(0.95rem,1.5vw,1.15rem)] text-gray-700 leading-relaxed group-hover:text-[#1877F2] transition-colors duration-300">
                 {award.description}

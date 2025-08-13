@@ -40,7 +40,7 @@ export default function IntroSection() {
         <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
           {/* Profile Image */}
           <div
-                          className="relative w-80 h-80 md:w-96 md:h-96 rounded-4xl overflow-hidden border-2 border-gray-700/30 shadow-2xl transform hover:scale-105 transition-all duration-500 cursor-pointer backdrop-blur-sm"
+            className="relative w-80 h-80 md:w-96 md:h-96 rounded-4xl overflow-hidden border-2 border-gray-700/30 shadow-2xl transform hover:scale-105 transition-all duration-500 cursor-pointer backdrop-blur-sm"
             style={{ perspective: '1000px' }}
             onMouseEnter={() => setIsImageFlipped(true)}
             onMouseLeave={() => setIsImageFlipped(false)}
@@ -87,13 +87,18 @@ export default function IntroSection() {
             <div className="bg-gray-900/60 backdrop-blur-sm rounded-4xl p-6 border border-gray-700/30">
               <ul className="text-2xl leading-relaxed text-gray-200 space-y-2">
                 {content.description.map((line, idx) => (
-                  <li key={idx}><span className="font-bold">{line}</span></li>
+                  <li key={idx}>
+                    <span className="font-bold">{line}</span>
+                  </li>
                 ))}
               </ul>
             </div>
             <div className="grid grid-cols-2 gap-4 mt-8">
               {content.details.map((item, index) => (
-                <div key={index} className="flex items-center gap-3 bg-gray-800/40 backdrop-blur-sm rounded-4xl p-4 border border-gray-700/20 hover:border-teal-400/30 transition-colors duration-300">
+                <div
+                  key={index}
+                  className="flex items-center gap-3 bg-gray-800/40 backdrop-blur-sm rounded-4xl p-4 border border-gray-700/20 hover:border-teal-400/30 transition-colors duration-300"
+                >
                   <div className="w-3 h-3 bg-gradient-to-r from-teal-400 to-blue-400 rounded-full"></div>
                   <span className="text-gray-200 font-medium">{item}</span>
                 </div>
