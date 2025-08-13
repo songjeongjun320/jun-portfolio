@@ -31,7 +31,7 @@ export default function DevelopmentLogSection({ onBack }: Props) {
           >
             Back
           </button>
-          <h1 className="text-white text-3xl font-extrabold">Dev Logs</h1>
+          <h1 className="text-white text-3xl font-extrabold">Dev & Research Logs</h1>
           <div />
         </div>
 
