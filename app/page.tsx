@@ -19,6 +19,7 @@ import MilitarySection from '@/components/sections/MilitarySection';
 import ContactInfoSection from '@/components/sections/ContactInfoSection';
 import DevelopmentLogSection from '@/components/sections/DevelopmentLogSection';
 import Image from 'next/image';
+import WelcomeModal from '@/components/WelcomeModal';
 
 export default function Portfolio() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -85,6 +86,7 @@ export default function Portfolio() {
 
   return (
     <div className="h-screen bg-gradient-to-t from-purple-950 via-violet-950 via-indigo-950 to-blue-950 p-[1vw] relative">
+      <WelcomeModal />
       {/* 추가 그라데이션 오버레이 */}
       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/30 pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-violet-950/30 via-transparent to-indigo-950/30 pointer-events-none"></div>
