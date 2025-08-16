@@ -19,11 +19,43 @@ import MilitarySection from '@/components/sections/MilitarySection';
 import ContactInfoSection from '@/components/sections/ContactInfoSection';
 import DevelopmentLogSection from '@/components/sections/DevelopmentLogSection';
 import Image from 'next/image';
-import WelcomeModal from '@/components/WelcomeModal';
+import HoverTooltip from '@/components/HoverTooltip'; // 툴팁 컴포넌트 import
+
+// 툴팁 콘텐츠 정의
+const TOOLTIP_CONTENT = {
+  education: 'Click to see my academic background and degrees.',
+  projects: 'Explore my personal and professional projects.',
+  honors: 'Check out my achievements and awards.',
+  resume: 'View my detailed resume and recommendations.',
+  skills: 'Discover my technical skills and expertise.',
+  quote: "A little quote that inspires me. - Steve Jobs",
+  experience: 'Learn about my professional work experience.',
+  military: 'Details about my military service and volunteer work.',
+  devlog: 'Follow my development journey and insights.',
+  contact: 'Find my contact information and social media links.'
+};
 
 export default function Portfolio() {
   const [currentView, setCurrentView] = useState('dashboard');
   const [showCardsOnly, setShowCardsOnly] = useState(true);
+  const [tooltip, setTooltip] = useState({
+    content: '',
+    position: { x: 0, y: 0 },
+    visible: false
+  });
+
+  // 마우스 이벤트 핸들러
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setTooltip(prev => ({ ...prev, position: { x: e.clientX, y: e.clientY } }));
+  };
+
+  const handleMouseEnter = (content: string) => {
+    setTooltip(prev => ({ ...prev, content, visible: true }));
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip(prev => ({ ...prev, visible: false }));
+  };
 
   // 공통 스타일 정의
   const imageContainerStyle = 'flex items-center justify-center w-full';
@@ -86,7 +118,11 @@ export default function Portfolio() {
 
   return (
     <div className="h-screen bg-gradient-to-t from-purple-950 via-violet-950 via-indigo-950 to-blue-950 p-[1vw] relative">
-      <WelcomeModal />
+      <HoverTooltip
+        content={tooltip.content}
+        position={tooltip.position}
+        visible={tooltip.visible}
+      />
       {/* 추가 그라데이션 오버레이 */}
       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/30 pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-violet-950/30 via-transparent to-indigo-950/30 pointer-events-none"></div>
@@ -109,6 +145,9 @@ export default function Portfolio() {
         {/* Education Card */}
         <div
           onClick={() => setCurrentView('education')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.education)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-primary card-hover-primary card-focus flex flex-col items-center justify-center"
           style={{ padding: 'var(--space-5)' }}
           tabIndex={0}
@@ -145,6 +184,9 @@ export default function Portfolio() {
         {/* Projects Card - Top Center */}
         <div
           onClick={() => setCurrentView('projects')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.projects)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center col-start-2 row-start-1"
           style={{ padding: 'var(--space-4)' }}
           tabIndex={0}
@@ -170,6 +212,9 @@ export default function Portfolio() {
         {/* Honors Card - Top Right */}
         <div
           onClick={() => setCurrentView('honors')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.honors)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-primary card-hover-primary card-focus flex flex-col items-center justify-center col-start-3 row-start-1"
           style={{ padding: 'var(--space-5)' }}
           tabIndex={0}
@@ -205,6 +250,9 @@ export default function Portfolio() {
         {/* Main Card - Center, 2x1 */}
         <div
           onClick={() => window.open('/resume', '_self')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.resume)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-hero col-start-2 col-end-4 row-start-2 row-end-3 flex flex-col items-center justify-center hover:animate-pulse-gentle"
           style={{ padding: 'var(--space-8)' }}
           tabIndex={0}
@@ -223,6 +271,9 @@ export default function Portfolio() {
         {/* Tech Stack Card */}
         <div
           onClick={() => setCurrentView('skills')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.skills)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center row-start-3 col-start-2"
           style={{ padding: 'var(--space-4)' }}
           tabIndex={0}
@@ -262,6 +313,9 @@ export default function Portfolio() {
 
         {/* Quote Card - Bottom Center, now 1x1 */}
         <div
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.quote)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-tertiary card-hover-gentle row-start-3 col-start-3 flex flex-col items-center justify-center hover:animate-pulse-gentle cursor-default"
           style={{ padding: 'var(--space-6)' }}
         >
@@ -281,6 +335,9 @@ export default function Portfolio() {
         {/* Experience Card - Bottom Left */}
         <div
           onClick={() => setCurrentView('experience')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.experience)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center"
           style={{ padding: 'var(--space-4)' }}
           tabIndex={0}
@@ -316,6 +373,9 @@ export default function Portfolio() {
         {/* Military Card - Bottom Right */}
         <div
           onClick={() => setCurrentView('military')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.military)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center row-start-3 col-start-4"
           style={{ padding: 'var(--space-4)' }}
           tabIndex={0}
@@ -343,6 +403,9 @@ export default function Portfolio() {
         {/* Development Log Card - Left Middle */}
         <div
           onClick={() => setCurrentView('devlog')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.devlog)}
+          onMouseLeave={handleMouseLeave}
           className="card-gradient-special flex flex-col items-center justify-center row-start-2 col-start-1 row-span-2 cursor-pointer"
           style={{
             padding: 'var(--space-6)',
@@ -385,6 +448,9 @@ export default function Portfolio() {
         {/* Contact Card - Top Right */}
         <div
           onClick={() => setCurrentView('contact')}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.contact)}
+          onMouseLeave={handleMouseLeave}
           className="card-base card-secondary card-hover-secondary card-focus flex flex-col items-center justify-center row-start-1 col-start-4"
           style={{ padding: 'var(--space-4)' }}
           tabIndex={0}
