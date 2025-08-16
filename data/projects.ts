@@ -1,5 +1,25 @@
 export const projects = [
   {
+    id: 8,
+    title: 'Rebil - Startup',
+    description:
+      'Startup MVP for peer-to-peer car rental in Indonesia. Building from 0 to ∞. Next.js platform with 15+ relational tables.',
+    image: '/img/rebil.png', // updated image
+    views: 10000,
+    date: new Date('2025-06-13'),
+    href: 'https://rebil.vercel.app/'
+  },
+  {
+    id: 9,
+    title: "Increasing Multilingual Language Model's Ability",
+    description:
+      'Researching methods to mitigate English-centric bias in LLMs and improve multilingual performance.',
+    image: '/img/MLOPS.jpg', // placeholder image
+    views: 8500,
+    date: new Date('2024-12-13'),
+    href: 'https://github.com/songjeongjun320/Increase_MLLM_Ability'
+  },
+  {
     id: 1,
     title: 'CarePilot - AI Voice-Enabled Doctor Assistant',
     description:
