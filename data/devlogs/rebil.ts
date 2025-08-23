@@ -9,6 +9,48 @@ export const rebil: DevProject = {
   stack: ['Next.js', 'Supabase', 'Git', 'Full-Stack', 'OAuth', 'GCP'],
   logs: [
     {
+      id: 'rebil-2025-08-23-pr21',
+      date: '2025-08-23',
+      summary:
+        'Enhanced host tools with vehicle management (bulk actions, search, filters) and an offline booking system integrated into a unified calendar.',
+      details: `Problem: The host dashboard lacked advanced tools for managing vehicles and offline bookings. Key issues included inefficient client-side filtering, incorrect booking conflict checks, and several UI bugs.
+
+What I changed:
+- **Host Vehicle Management:** Introduced a new page with server-side search, filtering, and pagination for the host's vehicle fleet. Implemented bulk actions (activate, deactivate, delete) to improve efficiency.
+- **Offline Booking System:** Created a feature for hosts to manually add bookings made outside the platform. This includes a creation modal and a separate page to view and manage these bookings.
+- **Unified Calendar:** Updated the vehicle booking calendar to display both online and offline bookings, with different styling for clarity.
+- **Bug Fixes & Refinements:**
+  - Consolidated vehicle filtering logic into the parent component to avoid multiple re-renders.
+  - Corrected the booking conflict check to use correct status enums and exclude completed bookings.
+  - Fixed the logic for identifying offline bookings in the calendar view.
+  - Addressed UI bugs, like using the correct icon for a close button and preventing nested link navigation.
+
+Result: Hosts now have a powerful, centralized system to manage their fleet and all bookings, improving operational efficiency and providing a clearer overview of vehicle availability.`,
+      tags: ['Host', 'Booking', 'Admin', 'UX', 'Refactor', 'Vehicles'],
+    },
+    {
+      id: 'rebil-2025-08-16-pr20',
+      date: '2025-08-16',
+      summary:
+        'Refined vehicle search and availability checking with improved date overlap logic, extensive debugging logs, and robust query fallbacks.',
+      details: `Problem: Inaccurate date overlap calculations, poor debugging visibility in the search flow, and brittle error handling for optimized DB queries.
+
+What I changed:
+- **Availability Logic:** Corrected and unified date overlap logic in Supabase queries (.gt('end_date', startDate).lt('start_date', endDate)) and client-side checks for consistency and accuracy.
+- **Error Handling:** Implemented a safer, pessimistic fallback in client-side availability checks, returning \`false\` on error to prevent overbooking. Enhanced the optimized search to gracefully fall back to a basic search if the database function is missing.
+- **Debugging & Performance:** Added extensive logging to trace the search flow and refactored a multi-pass filter into a more efficient single-pass operation. (Note: Debug logs to be removed before production merge).
+
+Result: More reliable vehicle availability searches, significantly improved debugging capabilities, and a more resilient search system that prevents overbooking.`,
+      tags: [
+        'Search',
+        'Availability',
+        'Database',
+        'Supabase',
+        'Refactor',
+        'Debugging',
+      ],
+    },
+    {
       id: 'rebil-2025-08-13-pr19',
       date: '2025-08-13',
       summary:
