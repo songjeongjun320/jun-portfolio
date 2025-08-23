@@ -9,6 +9,31 @@ export const mllm: DevProject = {
   stack: ['Python', 'Gemini', 'GCP', 'LLM', 'PyTorch'],
   logs: [
     {
+      id: 'mllm-2025-08-23',
+      date: '2025-08-23',
+      summary:
+        'Established a comprehensive evaluation suite (KLUE, MMLU), a ToW data quality module, and new fine-tuning pipelines while addressing critical portability issues.',
+      details: `Problem: The project lacked a standardized Korean evaluation framework, had no quality control for generated ToW data, and used non-portable training scripts with hardcoded paths and credentials.
+
+What I changed:
+- **Comprehensive Evaluation:** Integrated the full KLUE benchmark suite (8 tasks) and standardized 5-shot MMLU evaluation scripts for both Korean and English, creating a robust system for assessing model performance.
+- **ToW Data Quality Assurance:** Developed a new module to programmatically check and verify the quality of generated ToW datasets, assessing format, coherence, relevance, and linguistic quality.
+- **Advanced Data Generation:** Created new pipelines for generating "gold labels" and ToW data using large models like GPT-OSS 120B (with vLLM) and Gemini.
+- **CI/CD & Security Fixes:** Addressed critical code review feedback by removing hardcoded absolute paths and GCP project IDs from scripts. Replaced them with relative paths (\`Path(__file__).parent\`) and environment variables (\`os.getenv\`) to make the entire toolchain portable and secure.
+- **Code Refactoring:** Began consolidating duplicated model-specific training scripts (for DeepSeek, Llama, Mistral) into a single, generic trainer to improve maintainability, as suggested in code review.
+
+Result: The project now has a powerful, CI/CD-friendly framework for evaluation and data management, significantly improving research quality, code maintainability, and security.`,
+      tags: [
+        'Evaluation',
+        'KLUE',
+        'MMLU',
+        'ToW',
+        'Data Quality',
+        'CI/CD',
+        'Refactor',
+      ],
+    },
+    {
       id: 'mllm-2025-08-12',
       date: '2025-08-12',
       summary:
