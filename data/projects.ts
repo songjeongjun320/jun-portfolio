@@ -7,7 +7,7 @@ export const projects = [
     image: '/img/rebil.png', // updated image
     views: 10000,
     date: new Date('2025-06-13'),
-    href: 'https://rebil.vercel.app/'
+    href: 'https://rebil.vercel.app/',
   },
   {
     id: 9,
@@ -17,7 +17,7 @@ export const projects = [
     image: '/img/MLOPS.jpg', // placeholder image
     views: 8500,
     date: new Date('2024-12-13'),
-    href: 'https://github.com/songjeongjun320/Increase_MLLM_Ability'
+    href: 'https://github.com/songjeongjun320/Increase_MLLM_Ability',
   },
   {
     id: 1,

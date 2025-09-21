@@ -35,7 +35,14 @@ const sendMessageMutation = useMutation<SendMessageResponse, Error, string>({
 \`\`\`
 
 Result: A production-ready messaging system with 3,000+ lines of code, supporting real-time communication between hosts and renters with enterprise-grade security.`,
-      tags: ['Messaging', 'Real-time', 'UI/UX', 'Security', 'Performance', 'React Query'],
+      tags: [
+        'Messaging',
+        'Real-time',
+        'UI/UX',
+        'Security',
+        'Performance',
+        'React Query',
+      ],
     },
     {
       id: 'rebil-2025-09-10-pr23',

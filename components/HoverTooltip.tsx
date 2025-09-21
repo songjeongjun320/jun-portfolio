@@ -10,7 +10,7 @@ interface HoverTooltipProps {
 const HoverTooltip: React.FC<HoverTooltipProps> = ({
   content,
   position,
-  visible
+  visible,
 }) => {
   if (!visible) {
     return null;
@@ -29,7 +29,7 @@ const HoverTooltip: React.FC<HoverTooltipProps> = ({
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
-        transform: transform
+        transform: transform,
       }}
     >
       <Info size={20} className="text-cyan-400" />

@@ -28,11 +28,11 @@ const TOOLTIP_CONTENT = {
   honors: 'Check out my achievements and awards.',
   resume: 'View my detailed resume and recommendations.',
   skills: 'Discover my technical skills and expertise.',
-  quote: "A little quote that inspires me. - Steve Jobs",
+  quote: 'A little quote that inspires me. - Steve Jobs',
   experience: 'Learn about my professional work experience.',
   military: 'Details about my military service and volunteer work.',
   devlog: 'Follow my development journey and insights.',
-  contact: 'Find my contact information and social media links.'
+  contact: 'Find my contact information and social media links.',
 };
 
 export default function Portfolio() {
@@ -41,20 +41,23 @@ export default function Portfolio() {
   const [tooltip, setTooltip] = useState({
     content: '',
     position: { x: 0, y: 0 },
-    visible: false
+    visible: false,
   });
 
   // 마우스 이벤트 핸들러
   const handleMouseMove = (e: React.MouseEvent) => {
-    setTooltip(prev => ({ ...prev, position: { x: e.clientX, y: e.clientY } }));
+    setTooltip((prev) => ({
+      ...prev,
+      position: { x: e.clientX, y: e.clientY },
+    }));
   };
 
   const handleMouseEnter = (content: string) => {
-    setTooltip(prev => ({ ...prev, content, visible: true }));
+    setTooltip((prev) => ({ ...prev, content, visible: true }));
   };
 
   const handleMouseLeave = () => {
-    setTooltip(prev => ({ ...prev, visible: false }));
+    setTooltip((prev) => ({ ...prev, visible: false }));
   };
 
   // 공통 스타일 정의
