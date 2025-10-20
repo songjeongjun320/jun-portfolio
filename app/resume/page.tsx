@@ -9,7 +9,7 @@ export default function ResumePage() {
   const [mergedUrl, setMergedUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const resumeSrc = '/pdf/JeongJun_Resume_V46.pdf';
+  const resumeSrc = '/pdf/JeongJun_Resume_V47.pdf';
   const recSrc = '/pdf/Recommendation.pdf';
 
   const fetchArrayBuffer = async (url: string) => {
