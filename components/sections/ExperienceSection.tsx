@@ -105,9 +105,9 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
             </div>
             {exp.technologies && exp.technologies.length > 0 && (
               <div className="mb-4 flex flex-wrap gap-2">
-                {exp.technologies.map((tech, techIndex) => (
+                {exp.technologies.map((tech) => (
                   <span
-                    key={techIndex}
+                    key={tech}
                     className="bg-gradient-to-r from-[#1877F2] to-[#4a9eff] text-white px-3 py-1 rounded-full text-[clamp(0.75rem,1vw,0.9rem)] font-medium shadow-sm"
                   >
                     {tech}
