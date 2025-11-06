@@ -9,9 +9,11 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
     {
       role: 'AI Full Stack Engineer',
       company: 'RapidFlare, Inc.',
-      period: 'Oct 2024 - Present',
+      period: 'Oct 2025 - Present',
+      location: 'San Francisco, CA',
+      technologies: ['Next.js', 'Python', 'LangChain', 'RAG', 'Elastic Cloud', 'GCP', 'Supabase', 'Git'],
       details: [
-        'Built GCP-triggered cron jobs to automate user feedback notifications and developed supporting backend API endpoints.',
+        'Architected versioned Elastic Cloud schema for RAG pipeline, enabling analytics, QA workflows, and interactive features.',
         'Implemented LangChain-driven reasoning chains to create customer-tailored RAG agents for smarter automation.',
       ],
     },
@@ -73,6 +75,11 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
                 <p className="text-[clamp(1.1rem,1.5vw,1.3rem)] font-semibold text-gray-800">
                   {exp.role}
                 </p>
+                {exp.location && (
+                  <p className="text-[clamp(0.9rem,1.2vw,1rem)] text-gray-600 mt-1">
+                    📍 {exp.location}
+                  </p>
+                )}
               </div>
               <div className="bg-[#e3e9fc] px-4 py-2 rounded-4xl border border-blue-100">
                 <span className="text-[clamp(1rem,1.2vw,1.1rem)] text-[#1877F2] font-medium">
@@ -80,6 +87,18 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
                 </span>
               </div>
             </div>
+            {exp.technologies && exp.technologies.length > 0 && (
+              <div className="mb-4 flex flex-wrap gap-2">
+                {exp.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="bg-gradient-to-r from-[#1877F2] to-[#4a9eff] text-white px-3 py-1 rounded-full text-[clamp(0.75rem,1vw,0.9rem)] font-medium shadow-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
             <div className="space-y-[clamp(0.3rem,1vw,1rem)]">
               {exp.details.map((detail, i) => (
                 <div key={i} className="flex items-start gap-4 group/item">
