@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, notFound } from 'next/navigation';
 import EducationSection from '@/components/sections/EducationSection';
 import ExperienceSection from '@/components/sections/ExperienceSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
@@ -9,65 +9,46 @@ import SkillsSection from '@/components/sections/SkillsSection';
 import MilitarySection from '@/components/sections/MilitarySection';
 import ContactInfoSection from '@/components/sections/ContactInfoSection';
 import DevelopmentLogSection from '@/components/sections/DevelopmentLogSection';
-import { useEffect } from 'react';
 
-// Valid section IDs
-const VALID_SECTIONS = [
-  'education',
-  'experience',
-  'skills',
-  'projects',
-  'honors',
-  'military',
-  'contact',
-  'devlog',
-];
+// Component map for section routing
+const sectionComponentMap = {
+  education: EducationSection,
+  experience: ExperienceSection,
+  skills: SkillsSection,
+  projects: ProjectsSection,
+  honors: Honors_AwardsSection,
+  military: MilitarySection,
+  contact: ContactInfoSection,
+  devlog: DevelopmentLogSection,
+} as const;
+
+type SectionId = keyof typeof sectionComponentMap;
 
 export default function SectionPage() {
   const params = useParams();
   const router = useRouter();
-  const sectionId = params.id as string;
 
-  // Redirect to home if invalid section
-  useEffect(() => {
-    if (!VALID_SECTIONS.includes(sectionId)) {
-      router.push('/');
-    }
-  }, [sectionId, router]);
+  // Validate params.id type and value
+  const sectionId = params.id;
+  if (typeof sectionId !== 'string' || !(sectionId in sectionComponentMap)) {
+    notFound();
+  }
 
   const handleBack = () => {
     router.push('/');
   };
 
-  const renderSection = () => {
-    switch (sectionId) {
-      case 'education':
-        return <EducationSection onBack={handleBack} />;
-      case 'experience':
-        return <ExperienceSection onBack={handleBack} />;
-      case 'skills':
-        return <SkillsSection onBack={handleBack} />;
-      case 'projects':
-        return <ProjectsSection onBack={handleBack} />;
-      case 'honors':
-        return <Honors_AwardsSection onBack={handleBack} />;
-      case 'military':
-        return <MilitarySection onBack={handleBack} />;
-      case 'contact':
-        return <ContactInfoSection onBack={handleBack} />;
-      case 'devlog':
-        return <DevelopmentLogSection onBack={handleBack} />;
-      default:
-        return null;
-    }
-  };
+  // Get the component from the map
+  const SectionComponent = sectionComponentMap[sectionId as SectionId];
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-purple-950 via-violet-950 via-indigo-950 to-blue-950 relative">
       {/* 추가 그라데이션 오버레이 */}
       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/30 pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-violet-950/30 via-transparent to-indigo-950/30 pointer-events-none"></div>
-      <div className="relative z-10">{renderSection()}</div>
+      <div className="relative z-10">
+        <SectionComponent onBack={handleBack} />
+      </div>
     </div>
   );
 }
