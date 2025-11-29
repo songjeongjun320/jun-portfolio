@@ -1,23 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   FaProjectDiagram,
   FaMedal,
-  FaArrowLeft,
   FaGithub,
   FaLinkedin,
 } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { SiN8N, SiReact } from 'react-icons/si';
-import EducationSection from '@/components/sections/EducationSection';
-import ExperienceSection from '@/components/sections/ExperienceSection';
-import ProjectsSection from '@/components/sections/ProjectsSection';
-import Honors_AwardsSection from '@/components/sections/Honors_AwardsSection';
-import SkillsSection from '@/components/sections/SkillsSection';
-import MilitarySection from '@/components/sections/MilitarySection';
-import ContactInfoSection from '@/components/sections/ContactInfoSection';
-import DevelopmentLogSection from '@/components/sections/DevelopmentLogSection';
 import Image from 'next/image';
 import HoverTooltip from '@/components/HoverTooltip'; // 툴팁 컴포넌트 import
 
@@ -36,8 +28,7 @@ const TOOLTIP_CONTENT = {
 };
 
 export default function Portfolio() {
-  const [currentView, setCurrentView] = useState('dashboard');
-  const [showCardsOnly, setShowCardsOnly] = useState(true);
+  const router = useRouter();
   const [tooltip, setTooltip] = useState({
     content: '',
     position: { x: 0, y: 0 },
@@ -83,42 +74,6 @@ export default function Portfolio() {
     },
   };
 
-  const renderDetailView = () => {
-    const handleBack = () => setCurrentView('dashboard');
-
-    switch (currentView) {
-      case 'education':
-        return <EducationSection onBack={handleBack} />;
-      case 'experience':
-        return <ExperienceSection onBack={handleBack} />;
-      case 'skills':
-        return <SkillsSection onBack={handleBack} />;
-      case 'projects':
-        return <ProjectsSection onBack={handleBack} />;
-      case 'honors':
-        return <Honors_AwardsSection onBack={handleBack} />;
-      case 'military':
-        return <MilitarySection onBack={handleBack} />;
-      case 'contact':
-        return <ContactInfoSection onBack={handleBack} />;
-      case 'devlog':
-        return <DevelopmentLogSection onBack={handleBack} />;
-      default:
-        return null;
-    }
-  };
-
-  if (currentView !== 'dashboard') {
-    return (
-      <div className="min-h-screen bg-gradient-to-t from-purple-950 via-violet-950 via-indigo-950 to-blue-950 relative">
-        {/* 추가 그라데이션 오버레이 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/30 pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-violet-950/30 via-transparent to-indigo-950/30 pointer-events-none"></div>
-        <div className="relative z-10">{renderDetailView()}</div>
-      </div>
-    );
-  }
-
   return (
     <div className="h-screen bg-gradient-to-t from-purple-950 via-violet-950 via-indigo-950 to-blue-950 p-[1vw] relative">
       <HoverTooltip
@@ -130,24 +85,13 @@ export default function Portfolio() {
       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/30 pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-violet-950/30 via-transparent to-indigo-950/30 pointer-events-none"></div>
 
-      {/* Back Button - only show when cards are hidden */}
-      {!showCardsOnly && (
-        <button
-          onClick={() => setShowCardsOnly(true)}
-          className="fixed top-[1.5vw] left-[1.5vw] z-50 bg-white shadow-lg rounded-[1.5vw] p-[0.8vw] hover:shadow-xl transition-shadow duration-300 border-[0.1vw] border-blue-200"
-        >
-          <FaArrowLeft className="text-blue-600 text-[2vw]" />
-        </button>
-      )}
-
       {/* Grid Layout - 4x3 Grid */}
-      <div
-        className={`h-full grid grid-cols-4 grid-rows-3 gap-[1.5vw] w-full mx-auto relative z-10 transition-opacity duration-500 ${showCardsOnly ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-      >
+      <div className="h-full grid grid-cols-4 grid-rows-3 gap-[1.5vw] w-full mx-auto relative z-10">
+
         {/* Row 1 */}
         {/* Education Card */}
         <div
-          onClick={() => setCurrentView('education')}
+          onClick={() => router.push('/section/education')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.education)}
           onMouseLeave={handleMouseLeave}
@@ -186,7 +130,7 @@ export default function Portfolio() {
 
         {/* Projects Card - Top Center */}
         <div
-          onClick={() => setCurrentView('projects')}
+          onClick={() => router.push('/section/projects')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.projects)}
           onMouseLeave={handleMouseLeave}
@@ -214,7 +158,7 @@ export default function Portfolio() {
 
         {/* Honors Card - Top Right */}
         <div
-          onClick={() => setCurrentView('honors')}
+          onClick={() => router.push('/section/honors')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.honors)}
           onMouseLeave={handleMouseLeave}
@@ -273,7 +217,7 @@ export default function Portfolio() {
 
         {/* Tech Stack Card */}
         <div
-          onClick={() => setCurrentView('skills')}
+          onClick={() => router.push('/section/skills')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.skills)}
           onMouseLeave={handleMouseLeave}
@@ -337,7 +281,7 @@ export default function Portfolio() {
 
         {/* Experience Card - Bottom Left */}
         <div
-          onClick={() => setCurrentView('experience')}
+          onClick={() => router.push('/section/experience')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.experience)}
           onMouseLeave={handleMouseLeave}
@@ -375,7 +319,7 @@ export default function Portfolio() {
 
         {/* Military Card - Bottom Right */}
         <div
-          onClick={() => setCurrentView('military')}
+          onClick={() => router.push('/section/military')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.military)}
           onMouseLeave={handleMouseLeave}
@@ -405,7 +349,7 @@ export default function Portfolio() {
 
         {/* Development Log Card - Left Middle */}
         <div
-          onClick={() => setCurrentView('devlog')}
+          onClick={() => router.push('/section/devlog')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.devlog)}
           onMouseLeave={handleMouseLeave}
@@ -450,7 +394,7 @@ export default function Portfolio() {
 
         {/* Contact Card - Top Right */}
         <div
-          onClick={() => setCurrentView('contact')}
+          onClick={() => router.push('/section/contact')}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.contact)}
           onMouseLeave={handleMouseLeave}
