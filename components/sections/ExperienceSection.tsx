@@ -8,8 +8,8 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
   const content = [
     {
       role: 'AI Full Stack Engineer',
-      company: 'RapidFlare, Inc.',
-      period: 'Oct 2024 - Present',
+      company: 'Rapidflare, Inc.',
+      period: 'Oct 2025 - Present',
       details: [
         'Built GCP-triggered cron jobs to automate user feedback notifications and developed supporting backend API endpoints.',
         'Implemented LangChain-driven reasoning chains to create customer-tailored RAG agents for smarter automation.',
