@@ -13,7 +13,7 @@ export default function Honors_AwardsSection({
   const content = [
     {
       title: "ASU Dean's List",
-      period: '2023 - 2024',
+      period: '2023 - 2025',
       description: 'Academic excellence recognition for maintaining high GPA',
     },
     {

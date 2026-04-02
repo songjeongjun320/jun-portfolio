@@ -10,10 +10,9 @@ interface EducationSectionProps {
 export default function EducationSection({ onBack }: EducationSectionProps) {
   const title = 'Education';
   const content = [
-    'Arizona State University, Ira A. Fulton Schools of Engineering | GPA: 3.81 / 4.0 (Overall), 3.78 / 4.0 (Major)',
-    'B.S. Computer Science (Expected December 2025)',
+    'Arizona State University, Ira A. Fulton Schools of Engineering | GPA: 3.76/4.0',
+    'B.S. Computer Science (Dec 2025)',
     "Dean's List (2023 - 2025) | NamU Scholarship (2023-2025)",
-    'Relevant Coursework: Data Structures, Algorithms, Machine Learning, AI, Natural Language Processing, and more!',
   ];
 
   return (

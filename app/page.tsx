@@ -9,7 +9,7 @@ import {
   FaLinkedin,
 } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiN8N, SiReact } from 'react-icons/si';
+import { SiNextdotjs, SiPython } from 'react-icons/si';
 import Image from 'next/image';
 import HoverTooltip from '@/components/HoverTooltip'; // 툴팁 컴포넌트 import
 
@@ -122,7 +122,7 @@ export default function Portfolio() {
                 B.S. Computer Science{' '}
               </p>
               <p className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.1vw]">
-                GPA: 3.77/4.0
+                GPA: 3.76/4.0
               </p>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function Portfolio() {
             JeongJun Song (Jun)
           </h1>
           <h2 className="text-[1vw] font-bold text-gray-800 mb-[1vw]">
-            Full Stack Developer & AI Agent Platform Builder
+            AI Full-Stack Engineer
           </h2>
           <div className="grid grid-cols-1 gap-[1.5vw] text-gray-700 text-[2.5vw]"></div>
         </div>
@@ -230,29 +230,30 @@ export default function Portfolio() {
           <div className="flex items-start justify-center h-full w-full gap-[1.5vw]">
             {/* Left Side - Icons */}
             <div className="flex flex-col items-center space-y-[1vw]">
-              {/* React Icon */}
               <div className="flex flex-col items-center">
-                <SiReact className="text-[6vw] text-[#8B5CF6] mb-[0.3vw]" />
+                <SiNextdotjs className="text-[6vw] text-black mb-[0.3vw]" />
               </div>
-
-              {/* n8n Icon */}
               <div className="flex flex-col items-center">
-                <SiN8N className="text-[3.6vw] text-[#EF7C28]" />
+                <SiPython className="text-[3.6vw] text-[#3776AB]" />
               </div>
             </div>
 
             {/* Right Side - Text */}
             <div className="flex flex-col justify-start text-left space-y-[0.3vw] mt-[0.5vw]">
-              <div className="text-[1.2vw] font-bold text-black">React</div>
-              <div className="text-[1.2vw] font-bold text-black">
-                TypeScript
-              </div>
+              <div className="text-[1.2vw] font-bold text-black">Next.js</div>
+              <div className="text-[1.2vw] font-bold text-black">Python</div>
               <div className="text-[1.2vw] font-bold text-black mb-[1vw]">
-                Tailwind CSS
+                GCP
               </div>
-              <div className="text-[1.2vw] font-bold text-[#38BDF8]">n8n</div>
+              <div className="text-[1.2vw] font-bold text-[#38BDF8]">Redis</div>
               <div className="text-[1.2vw] font-bold text-[#38BDF8]">
-                AI Agent
+                Agent Build
+              </div>
+              <div className="text-[1.2vw] font-bold text-[#38BDF8]">
+                RAG
+              </div>
+              <div className="text-[1.2vw] font-bold text-[#38BDF8]">
+                LangSmith
               </div>
             </div>
           </div>

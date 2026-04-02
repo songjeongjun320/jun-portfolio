@@ -13,19 +13,19 @@ import {
   SiGit,
   SiAmazon,
   SiLinux,
-  SiOpenai,
-  SiHuggingface,
+  SiElasticsearch,
+  SiGooglecloud,
+  SiRedis,
+  SiDocker,
+  SiJira,
+  SiCplusplus,
 } from 'react-icons/si';
 import {
-  FaRobot,
+  FaJava,
   FaArrowLeft,
-  FaDatabase,
   FaCode,
   FaServer,
   FaCogs,
-  FaUser,
-  FaBrain,
-  FaGem,
 } from 'react-icons/fa';
 
 interface SkillsSectionProps {
@@ -34,44 +34,14 @@ interface SkillsSectionProps {
 
 export default function SkillsSection({ onBack }: SkillsSectionProps) {
   const techStacks = {
-    devops: {
-      title: 'DevOps & Infrastructure',
-      icon: <FaCogs className="text-2xl text-orange-500" />,
-      skills: [
-        {
-          name: 'AWS',
-          icon: (
-            <SiAmazon className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#FF9900]" />
-          ),
-        },
-        {
-          name: 'Git',
-          icon: (
-            <SiGit className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#F05032]" />
-          ),
-        },
-        {
-          name: 'Linux',
-          icon: (
-            <SiLinux className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#FCC624]" />
-          ),
-        },
-      ],
-    },
-    frontend: {
-      title: 'Frontend Tech Stacks',
+    languages: {
+      title: 'Languages',
       icon: <FaCode className="text-2xl text-blue-500" />,
       skills: [
         {
-          name: 'Next.js',
+          name: 'Python',
           icon: (
-            <SiNextdotjs className="text-[clamp(1.2rem,2.5vw,2rem)] text-black" />
-          ),
-        },
-        {
-          name: 'React',
-          icon: (
-            <SiReact className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#61DAFB]" />
+            <SiPython className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#3776AB]" />
           ),
         },
         {
@@ -86,16 +56,34 @@ export default function SkillsSection({ onBack }: SkillsSectionProps) {
             <SiJavascript className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#F7DF1E]" />
           ),
         },
+        {
+          name: 'Java',
+          icon: (
+            <FaJava className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#ED8B00]" />
+          ),
+        },
+        {
+          name: 'C++',
+          icon: (
+            <SiCplusplus className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#00599C]" />
+          ),
+        },
       ],
     },
-    backend: {
-      title: 'Backend',
+    frameworks: {
+      title: 'Frameworks',
       icon: <FaServer className="text-2xl text-green-500" />,
       skills: [
         {
-          name: 'Python',
+          name: 'Next.js',
           icon: (
-            <SiPython className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#3776AB]" />
+            <SiNextdotjs className="text-[clamp(1.2rem,2.5vw,2rem)] text-black" />
+          ),
+        },
+        {
+          name: 'React',
+          icon: (
+            <SiReact className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#61DAFB]" />
           ),
         },
         {
@@ -112,36 +100,48 @@ export default function SkillsSection({ onBack }: SkillsSectionProps) {
             </span>
           ),
         },
-        {
-          name: 'Node.js',
-          icon: (
-            <span className="text-[clamp(1.2rem,2.5vw,2rem)] text-green-600">
-              ⬢
-            </span>
-          ),
-        },
       ],
     },
-    database: {
-      title: 'Database Framework',
-      icon: <FaDatabase className="text-2xl text-cyan-500" />,
+    tools: {
+      title: 'Tools & Infrastructure',
+      icon: <FaCogs className="text-2xl text-orange-500" />,
       skills: [
+        {
+          name: 'Elasticsearch',
+          icon: (
+            <SiElasticsearch className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#005571]" />
+          ),
+        },
+        {
+          name: 'GCP',
+          icon: (
+            <SiGooglecloud className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#4285F4]" />
+          ),
+        },
+        {
+          name: 'AWS',
+          icon: (
+            <SiAmazon className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#FF9900]" />
+          ),
+        },
         {
           name: 'Supabase',
           icon: (
             <SiSupabase className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#3ECF8E]" />
           ),
         },
-      ],
-    },
-    automation: {
-      title: 'Automation & Integration',
-      icon: <FaCogs className="text-2xl text-red-500" />,
-      skills: [
         {
-          name: 'AI Agent Tool',
+          name: 'Redis',
           icon: (
-            <FaRobot className="text-[clamp(1.2rem,2.5vw,2rem)] text-indigo-500" />
+            <SiRedis className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#DC382D]" />
+          ),
+        },
+        {
+          name: 'LangChain',
+          icon: (
+            <span className="text-[clamp(1.2rem,2.5vw,2rem)] text-green-500">
+              🔗
+            </span>
           ),
         },
         {
@@ -151,53 +151,27 @@ export default function SkillsSection({ onBack }: SkillsSectionProps) {
           ),
         },
         {
-          name: 'Langchain',
+          name: 'Docker',
           icon: (
-            <span className="text-[clamp(1.2rem,2.5vw,2rem)] text-green-500">
-              🔗
-            </span>
-          ),
-        },
-      ],
-    },
-    aiml: {
-      title: 'AI & Machine Learning Stack',
-      icon: <FaBrain className="text-2xl text-purple-500" />,
-      skills: [
-        {
-          name: 'OpenAI',
-          icon: (
-            <SiOpenai className="text-[clamp(1.2rem,2.5vw,2rem)] text-black" />
+            <SiDocker className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#2496ED]" />
           ),
         },
         {
-          name: 'Claude AI',
+          name: 'Git',
           icon: (
-            <FaBrain className="text-[clamp(1.2rem,2.5vw,2rem)] text-orange-500" />
+            <SiGit className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#F05032]" />
           ),
         },
         {
-          name: 'Gemini',
+          name: 'Linux',
           icon: (
-            <FaGem className="text-[clamp(1.2rem,2.5vw,2rem)] text-blue-500" />
+            <SiLinux className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#FCC624]" />
           ),
         },
         {
-          name: 'Llama',
+          name: 'Jira',
           icon: (
-            <FaRobot className="text-[clamp(1.2rem,2.5vw,2rem)] text-purple-600" />
-          ),
-        },
-        {
-          name: 'HuggingFace',
-          icon: (
-            <SiHuggingface className="text-[clamp(1.2rem,2.5vw,2rem)] text-yellow-500" />
-          ),
-        },
-        {
-          name: 'YOLOv5~10',
-          icon: (
-            <FaRobot className="text-[clamp(1.2rem,2.5vw,2rem)] text-blue-400" />
+            <SiJira className="text-[clamp(1.2rem,2.5vw,2rem)] text-[#0052CC]" />
           ),
         },
       ],
@@ -225,68 +199,35 @@ export default function SkillsSection({ onBack }: SkillsSectionProps) {
       {/* Full Width Responsive Grid Layout */}
       <div className="w-full max-w-7xl mx-auto px-[clamp(1rem,3vw,2rem)]">
         <div className="grid grid-cols-1 lg:grid-cols-8 gap-[clamp(0.8rem,1.5vw,1.5rem)]">
-          {/* Row 1, Columns 1-8 - AI & Machine Learning Stack */}
+          {/* Row 1, Full Width - Tools & Infrastructure */}
           <div className="lg:col-span-8 order-1 lg:order-none">
             <TechStackCard
-              title={techStacks.aiml.title}
-              icon={techStacks.aiml.icon}
-              skills={techStacks.aiml.skills}
+              title={techStacks.tools.title}
+              icon={techStacks.tools.icon}
+              skills={techStacks.tools.skills}
               delay={0}
               layout="horizontal"
             />
           </div>
 
-          {/* Row 2, Columns 1-4 - Frontend Tech Stacks */}
+          {/* Row 2, Left Half - Languages */}
           <div className="lg:col-span-4 order-2 lg:order-none">
             <TechStackCard
-              title={techStacks.frontend.title}
-              icon={techStacks.frontend.icon}
-              skills={techStacks.frontend.skills}
+              title={techStacks.languages.title}
+              icon={techStacks.languages.icon}
+              skills={techStacks.languages.skills}
               delay={100}
               layout="grid"
             />
           </div>
 
-          {/* Row 2, Columns 5-8 - Backend */}
+          {/* Row 2, Right Half - Frameworks */}
           <div className="lg:col-span-4 order-3 lg:order-none">
             <TechStackCard
-              title={techStacks.backend.title}
-              icon={techStacks.backend.icon}
-              skills={techStacks.backend.skills}
+              title={techStacks.frameworks.title}
+              icon={techStacks.frameworks.icon}
+              skills={techStacks.frameworks.skills}
               delay={200}
-              layout="grid"
-            />
-          </div>
-
-          {/* Row 3, Columns 1-2 - Database Framework */}
-          <div className="lg:col-span-2 order-4 lg:order-none">
-            <TechStackCard
-              title={techStacks.database.title}
-              icon={techStacks.database.icon}
-              skills={techStacks.database.skills}
-              delay={300}
-              layout="compact"
-            />
-          </div>
-
-          {/* Row 3, Columns 3-5 - Automation & Integration (3/8 = 37.5%) */}
-          <div className="lg:col-span-3 order-5 lg:order-none">
-            <TechStackCard
-              title={techStacks.automation.title}
-              icon={techStacks.automation.icon}
-              skills={techStacks.automation.skills}
-              delay={400}
-              layout="custom-2-1"
-            />
-          </div>
-
-          {/* Row 3, Columns 6-8 - DevOps & Infrastructure (3/8 = 37.5%) */}
-          <div className="lg:col-span-3 order-6 lg:order-none">
-            <TechStackCard
-              title={techStacks.devops.title}
-              icon={techStacks.devops.icon}
-              skills={techStacks.devops.skills}
-              delay={500}
               layout="grid"
             />
           </div>

@@ -3,18 +3,38 @@ export const projects = [
     id: 8,
     title: 'Rebil - Startup',
     description:
-      'Startup MVP for peer-to-peer car rental in Indonesia. Building from 0 to ∞. Next.js platform with 15+ relational tables.',
-    image: '/img/rebil.png', // updated image
+      'Vehicle rental marketplace targeting the Indonesian market. Building from 0 to 1, handling full-stack development and GCP infrastructure.',
+    image: '/img/rebil.png',
     views: 10000,
-    date: new Date('2025-06-13'),
+    date: new Date('2025-07-01'),
     href: 'https://rebil.vercel.app/',
+  },
+  {
+    id: 10,
+    title: 'Atoms - Capstone',
+    description:
+      'Developing MCP (Model Context Protocol) server and AI Agent workflows using n8n to automate business processes, with full-stack implementation.',
+    image: '/img/CarePilotLogo.png',
+    views: 5000,
+    date: new Date('2025-05-01'),
+    href: 'https://github.com/songjeongjun320',
+  },
+  {
+    id: 11,
+    title: 'Llama Socrates',
+    description:
+      'Created a model pipeline and MoE (Mixture of Experts) for math and instructional queries, improving math accuracy by 32% and reducing perplexity by 25% with LoRA fine-tuning.',
+    image: '/img/MLOPS.jpg',
+    views: 6000,
+    date: new Date('2025-01-15'),
+    href: 'https://github.com/songjeongjun320/Llama3.2_Socrates',
   },
   {
     id: 9,
     title: "Increasing Multilingual Language Model's Ability",
     description:
       'Researching methods to mitigate English-centric bias in LLMs and improve multilingual performance.',
-    image: '/img/MLOPS.jpg', // placeholder image
+    image: '/img/MLOPS.jpg',
     views: 8500,
     date: new Date('2024-12-13'),
     href: 'https://github.com/songjeongjun320/Increase_MLLM_Ability',

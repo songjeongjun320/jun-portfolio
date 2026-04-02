@@ -1,4 +1,4 @@
-import { FaEnvelope, FaLinkedin, FaGithub, FaArrowLeft } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaArrowLeft, FaPhone, FaGlobe } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 interface ContactInfoSectionProps {
@@ -59,6 +59,16 @@ export default function ContactInfoSection({
       label: 'X',
       link: 'https://x.com/jsong132',
       icon: <FaXTwitter className="text-[clamp(3rem,6vw,5rem)] text-black" />,
+    },
+    {
+      label: 'Phone',
+      link: 'tel:+16238894796',
+      icon: <FaPhone className="text-[clamp(3rem,6vw,5rem)] text-green-600" />,
+    },
+    {
+      label: 'Website',
+      link: 'https://junswebsite.vercel.app/',
+      icon: <FaGlobe className="text-[clamp(3rem,6vw,5rem)] text-[#1877F2]" />,
     },
   ];
 

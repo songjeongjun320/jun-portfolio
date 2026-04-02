@@ -6,18 +6,18 @@ import { CSSTransition } from 'react-transition-group';
 
 export default function IntroSection() {
   const content = {
-    title: 'Full Stack Developer & AI Agent Platform Builder',
+    title: 'AI Full-Stack Engineer',
     description: [
-      '· Build platforms with LLM agents and workflow automation.',
-      '· Database integration for agent-driven user experiences.',
+      '· Expertise in distributed AI systems, LLM pipelines, and real-time content safety.',
+      '· First US-based engineer at Rapidflare, architecting multi-channel AI agent platform from ground up.',
     ],
     details: [
       'Next.js',
-      'React',
+      'Python',
+      'LangChain',
+      'Elasticsearch',
+      'GCP',
       'Supabase',
-      'FPython',
-      'n8n',
-      'AI Agent Platforms',
     ],
   };
 
