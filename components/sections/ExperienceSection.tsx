@@ -7,18 +7,17 @@ interface ExperienceSectionProps {
 export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
   const content = [
     {
-      role: 'AI Full Stack Engineer',
+      role: 'Founding Engineer',
       company: 'Rapidflare, Inc.',
       period: 'Oct 2025 - Present',
       location: 'San Francisco, CA',
-      technologies: ['Next.js', 'Python', 'LangChain', 'RAG', 'Elastic Cloud', 'GCP', 'Supabase', 'Git'],
+      technologies: ['AI Agents', 'Evaluation', 'Safety', 'Python', 'Next.js', 'Elasticsearch', 'GCP'],
       details: [
-        'Led end-to-end enterprise client engagements for major semiconductor and AI chip enterprise clients — from contract negotiation and customer onboarding to weekly stakeholder meetings, feedback integration, and iterative product delivery',
-        'Architected a multi-tenant AI agent gateway serving 10+ enterprise customers across 3 interaction channels (Discord, Email, Web Copilot), with OAuth2 auth, multi-turn conversation threading, and distributed locking via Redis + Elasticsearch',
-        'Designed a real-time AI content safety pipeline with zero-added-latency parallel execution, multi-turn jailbreak detection, and customer-configurable policies — adopted across all enterprise accounts',
-        'Built an extensible cron job platform on GCP Cloud Run Jobs with automated Slack notification routing across 10+ customer channels, plus real-time data ingestion monitoring UX with cancellation workflows and progress tracking',
-        'Designed Elasticsearch conversation schema evolution with zero-downtime migration tooling, custom AST linter for deprecated field detection, and dual-path aggregation support',
-        'Built an automated AI QA pipeline detecting broken references and runtime errors in real-time, and integrated Gemini grounding API for web-search-enriched copilot responses with inline citations',
+        'Built the AI Safety Filter to classify incoming messages before retrieval and answer generation, including multi-turn jailbreak detection and customer-configurable policies.',
+        'Designed an evaluation architecture using customer-specific test cases to compare our agents with alternative agents, demonstrate strengths, and identify where to improve.',
+        'Built AI-powered pre-sales onboarding workflows that reduced a week of manual work to about three hours and increased the sales-call acceptance rate more than 10x compared with the previous process.',
+        'Own product requirements and delivery across five customer projects, working directly with customers from discovery through implementation.',
+        'Lead the AMD ROCm Developer Assistant project, building agents for its Discord and Discourse developer communities.',
       ],
     },
     {
@@ -108,7 +107,7 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
             <div className="space-y-[clamp(0.3rem,1vw,1rem)]">
               {exp.details.map((detail, i) => (
                 <div key={i} className="flex items-start gap-4 group/item">
-                  <div className="w-2 h-2 bg-[#1877F2] rounded-full mt-2.5 group-hover/item:scale-125 transition-transform duration-300"></div>
+                  <div aria-hidden="true" className="w-2 h-2 shrink-0 bg-[#1877F2] rounded-full mt-2.5"></div>
                   <p className="text-[clamp(0.95rem,1.5vw,1.15rem)] text-gray-700 leading-relaxed group-hover/item:text-[#1877F2] transition-colors duration-300">
                     {detail}
                   </p>

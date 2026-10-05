@@ -6,10 +6,9 @@ import { CSSTransition } from 'react-transition-group';
 
 export default function IntroSection() {
   const content = {
-    title: 'AI Full-Stack Engineer',
+    title: 'Founding Engineer at Rapidflare',
     description: [
-      '· Expertise in distributed AI systems, LLM pipelines, and real-time content safety.',
-      '· First US-based engineer at Rapidflare, architecting multi-channel AI agent platform from ground up.',
+      'I build AI agents and lead customer projects from requirements through launch.',
     ],
     details: [
       'Next.js',

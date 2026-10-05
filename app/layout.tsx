@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Jun's Website",
-  description: 'Developer & Researcher',
+  description: 'Jun Song, Founding Engineer at Rapidflare. Building AI agents, evaluations, and customer-facing products.',
 };
 
 export default function RootLayout({

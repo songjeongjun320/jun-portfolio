@@ -6,7 +6,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
-  views: number;
+  views: string;
   date: Date;
   href: string;
 }
@@ -39,7 +39,7 @@ export function ProjectCard({
 
         {/* Views and Date Overlay */}
         <div className="absolute top-4 right-4 bg-[#e3e9fc] text-[#1877F2] rounded-4xl px-3 py-1 text-xs font-medium border border-blue-100 shadow">
-          {views.toLocaleString()} views
+          {views} views
         </div>
 
         {/* Date Badge */}

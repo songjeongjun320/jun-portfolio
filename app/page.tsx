@@ -7,17 +7,17 @@ import {
   FaMedal,
   FaGithub,
   FaLinkedin,
+  FaHandshake,
 } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiNextdotjs, SiPython } from 'react-icons/si';
 import Image from 'next/image';
 import HoverTooltip from '@/components/HoverTooltip'; // 툴팁 컴포넌트 import
 
 // 툴팁 콘텐츠 정의
 const TOOLTIP_CONTENT = {
   education: 'Click to see my academic background and degrees.',
-  projects: 'Explore my personal and professional projects.',
-  honors: 'Check out my achievements and awards.',
+  projects: 'Explore my engineering work and published writing.',
+  work: 'See how I build products and work with customers.',
   resume: 'View my detailed resume and recommendations.',
   skills: 'Discover my technical skills and expertise.',
   quote: 'A little quote that inspires me. - Steve Jobs',
@@ -138,7 +138,7 @@ export default function Portfolio() {
           style={{ padding: 'var(--space-4)' }}
           tabIndex={0}
           role="button"
-          aria-label="View projects portfolio"
+          aria-label="View engineering projects and writing"
         >
           <div className="flex flex-col items-center text-center space-y-[0.5vw] h-full justify-center">
             <div className="bg-white/90 rounded-[0.8vw] p-[0.5vw] shadow-md">
@@ -148,47 +148,38 @@ export default function Portfolio() {
               <h3 className="text-[1.8vw] md:text-[1.4vw] lg:text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">
                 Projects
               </h3>
-              <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">
-                CarePilot AI Assistant
-              </h3>
-              <h3 className="text-[0.8vw] text-gray-600">6+ Projects</h3>
+              <p className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">
+                Agent Architecture · Evaluation · Safety
+              </p>
+              <p className="text-[0.8vw] text-gray-600">
+                Rapidflare engineering &amp; selected work
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Honors Card - Top Right */}
+        {/* Work Card - Top Right */}
         <div
-          onClick={() => router.push('/section/honors')}
+          onClick={() => router.push('/section/experience')}
           onMouseMove={handleMouseMove}
-          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.honors)}
+          onMouseEnter={() => handleMouseEnter(TOOLTIP_CONTENT.work)}
           onMouseLeave={handleMouseLeave}
           className="card-base card-primary card-hover-primary card-focus flex flex-col items-center justify-center col-start-3 row-start-1"
           style={{ padding: 'var(--space-5)' }}
           tabIndex={0}
           role="button"
-          aria-label="View honors and awards"
+          aria-label="View customer and engineering experience"
         >
           <div className={`${cardContainerStyle} space-y-[0.2vw]`}>
-            <div
-              className={imageContainerStyle}
-              style={largeImageSize.container}
-            >
-              <Image
-                src="/img/ethical_hackathon.jpg"
-                alt="Ethical Hackathon Logo"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={largeImageSize.image}
-                className="rounded-[1vw]"
-              />
+            <div className="bg-white/90 rounded-[0.8vw] p-[0.5vw] shadow-md">
+              <FaHandshake className="text-[3.5vw] md:text-[2.8vw] lg:text-[2.2vw] text-[#1877F2]" />
             </div>
             <div>
               <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">
-                🏆 2nd place in Hackathon
+                Engineer × Customer Partner
               </h3>
               <span className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">
-                OpenAI + Next.js + Supabase
+                Build · Lead · Deliver
               </span>
             </div>
           </div>
@@ -209,9 +200,12 @@ export default function Portfolio() {
           <h1 className="text-[2.1vw] font-extrabold text-[#1877F2] mb-[0.8vw]">
             JeongJun Song (Jun)
           </h1>
-          <h2 className="text-[1vw] font-bold text-gray-800 mb-[1vw]">
-            AI Full-Stack Engineer
+          <h2 className="text-[1vw] font-bold text-gray-800 mb-[0.3vw]">
+            Founding Engineer at Rapidflare
           </h2>
+          <p className="text-[0.9vw] font-medium text-gray-600">
+            On the journey to build Rapidflare into a $1B company.
+          </p>
           <div className="grid grid-cols-1 gap-[1.5vw] text-gray-700 text-[2.5vw]"></div>
         </div>
 
@@ -227,34 +221,22 @@ export default function Portfolio() {
           role="button"
           aria-label="View technical skills"
         >
-          <div className="flex items-start justify-center h-full w-full gap-[1.5vw]">
-            {/* Left Side - Icons */}
-            <div className="flex flex-col items-center space-y-[1vw]">
-              <div className="flex flex-col items-center">
-                <SiNextdotjs className="text-[6vw] text-black mb-[0.3vw]" />
-              </div>
-              <div className="flex flex-col items-center">
-                <SiPython className="text-[3.6vw] text-[#3776AB]" />
-              </div>
-            </div>
-
-            {/* Right Side - Text */}
-            <div className="flex flex-col justify-start text-left space-y-[0.3vw] mt-[0.5vw]">
-              <div className="text-[1.2vw] font-bold text-black">Next.js</div>
-              <div className="text-[1.2vw] font-bold text-black">Python</div>
-              <div className="text-[1.2vw] font-bold text-black mb-[1vw]">
-                GCP
-              </div>
-              <div className="text-[1.2vw] font-bold text-[#38BDF8]">Redis</div>
-              <div className="text-[1.2vw] font-bold text-[#38BDF8]">
-                Agent Build
-              </div>
-              <div className="text-[1.2vw] font-bold text-[#38BDF8]">
-                RAG
-              </div>
-              <div className="text-[1.2vw] font-bold text-[#38BDF8]">
-                LangSmith
-              </div>
+          <div className="flex flex-col items-center justify-center w-full gap-3">
+            <h3 className="text-[clamp(1rem,1.2vw,1.4rem)] font-extrabold text-[#1877F2]">
+              Tech Stack
+            </h3>
+            <p className="text-center text-[clamp(0.7rem,0.8vw,0.95rem)] text-gray-600">
+              Tools and areas used across my career.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2 w-full">
+              {['Next.js', 'Python', 'GCP', 'Redis', 'Agent Build', 'RAG', 'LangSmith', 'CAPTCHA', 'Agent Evaluation', 'Model Training', 'RL', 'Vision ML'].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full bg-blue-50 border border-blue-100 px-3 py-1 text-[clamp(0.85rem,1vw,1.1rem)] font-semibold text-gray-800 whitespace-nowrap"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -309,10 +291,10 @@ export default function Portfolio() {
             </div>
             <div>
               <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">
-                +2 years of AI/ML Experience
+                4+ years of AI/ML Experience
               </h3>
               <p className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">
-                Train, Optimize, Deploy
+                Train · Optimize · Deploy · Agent Architecture
               </p>
             </div>
           </div>
