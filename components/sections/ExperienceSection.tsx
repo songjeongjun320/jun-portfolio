@@ -17,7 +17,7 @@ export default function ExperienceSection({ onBack }: ExperienceSectionProps) {
         'Designed an evaluation architecture using customer-specific test cases to compare our agents with alternative agents, demonstrate strengths, and identify where to improve.',
         'Built AI-powered pre-sales onboarding workflows that reduced a week of manual work to about three hours and increased the sales-call acceptance rate more than 10x compared with the previous process.',
         'Own product requirements and delivery across five customer projects, working directly with customers from discovery through implementation.',
-        'Lead the AMD ROCm Developer Assistant project, building agents for its Discord and Discourse developer communities.',
+        'Lead AMD Developer Assistant end to end across product scoping, agent architecture, Discord and Discourse integrations, deployment, and iteration, supporting 200+ user interactions per week since Jan 2026.',
       ],
     },
     {

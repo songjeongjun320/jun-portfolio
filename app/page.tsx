@@ -176,10 +176,10 @@ export default function Portfolio() {
             </div>
             <div>
               <h3 className="text-[1vw] font-bold text-gray-800 mb-[0.1vw]">
-                Engineer × Customer Partner
+                Technical Project Lead
               </h3>
               <span className="text-[1.2vw] font-extrabold text-[#1877F2] mb-[0.3vw]">
-                Build · Lead · Deliver
+                Own · Build · Deliver
               </span>
             </div>
           </div>
